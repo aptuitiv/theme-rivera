@@ -1,0 +1,60 @@
+/* =========================================================================== *\
+    Header
+\* =========================================================================== */
+
+
+/* @define Header */
+
+.Header {
+    display: block;
+    padding: 1.5rem var(--g-gutter);
+}
+
+@media (--c-bp-sm) {
+    .Header {
+        padding: var(--g-gutter-sm);
+    }
+}
+
+.Header-logo {
+    max-width: 480px;
+}
+
+.Header-line {
+    margin-bottom: 5px;
+}
+
+.Header-line:last-child {
+    margin-bottom: 0;
+}
+
+
+.Header-button {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.Header-button:first-child {
+    margin-left: 0;
+}
+
+.Header-skipToMain {
+    height: 1px;
+    left: -10000px;
+    overflow: hidden;
+    position: absolute;
+    top: 5px;
+    width: 1px;
+    z-index: 100;
+}
+
+.Header-skipToMain:focus {
+    background-color: #fff;
+    color: var(--theme-primary-color);
+    font-weight: bold;
+    height: auto;
+    left: 10px;
+    padding: 5px 10px;
+    text-decoration: underline;
+    width: auto;
+}
