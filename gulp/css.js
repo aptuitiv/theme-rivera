@@ -24,7 +24,7 @@ const plumber = require('gulp-plumber');
 const postcss = require('gulp-postcss');
 const postcssImport = require('postcss-import');
 const postcssBemLinter = require('postcss-bem-linter');
-const postcssCssNext = require('postcss-cssnext');
+const postcssPresetEnv = require('postcss-preset-env');
 const stylelint = require('stylelint');
 const tap = require('gulp-tap');
 
@@ -46,7 +46,7 @@ function runStylelint() {
         .pipe(postcss([
             postcssBemLinter({
                 preset: 'suit',
-                utilitySelectors: /^\.u-(xl-|xs-|sm-|md-|lg-)?(?:[a-z0-9][a-zA-Z0-9]*)+$/
+                utilitySelectors: /^\.u-(xl-|xs-|sm-|md-|lg-|ssn-)?(?:[a-z0-9][a-zA-Z0-9]*)+$/
             }),
             stylelint()
         ]));
@@ -63,7 +63,12 @@ runStylelint.description = 'Runs the CSS linter';
  */
 const processors = [
     postcssImport,
-    postcssCssNext()
+    postcssPresetEnv({
+        features: {
+            'custom-properties': {preserve: false},
+            'custom-media-queries': {preserve: false}
+        }
+    })
 ];
 
 /**
@@ -141,4 +146,3 @@ function generateCriticalCSS(data, i, callback) {
 exports.criticalCss = criticalCss
 exports.css = gulp.series(runStylelint, processCss);
 exports.stylelint = runStylelint;
-

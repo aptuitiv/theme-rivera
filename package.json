@@ -38,8 +38,8 @@
         "moment": "^2.24.0",
         "penthouse": "^2.2.2",
         "postcss-bem-linter": "^3.3.0",
-        "postcss-cssnext": "^3.1.0",
         "postcss-import": "^12.0.1",
+        "postcss-preset-env": "^6.7.0",
         "stylelint": "^13.2.1",
         "stylelint-order": "^4.0.0"
     },
