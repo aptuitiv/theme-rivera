@@ -1,0 +1,11 @@
+{# Documentation at https://developers.facebook.com/docs/plugins/embedded-video-player/ #}
+{% if facebookVideoUrl %}
+    {% if _page.hasJs('https://connect.facebook.net/en_US/sdk.js') == false %}
+        <div id="fb-root"></div>
+        {% do _page.addJs('https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2', {async: true, defer: true}) %}
+        {% do _page.registerJs('https://connect.facebook.net/en_US/sdk.js') %}
+    {% endif %}
+    <div class="u-margBottom3">
+        <div class="fb-video" data-href="{{ facebookVideoUrl }}" data-allowfullscreen="true" data-width="auto">Video loading...</div>
+    </div>
+{% endif %}

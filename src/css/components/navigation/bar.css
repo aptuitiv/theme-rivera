@@ -6,7 +6,9 @@
 /** @define NavBar */
 
 .NavBar {
-    background: var(--theme-navbar-bg);
-    color: var(--theme-nav-color);
-    padding: 0 28px;
+    align-items: center;
+    display: flex;
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    padding-left: 20px;
 }

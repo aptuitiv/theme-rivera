@@ -1,4 +1,5 @@
 {% if columns %}
+    {% import 'macros/macros' as macros %}
     {# Set the column classes based on the number of columns #}
 
     {% set count = numberOfColumns == 'Auto' ? columns|length : numberOfColumns %}
@@ -31,7 +32,7 @@
                     {% endif %}
                     <div class="ContentGrid-content">{{ column.content }}</div>
                     {% if column.link %}
-                        <a href="{{ column.link }}" class="Button ContentGrid-button">{{ column.linkText ?: 'Learn More' }}</a>
+                        <a href="{{ column.link }}" class="Button Button--withIcon ContentGrid-button">{{ column.linkText ?: 'Learn More' }} {{ macros.iconAriaHidden('caret-right', 'Button-icon') }}</a>
                     {% endif %}
                 </div>
             </div>

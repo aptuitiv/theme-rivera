@@ -223,7 +223,7 @@
     box-sizing: border-box;
     color: #fff;
     display: block;
-    font-family: var(--base-typography-heading-fontFamily);
+    font-family: var(--theme-typography-heading-fontFamily);
     font-size: 2.6em;
     line-height: 1.1;
     max-width: 45vw;

@@ -16,6 +16,9 @@
 }
 
 .ContentGrid-item {
+    border-radius: 4px;
+    box-shadow: 0 30px 60px -12px rgba(50, 50, 93, .25), 0 18px 36px -18px rgba(0, 0, 0, .3), 0 -12px 36px -8px rgba(0, 0, 0, .025);
+    padding: 20px;
     position: relative;
 }
 
@@ -43,7 +46,7 @@
     color: var(--theme-content-grid-title-color);
     font-family: var(--theme-typography-heading-fontFamily);
     font-size: var(--base-typography-h3-fontSize);
-    font-size: var(--base-typography-h3-lineHeight);
+    line-height: var(--base-typography-h3-lineHeight);
 }
 
 /* postcss-bem-linter: ignore */

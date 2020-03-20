@@ -84,6 +84,18 @@ textarea {
 }
 
 /**
+ * Add top margin to anchor links so that they don't get stuck behind the anchor link
+ * @link https://github.com/twbs/bootstrap/issues/1768#issuecomment-46519033
+ */
+a[id]:not([href]):before {
+    content: " ";
+    display: block;
+    height: 200px;
+    margin-top: -200px;
+    visibility: hidden;
+}
+
+/**
  * Work around a Firefox/IE bug where the transparent `button` background
  * results in a loss of the default `button` focus styles.
  */

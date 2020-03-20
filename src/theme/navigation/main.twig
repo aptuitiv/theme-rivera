@@ -14,7 +14,7 @@
             {# ASSIGN SUB MENU ITEM CLASS #}
             {% set class = "Dropdown-item " ~ item.link.class %}
             {% if item.subItems %}
-                {% set class = class ~ ' js-dropdownParent' %}
+                {% set class = class ~ ' Dropdown-item--parent js-dropdownParent' %}
             {% endif %}
             <li class="{{ class|trim }}">
                 {# ASSIGN SUB MENU LINK CLASS #}

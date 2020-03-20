@@ -79,13 +79,3 @@
         {% endinlinejs %}
     {% endif %}
 {% endif %}
-{% if title or content %}
-    <div class="ContentHeader">
-        {% if title %}
-            <h1 class="ContentHeader-title">{{ title }}</h1>
-        {% endif %}
-        {% if content %}
-            <div class="ContentHeader-content">{{ content }}</div>
-        {% endif %}
-    </div>
-{% endif %}

@@ -6,8 +6,22 @@
 /* @define Header */
 
 .Header {
+    background: #fff;
+    border-bottom: 1px solid #ebeaeb;
     display: block;
-    padding: 1.5rem var(--g-gutter);
+    padding: 12px 0;
+    z-index: 1000;
+}
+
+@media (min-width: 800px) {
+    .Header {
+        position: sticky;
+        top: 0;
+    }
+
+    .Header.is-sticky {
+        padding: 6px 0;
+    }
 }
 
 @media (--c-bp-sm) {
@@ -16,16 +30,34 @@
     }
 }
 
+.Header-inner {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Header-logoWrap {
+    align-items: center;
+    display: flex;
+    margin-bottom: 2px;
+    width: 125px;
+}
+
+.Header-logoLink {
+    display: inline-block;
+}
+
 .Header-logo {
-    max-width: 480px;
+    display: inline-block;
+    width: 90%;
 }
 
-.Header-line {
-    margin-bottom: 5px;
+.Header-social {
+    margin-right: 12px;
 }
 
-.Header-line:last-child {
-    margin-bottom: 0;
+.Header-buttons {
+
 }
 
 

@@ -1,0 +1,56 @@
+{# Documentation at https://developers.facebook.com/docs/plugins/embedded-video-player/ #}
+{% if videos %}
+    {% import 'macros/macros' as macros %}
+    {% if _page.hasJs('https://connect.facebook.net/en_US/sdk.js') == false %}
+        <div id="fb-root"></div>
+        {% do _page.addJs('https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2', {async: true, defer: true}) %}
+        {% do _page.registerJs('https://connect.facebook.net/en_US/sdk.js') %}
+    {% endif %}
+    {% set class = 'js-videoSlider' ~ random_string(8)|upper %}
+    <div class="VideoSlider">
+        <div class="VideoSlider-inner {{ class }}">
+            {% for video in videos %}
+                <div class="VideoSlider-slide">
+                    <div class="fb-video" data-href="{{ video.facebookVideoUrl }}" data-allowfullscreen="true" data-width="auto">Video loading...</div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    {% do _page.addCss('/slick/slick.css'|theme_url, {'preload': true}) %}
+
+    {% if _page.hasJs('slick/slick.min.js'|theme_url) == false %}
+        {% inlinejs %}
+            loadjs.ready('main', {
+                success: function() {
+                    loadjs(['{{ 'slick/slick.min.js'|theme_url }}'], 'slickheader');
+                }
+            });
+        {% endinlinejs %}
+        {% do _page.registerJs('slick/slick.min.js'|theme_url) %}
+    {% endif %}
+    {% inlinejs %}
+    loadjs.ready('slickheader', {
+        success: function() {
+            $(function() {
+                $('.{{ class }}').slick({
+                    adaptiveHeight: true,
+                    arrows: true,
+                    autoplay: false,
+                    autoplaySpeed: 4000,
+                    dots: true,
+                    dotsClass: 'VideoSlider-dots',
+                    fade: false,
+                    prevArrow: '<a href="#" class="VideoSlider-nav VideoSlider-navPrev"> {{ macros.iconImg("chevron-thin-left", "Slide Left", "VideoSlider-navIcon") }} </a>',
+                    nextArrow: '<a href="#" class="VideoSlider-nav VideoSlider-navNext">{{ macros.iconImg("chevron-thin-right", "Slide Right", "VideoSlider-navIcon") }} </a>',
+                    speed: 500,
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }).on('setPosition', function (event, slick) {
+                    slick.$slides.css('height', 'auto');
+                });
+            });
+        }
+    });
+    {% endinlinejs %}
+{% endif %}
