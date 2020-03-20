@@ -43,6 +43,16 @@
     color: var(--theme-content-bar-heading-color);
 }
 
+/* postcss-bem-linter: ignore */
+
+.ContentBar--dark a {
+    color: var(--theme-content-bar-link-color);
+}
+
+/* postcss-bem-linter: ignore */
+
+.ContentBar--dark a:active,
+.ContentBar--dark a:focus,
 .ContentBar--dark a:hover {
     color: var(--theme-content-bar-link-color-hover);
 }

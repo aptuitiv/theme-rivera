@@ -23,6 +23,8 @@
 .Slider-link:focus,
 .Slider-link:hover {
     color: inherit;
+    display: block;
+    overflow: hidden; /* Done to prevent a scaled blurred image (with .u-imageBlur) from overflowing */
     text-decoration: none;
 }
 

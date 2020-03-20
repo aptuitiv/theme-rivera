@@ -262,10 +262,6 @@
         {
             "key": "sidebar",
             "name": "Sidebar"
-        },
-        {
-            "key": "footer",
-            "name": "Footer"
         }
     ],
     "contentBuilder": {
@@ -453,6 +449,129 @@
                         ]
                     },
                     {
+                        "key": "content-wrap",
+                        "name": "Content Wrap",
+                        "type": "full",
+                        "template": "content-wrap",
+                        "enabled": true,
+                        "parse": true,
+                        "description": "",
+                        "fields": [
+                            {
+                                "key": "background",
+                                "name": "Background",
+                                "type": "select",
+                                "value": "",
+                                "description": "",
+                                "options": [
+                                    {
+                                        "value": "White",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Light",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Dark",
+                                        "default": false
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "spacing",
+                                "name": "Spacing above and below content",
+                                "type": "select",
+                                "value": "",
+                                "description": "",
+                                "options": [
+                                    {
+                                        "value": "None",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Small",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Medium",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Large",
+                                        "default": false
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "parent",
+                                "name": "Content",
+                                "type": "formElementParent",
+                                "value": "",
+                                "description": "Drop content elements here"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "facebook-video",
+                        "name": "Facebook video",
+                        "type": "full",
+                        "template": "facebook-video",
+                        "enabled": true,
+                        "parse": true,
+                        "description": "",
+                        "fields": [
+                            {
+                                "key": "facebookVideoUrl",
+                                "name": "Facebook video URL",
+                                "type": "text",
+                                "configuration": {
+                                    "allowCode": "no"
+                                },
+                                "value": "",
+                                "description": ""
+                            }
+                        ]
+                    },
+                    {
+                        "key": "facebook-video-slider",
+                        "name": "Facebook video slider",
+                        "type": "full",
+                        "template": "facebook-video-slider",
+                        "enabled": true,
+                        "parse": true,
+                        "description": "",
+                        "fields": [
+                            {
+                                "key": "videos",
+                                "name": "Videos",
+                                "type": "repeating",
+                                "configuration": {
+                                    "collectionItemSort": "1",
+                                    "collectionItemDelete": "1",
+                                    "collectionMinNumItems": "",
+                                    "collectionMaxNumItems": "",
+                                    "collectionOrientation": "vertical",
+                                    "collectionItemName": "Video"
+                                },
+                                "value": "",
+                                "description": "",
+                                "fields": [
+                                    {
+                                        "key": "facebookVideoUrl",
+                                        "name": "Facebook video URL",
+                                        "type": "text",
+                                        "configuration": {
+                                            "allowCode": "no"
+                                        },
+                                        "value": "",
+                                        "description": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "key": "featured-content-wrapper",
                         "name": "Featured Content Wrapper",
                         "type": "grid",
@@ -631,67 +750,92 @@
                         "description": "",
                         "fields": [
                             {
-                                "key": "rows",
-                                "name": "Rows",
-                                "type": "repeating",
+                                "key": "heading",
+                                "name": "Heading",
+                                "type": "text",
                                 "configuration": {
-                                    "collectionItemSort": "1",
-                                    "collectionItemDelete": "1",
-                                    "collectionMinNumItems": "",
-                                    "collectionMaxNumItems": "",
-                                    "collectionOrientation": "vertical",
-                                    "collectionItemName": "Row"
+                                    "allowCode": "no"
                                 },
                                 "value": "",
+                                "description": ""
+                            },
+                            {
+                                "key": "image",
+                                "name": "Image",
+                                "type": "image",
+                                "configuration": {
+                                    "path": "\/images",
+                                    "height": 600,
+                                    "width": 600
+                                },
+                                "value": "",
+                                "description": ""
+                            },
+                            {
+                                "key": "imageSize",
+                                "name": "Image size",
+                                "type": "select",
+                                "value": "",
                                 "description": "",
-                                "fields": [
+                                "options": [
                                     {
-                                        "key": "heading",
-                                        "name": "Heading",
-                                        "type": "text",
-                                        "configuration": {
-                                            "allowCode": "no"
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        "value": "1\/4",
+                                        "default": false
                                     },
                                     {
-                                        "key": "image",
-                                        "name": "Image",
-                                        "type": "image",
-                                        "configuration": {
-                                            "path": "\/images\/staff",
-                                            "height": 500,
-                                            "width": 500
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        "value": "1\/3",
+                                        "default": false
                                     },
                                     {
-                                        "key": "alignImage",
-                                        "name": "Align Image",
-                                        "type": "select",
-                                        "value": "",
-                                        "description": "",
-                                        "options": [
-                                            {
-                                                "value": "Left",
-                                                "default": false
-                                            },
-                                            {
-                                                "value": "Right",
-                                                "default": false
-                                            }
-                                        ]
+                                        "value": "2\/5",
+                                        "default": false
                                     },
                                     {
-                                        "key": "content",
-                                        "name": "Content",
-                                        "type": "richTextEditor",
-                                        "value": "",
-                                        "description": ""
+                                        "value": "1\/2",
+                                        "default": false
                                     }
                                 ]
+                            },
+                            {
+                                "key": "alignImage",
+                                "name": "Align image",
+                                "type": "select",
+                                "value": "",
+                                "description": "",
+                                "options": [
+                                    {
+                                        "value": "Left",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Right",
+                                        "default": false
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "link",
+                                "name": "Link",
+                                "type": "url",
+                                "value": "",
+                                "description": ""
+                            },
+                            {
+                                "key": "buttonText",
+                                "name": "Button text",
+                                "type": "text",
+                                "configuration": {
+                                    "allowCode": "no"
+                                },
+                                "value": "Learn more",
+                                "description": ""
+                            },
+                            {
+                                "key": "content",
+                                "name": "Content",
+                                "type": "richTextEditor",
+                                "value": "",
+                                "description": ""
                             }
                         ]
                     },
@@ -704,60 +848,6 @@
                         "parse": true,
                         "description": "",
                         "fields": [
-                            {
-                                "key": "numberOfColumns",
-                                "name": "Number of columns per row",
-                                "type": "select",
-                                "value": "",
-                                "description": "Number of columns to display at the largest screen size.\n\"Auto\" will determine the number of columns based on the number of items.",
-                                "options": [
-                                    {
-                                        "value": "Auto",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "2",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "3",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "4",
-                                        "default": false
-                                    }
-                                ]
-                            },
-                            {
-                                "key": "displayTitle",
-                                "name": "Display title",
-                                "type": "select",
-                                "value": "",
-                                "description": "",
-                                "options": [
-                                    {
-                                        "value": "Above Image",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Below Image",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Top of Image",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Centered on Image",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Bottom of Image",
-                                        "default": false
-                                    }
-                                ]
-                            },
                             {
                                 "key": "columns",
                                 "name": "Columns",
@@ -818,6 +908,60 @@
                                                 "default": false
                                             }
                                         ]
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "numberOfColumns",
+                                "name": "Number of columns per row",
+                                "type": "select",
+                                "value": "",
+                                "description": "Number of columns to display at the largest screen size.\n\"Auto\" will determine the number of columns based on the number of items.",
+                                "options": [
+                                    {
+                                        "value": "Auto",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "2",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "3",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "4",
+                                        "default": false
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "displayTitle",
+                                "name": "Display title",
+                                "type": "select",
+                                "value": "",
+                                "description": "",
+                                "options": [
+                                    {
+                                        "value": "Above Image",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Below Image",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Top of Image",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Centered on Image",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Bottom of Image",
+                                        "default": false
                                     }
                                 ]
                             }
@@ -956,7 +1100,7 @@
                                         "name": "How to Display Image",
                                         "type": "select",
                                         "value": "",
-                                        "description": "\"Scale to fit\" means that the image will be scaled to fit in a perfect square.\n\"Fit\" means that the image will be centered but will not be displayed as a perfect square",
+                                        "description": "\"Scale to fit\" means that the image will be scaled to fit in a perfect square.\n\"Fit\" means that the image will be centered but will not be displayed as a perfect square.",
                                         "options": [
                                             {
                                                 "value": "Scale to fit",
@@ -1127,6 +1271,81 @@
                         ]
                     },
                     {
+                        "key": "location-map",
+                        "name": "Location Map",
+                        "type": "full",
+                        "template": "location-map",
+                        "enabled": true,
+                        "parse": true,
+                        "description": "",
+                        "fields": [
+                            {
+                                "key": "heading",
+                                "name": "Heading",
+                                "type": "text",
+                                "configuration": {
+                                    "allowCode": "no"
+                                },
+                                "value": "",
+                                "description": ""
+                            },
+                            {
+                                "key": "address",
+                                "name": "Address",
+                                "type": "textarea",
+                                "configuration": {
+                                    "allowCode": "no"
+                                },
+                                "value": "",
+                                "description": ""
+                            },
+                            {
+                                "key": "embedRatio",
+                                "name": "Embed ratio",
+                                "type": "select",
+                                "value": "",
+                                "description": "",
+                                "options": [
+                                    {
+                                        "value": "4by3",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "3by2",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "16by9",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "5by3",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "3by1",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "2by1",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "1by1",
+                                        "default": false
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "iframeTag",
+                                "name": "Iframe tag",
+                                "type": "iframeEmbed",
+                                "value": "",
+                                "description": "Copy the Iframe embed tag from Google Maps and paste it here"
+                            }
+                        ]
+                    },
+                    {
                         "key": "media-embed",
                         "name": "Media Embed",
                         "type": "full",
@@ -1193,18 +1412,6 @@
                         "description": "",
                         "fields": [
                             {
-                                "key": "image",
-                                "name": "Image",
-                                "type": "image",
-                                "configuration": {
-                                    "path": "\/images",
-                                    "height": 400,
-                                    "width": 400
-                                },
-                                "value": "",
-                                "description": ""
-                            },
-                            {
                                 "key": "alignment",
                                 "name": "Alignment",
                                 "type": "select",
@@ -1228,6 +1435,18 @@
                                         "default": false
                                     }
                                 ]
+                            },
+                            {
+                                "key": "image",
+                                "name": "Image",
+                                "type": "image",
+                                "configuration": {
+                                    "path": "\/images",
+                                    "height": 400,
+                                    "width": 400
+                                },
+                                "value": "",
+                                "description": ""
                             },
                             {
                                 "key": "caption",
@@ -1290,27 +1509,6 @@
                         "parse": true,
                         "description": "",
                         "fields": [
-                            {
-                                "key": "alignImages",
-                                "name": "Align Images",
-                                "type": "select",
-                                "value": "",
-                                "description": "",
-                                "options": [
-                                    {
-                                        "value": "Left",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Right",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "Center",
-                                        "default": false
-                                    }
-                                ]
-                            },
                             {
                                 "key": "people",
                                 "name": "People",
@@ -1384,6 +1582,27 @@
                                         "type": "richTextEditor",
                                         "value": "",
                                         "description": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "alignImages",
+                                "name": "Align Images",
+                                "type": "select",
+                                "value": "",
+                                "description": "",
+                                "options": [
+                                    {
+                                        "value": "Left",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Right",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "Center",
+                                        "default": false
                                     }
                                 ]
                             }
@@ -1702,13 +1921,21 @@
             "default": true,
             "adminBar": true,
             "contentAreas": [
-                "header",
-                "footer"
+                "header"
             ]
         },
         {
             "key": "two-column",
             "name": "Two Column",
+            "default": false,
+            "adminBar": true,
+            "contentAreas": [
+                "header"
+            ]
+        },
+        {
+            "key": "full-width",
+            "name": "Full Width",
             "default": false,
             "adminBar": true,
             "contentAreas": [
@@ -1900,6 +2127,22 @@
             "name": "Columned Feature"
         },
         {
+            "key": "content-builder\/content-wrap",
+            "name": "Content Wrap"
+        },
+        {
+            "key": "content-builder\/location-map",
+            "name": "Location Map"
+        },
+        {
+            "key": "content-builder\/facebook-video",
+            "name": "Facebook video"
+        },
+        {
+            "key": "content-builder\/facebook-video-slider",
+            "name": "Facebook video slider"
+        },
+        {
             "key": "content-layouts\/header",
             "name": "Header"
         },
@@ -1910,6 +2153,128 @@
         {
             "key": "forms\/label-above-field",
             "name": "label-above-field"
+        },
+        {
+            "key": "blog\/post-detail",
+            "name": "post-detail",
+            "type": "post-detail"
+        },
+        {
+            "key": "blog\/category-detail",
+            "name": "category-detail",
+            "type": "category-detail"
+        },
+        {
+            "key": "blog\/sidebar",
+            "name": "sidebar",
+            "type": "blank"
+        },
+        {
+            "key": "blog\/post-list",
+            "name": "post-list",
+            "type": "post-list"
+        },
+        {
+            "key": "blog\/forms\/comments",
+            "name": "Default Template",
+            "type": "form",
+            "default": true,
+            "formKey": "comment"
+        },
+        {
+            "key": "calendar\/tag-list",
+            "name": "tag-list",
+            "type": "tag-list"
+        },
+        {
+            "key": "calendar\/event-list-list-format",
+            "name": "event-list-list-format",
+            "type": "event-list-list"
+        },
+        {
+            "key": "calendar\/search-results",
+            "name": "search-results",
+            "type": "search-results"
+        },
+        {
+            "key": "calendar\/event-list-agenda-format",
+            "name": "event-list-agenda-format",
+            "type": "event-list-agenda"
+        },
+        {
+            "key": "calendar\/event-detail",
+            "name": "event-detail",
+            "type": "event-detail"
+        },
+        {
+            "key": "calendar\/tag-detail",
+            "name": "tag-detail",
+            "type": "tag-detail"
+        },
+        {
+            "key": "calendar\/search",
+            "name": "search",
+            "type": "search"
+        },
+        {
+            "key": "calendar\/event-list-grid-format",
+            "name": "event-list-grid-format",
+            "type": "event-list-grid"
+        },
+        {
+            "key": "calendar\/calendar-home",
+            "name": "calendar-home",
+            "type": "home"
+        },
+        {
+            "key": "gallery\/category-detail",
+            "name": "category-detail",
+            "type": "category-detail"
+        },
+        {
+            "key": "gallery\/sidebar",
+            "name": "sidebar",
+            "type": "blank"
+        },
+        {
+            "key": "gallery\/category-list",
+            "name": "category-list",
+            "type": "category-list"
+        },
+        {
+            "key": "gallery\/api-category-filter",
+            "name": "api-category-filter",
+            "type": "api-category-filter"
+        },
+        {
+            "key": "gallery\/item-detail",
+            "name": "item-detail",
+            "type": "item-detail"
+        },
+        {
+            "key": "gallery\/categories",
+            "name": "categories",
+            "type": ""
+        },
+        {
+            "key": "gallery\/category",
+            "name": "category",
+            "type": ""
+        },
+        {
+            "key": "gallery\/home",
+            "name": "home",
+            "type": ""
+        },
+        {
+            "key": "gallery\/item",
+            "name": "item",
+            "type": ""
+        },
+        {
+            "key": "gallery\/items",
+            "name": "items",
+            "type": ""
         }
     ],
     "siteSettings": {
@@ -2011,7 +2376,7 @@
         "tinymce_image_title": "0",
         "tinymce_import_stylesheets": [
             {
-                "import_file": "\/theme\/custom\/css\/main.css"
+                "import_file": "https:\/\/bcms-files.s3.amazonaws.com\/m9agGKxgOW-1417\/theme\/custom\/css\/main.css"
             }
         ],
         "tinymce_inline_classes": [],
@@ -2042,7 +2407,7 @@
             }
         ],
         "tinymce_paste_as_text": "0",
-        "tinymce_show_contextmenu": "1",
+        "tinymce_show_contextmenu": "0",
         "tinymce_table_cell_classes": [],
         "tinymce_table_classes": [
             {
@@ -2220,6 +2585,545 @@
             "session_cookie_lifetime_units": "days",
             "session_gcmaxlifetime": "24",
             "session_gcmaxlifetime_units": "hours",
+            "time_format": "g:i A"
+        },
+        "blog": {
+            "additional_breadcrumb_links": "",
+            "app_item_not_found_custom_redirect": "",
+            "app_item_not_found_handler": "redirectAppHome",
+            "archive_body_class": "",
+            "archive_breadcrumb": "Archive",
+            "archive_css_files": "",
+            "archive_footer": "",
+            "archive_header": "",
+            "archive_head_content": "",
+            "archive_inline_css": "",
+            "archive_inline_js": "",
+            "archive_js_files": "",
+            "archive_title": "Blog Archive",
+            "breadcrumb_text": "Blog",
+            "category_body_class": "",
+            "category_breadcrumb": "{{ categoryName }}",
+            "category_css_files": "",
+            "category_footer": "",
+            "category_header": "",
+            "category_head_content": "",
+            "category_inline_css": "",
+            "category_inline_js": "",
+            "category_js_files": "",
+            "category_list_body_class": "",
+            "category_list_breadcrumb": "View by Category",
+            "category_list_css_files": "",
+            "category_list_footer": "",
+            "category_list_header": "",
+            "category_list_head_content": "",
+            "category_list_inline_css": "",
+            "category_list_inline_js": "",
+            "category_list_js_files": "",
+            "category_list_title": "View By Category",
+            "category_social_og_type": "",
+            "category_title": "Category {{ categoryName }}",
+            "date_format": "F j, Y",
+            "feed_author": "",
+            "feed_category_description": "",
+            "feed_category_entry_title": "{{ title }}",
+            "feed_category_title": "Items in {{ categoryName }}",
+            "feed_comment_description": "",
+            "feed_comment_entry_title": "By {{ commentAuthor.fullName }}",
+            "feed_comment_title": "Comments",
+            "feed_copyright": "",
+            "feed_description": "",
+            "feed_email": "",
+            "feed_entry_title": "{{ title }}",
+            "feed_generator": "BranchCMS",
+            "feed_image": "",
+            "feed_item_description_source": "content",
+            "feed_language": "en-us",
+            "feed_skipDays": "",
+            "feed_skipHours": "",
+            "feed_tag_description": "",
+            "feed_tag_entry_title": "{{ title }}",
+            "feed_tag_title": "Items Tagged \"{{ tagName }}\"",
+            "feed_title": "Feed",
+            "feed_webmaster": "",
+            "home_body_class": "",
+            "home_css_files": "",
+            "home_footer": "<p>This is a sample blog footer that can appear at the bottom of the list of blog posts.<\/p>",
+            "home_header": "<p>This shows a sample blog. You can create as many posts as you want. Newer posts will show first.<\/p>",
+            "home_head_content": "",
+            "home_inline_css": "",
+            "home_inline_js": "",
+            "home_js_files": "",
+            "home_title": "Blog",
+            "pagination_page_range": "10",
+            "pagination_style": "Sliding",
+            "post_body_class": "",
+            "post_breadcrumb": "{{ postTitle }}",
+            "post_css_files": "",
+            "post_footer": "",
+            "post_header": "",
+            "post_head_content": "",
+            "post_inline_css": "",
+            "post_inline_js": "",
+            "post_js_files": "",
+            "post_list_body_class": "",
+            "post_list_breadcrumb": "View all Posts",
+            "post_list_css_files": "",
+            "post_list_footer": "<p>This is a sample blog footer that can appear at the bottom of the list of blog posts.<\/p>",
+            "post_list_header": "<h1>Our Blog<\/h1>\n<p>This shows a sample blog. You can create as many posts as you want. Newer posts will show first.<\/p>",
+            "post_list_head_content": "",
+            "post_list_inline_css": "",
+            "post_list_inline_js": "",
+            "post_list_js_files": "",
+            "post_list_title": "Blog Post",
+            "post_title": "Blog - {{ postTitle }}",
+            "search_body_class": "",
+            "search_breadcrumb": "Search",
+            "search_css_files": "",
+            "search_footer": "",
+            "search_get_all_ids": "0",
+            "search_header": "",
+            "search_head_content": "",
+            "search_inline_css": "",
+            "search_inline_js": "",
+            "search_js_files": "",
+            "search_results_body_class": "",
+            "search_results_breadcrumb": "Search Results",
+            "search_results_css_files": "",
+            "search_results_footer": "",
+            "search_results_header": "",
+            "search_results_head_content": "",
+            "search_results_inline_css": "",
+            "search_results_inline_js": "",
+            "search_results_js_files": "",
+            "search_results_title": "Search Results",
+            "search_title": "Search",
+            "tag_body_class": "",
+            "tag_breadcrumb": "{{ tagName }}",
+            "tag_cloud_data_max_weight": "20",
+            "tag_cloud_data_min_weight": "10",
+            "tag_cloud_html_cloud_separator": "space",
+            "tag_cloud_html_cloud_separator_tag": "",
+            "tag_cloud_html_cloud_wrapper": [
+                {
+                    "tag": "ul"
+                }
+            ],
+            "tag_cloud_html_tag_classes": "",
+            "tag_cloud_html_tag_font_size_unit": "px",
+            "tag_cloud_html_tag_max_font_size": "20",
+            "tag_cloud_html_tag_min_font_size": "10",
+            "tag_cloud_html_tag_style": "font",
+            "tag_cloud_html_tag_wrapper": [
+                {
+                    "tag": "li"
+                }
+            ],
+            "tag_cloud_order": "date",
+            "tag_css_files": "",
+            "tag_footer": "",
+            "tag_header": "",
+            "tag_head_content": "",
+            "tag_inline_css": "",
+            "tag_inline_js": "",
+            "tag_js_files": "",
+            "tag_list_body_class": "",
+            "tag_list_breadcrumb": "View by Tag",
+            "tag_list_css_files": "",
+            "tag_list_footer": "",
+            "tag_list_header": "",
+            "tag_list_head_content": "",
+            "tag_list_inline_css": "",
+            "tag_list_inline_js": "",
+            "tag_list_js_files": "",
+            "tag_list_title": "View By Tag",
+            "tag_social_og_type": "",
+            "tag_title": "Tag - {{ tagName }}",
+            "time_format": "g:i A"
+        },
+        "calendar": {
+            "account_registration_detail_body_class": "",
+            "account_registration_detail_breadcrumb": "Account Registration Detail",
+            "account_registration_detail_css_files": "",
+            "account_registration_detail_footer": "",
+            "account_registration_detail_header": "",
+            "account_registration_detail_head_content": "",
+            "account_registration_detail_inline_css": "",
+            "account_registration_detail_inline_js": "",
+            "account_registration_detail_js_files": "",
+            "account_registration_detail_title": "Account Registration Detail",
+            "account_registration_list_body_class": "",
+            "account_registration_list_breadcrumb": "Account Registrations List",
+            "account_registration_list_css_files": "",
+            "account_registration_list_footer": "",
+            "account_registration_list_header": "",
+            "account_registration_list_head_content": "",
+            "account_registration_list_inline_css": "",
+            "account_registration_list_inline_js": "",
+            "account_registration_list_js_files": "",
+            "account_registration_list_title": "Account Registrations List",
+            "additional_breadcrumb_links": "",
+            "agenda_view_body_class": "",
+            "agenda_view_breadcrumb": "{{ dateRange }}",
+            "agenda_view_css_files": "",
+            "agenda_view_footer": "",
+            "agenda_view_header": "",
+            "agenda_view_head_content": "",
+            "agenda_view_inline_css": "",
+            "agenda_view_inline_js": "",
+            "agenda_view_js_files": "",
+            "agenda_view_title": "Calendar of Events - {{ dateRange }}",
+            "app_item_not_found_custom_redirect": "",
+            "app_item_not_found_handler": "redirectAppHome",
+            "breadcrumb_text": "Calendar",
+            "category_body_class": "",
+            "category_breadcrumb": "{{ categoryName }}",
+            "category_css_files": "",
+            "category_display": "filter",
+            "category_footer": "",
+            "category_header": "",
+            "category_head_content": "",
+            "category_inline_css": "",
+            "category_inline_js": "",
+            "category_js_files": "",
+            "category_list_body_class": "",
+            "category_list_breadcrumb": "View by Category",
+            "category_list_css_files": "",
+            "category_list_footer": "",
+            "category_list_header": "",
+            "category_list_head_content": "",
+            "category_list_inline_css": "",
+            "category_list_inline_js": "",
+            "category_list_js_files": "",
+            "category_list_title": "View By Category",
+            "category_social_og_type": "",
+            "category_title": "Category {{ categoryName }}",
+            "date_format": "F j, Y",
+            "date_nav_format": "F j, Y",
+            "event_add_body_class": "",
+            "event_add_breadcrumb": "Add an Event",
+            "event_add_css_files": "",
+            "event_add_footer": "",
+            "event_add_header": "",
+            "event_add_head_content": "",
+            "event_add_inline_css": "",
+            "event_add_inline_js": "",
+            "event_add_js_files": "",
+            "event_add_not_logged_in_action": "404",
+            "event_add_not_logged_in_action_redirect": "",
+            "event_add_title": "Add an Event",
+            "event_body_class": "",
+            "event_breadcrumb": "{{ title }}",
+            "event_css_files": "",
+            "event_date_format": "l, F j, Y",
+            "event_edit_body_class": "",
+            "event_edit_breadcrumb": "Edit Event",
+            "event_edit_css_files": "",
+            "event_edit_footer": "",
+            "event_edit_header": "",
+            "event_edit_head_content": "",
+            "event_edit_inline_css": "",
+            "event_edit_inline_js": "",
+            "event_edit_js_files": "",
+            "event_edit_title": "Edit Event",
+            "event_footer": "",
+            "event_header": "",
+            "event_head_content": "",
+            "event_inline_css": "",
+            "event_inline_js": "",
+            "event_js_files": "",
+            "event_list_agenda_view": "enable",
+            "event_list_default_view": "agenda",
+            "event_list_grid_view": "enable",
+            "event_list_list_view": "disable",
+            "event_social_og_type": "",
+            "event_time_format": "g:i a",
+            "event_title": "{{ title }} - {{ date }}",
+            "feed_author": "",
+            "feed_category_description": "",
+            "feed_category_entry_title": "{{ title }}",
+            "feed_category_title": "Items in {{ categoryName }}",
+            "feed_copyright": "",
+            "feed_description": "",
+            "feed_email": "",
+            "feed_entry_title": "{{ title }}",
+            "feed_generator": "BranchCMS",
+            "feed_image": "",
+            "feed_item_description_source": "abstract",
+            "feed_language": "en-us",
+            "feed_skipDays": "",
+            "feed_skipHours": "",
+            "feed_tag_description": "",
+            "feed_tag_entry_title": "{{ title }}",
+            "feed_tag_title": "Items Tagged \"{{ tagName }}\"",
+            "feed_title": "Feed",
+            "feed_webmaster": "",
+            "grid_view_body_class": "",
+            "grid_view_breadcrumb": "{{ dateRange }}",
+            "grid_view_css_files": "",
+            "grid_view_footer": "",
+            "grid_view_header": "",
+            "grid_view_head_content": "",
+            "grid_view_inline_css": "",
+            "grid_view_inline_js": "",
+            "grid_view_js_files": "",
+            "grid_view_title": "Calendar of Events - {{ dateRange }}",
+            "home_body_class": "",
+            "home_css_files": "",
+            "home_footer": "",
+            "home_header": "",
+            "home_head_content": "",
+            "home_inline_css": "",
+            "home_inline_js": "",
+            "home_js_files": "",
+            "home_title": "Calendar",
+            "item_add_category_select_option_text": "-- Select a Category --",
+            "item_add_include_categories": "1",
+            "item_add_include_subcategories": "1",
+            "item_add_indent_subcategories": "custom",
+            "item_add_indent_subcategories_custom": "--",
+            "item_add_indent_subcategories_parent_separator": " :: ",
+            "item_add_order_categories_by": "name",
+            "item_add_order_categories_direction": "asc",
+            "item_edit_category_select_option_text": "-- Select a Category --",
+            "item_edit_include_categories": "1",
+            "item_edit_include_subcategories": "1",
+            "item_edit_indent_subcategories": "custom",
+            "item_edit_indent_subcategories_custom": "--",
+            "item_edit_indent_subcategories_parent_separator": " :: ",
+            "item_edit_order_categories_by": "name",
+            "item_edit_order_categories_direction": "asc",
+            "list_view_body_class": "",
+            "list_view_breadcrumb": "{{ dateRange }}",
+            "list_view_css_files": "",
+            "list_view_footer": "",
+            "list_view_header": "",
+            "list_view_head_content": "",
+            "list_view_inline_css": "",
+            "list_view_inline_js": "",
+            "list_view_js_files": "",
+            "list_view_title": "Calendar of Events - {{ dateRange }}",
+            "next_text": "&#62;&#62;",
+            "no_events_message": "<p>There are no events for this date range<\/p>",
+            "pagination_page_range": "10",
+            "pagination_style": "Sliding",
+            "previous_text": "&#60;&#60;",
+            "registration_body_class": "",
+            "registration_breadcrumb": "Event Registration",
+            "registration_css_files": "",
+            "registration_footer": "",
+            "registration_header": "",
+            "registration_head_content": "",
+            "registration_inline_css": "",
+            "registration_inline_js": "",
+            "registration_js_files": "",
+            "registration_title": "Event Registration",
+            "search_body_class": "",
+            "search_breadcrumb": "Search",
+            "search_css_files": "",
+            "search_date": "all",
+            "search_footer": "",
+            "search_get_all_ids": "0",
+            "search_header": "",
+            "search_head_content": "",
+            "search_inline_css": "",
+            "search_inline_js": "",
+            "search_js_files": "",
+            "search_results_body_class": "",
+            "search_results_breadcrumb": "Search Results",
+            "search_results_css_files": "",
+            "search_results_footer": "",
+            "search_results_header": "",
+            "search_results_head_content": "",
+            "search_results_inline_css": "",
+            "search_results_inline_js": "",
+            "search_results_js_files": "",
+            "search_results_title": "Search Results",
+            "search_sort": "relevance",
+            "search_title": "Search",
+            "tag_body_class": "",
+            "tag_breadcrumb": "{{ tagName }}",
+            "tag_cloud_data_max_weight": "20",
+            "tag_cloud_data_min_weight": "10",
+            "tag_cloud_html_cloud_separator": "space",
+            "tag_cloud_html_cloud_separator_tag": "",
+            "tag_cloud_html_cloud_wrapper": [
+                {
+                    "tag": "ul"
+                }
+            ],
+            "tag_cloud_html_tag_classes": "",
+            "tag_cloud_html_tag_font_size_unit": "px",
+            "tag_cloud_html_tag_max_font_size": "20",
+            "tag_cloud_html_tag_min_font_size": "10",
+            "tag_cloud_html_tag_style": "font",
+            "tag_cloud_html_tag_wrapper": [
+                {
+                    "tag": "li"
+                }
+            ],
+            "tag_cloud_order": "date",
+            "tag_css_files": "",
+            "tag_footer": "",
+            "tag_header": "",
+            "tag_head_content": "",
+            "tag_inline_css": "",
+            "tag_inline_js": "",
+            "tag_js_files": "",
+            "tag_list_body_class": "",
+            "tag_list_breadcrumb": "View by Tag",
+            "tag_list_css_files": "",
+            "tag_list_footer": "",
+            "tag_list_header": "",
+            "tag_list_head_content": "",
+            "tag_list_inline_css": "",
+            "tag_list_inline_js": "",
+            "tag_list_js_files": "",
+            "tag_list_title": "View By Tag",
+            "tag_social_og_type": "",
+            "tag_title": "Tag - {{ tagName }}",
+            "time_format": "g:i A"
+        },
+        "gallery": {
+            "additional_breadcrumb_links": "",
+            "app_item_not_found_custom_redirect": "",
+            "app_item_not_found_handler": "redirectAppHome",
+            "breadcrumb_text": "Gallery",
+            "category_body_class": "",
+            "category_breadcrumb": "{{ categoryName }}",
+            "category_css_files": "",
+            "category_footer": "",
+            "category_header": "",
+            "category_head_content": "",
+            "category_inline_css": "",
+            "category_inline_js": "",
+            "category_js_files": "",
+            "category_list_body_class": "",
+            "category_list_breadcrumb": "View by Category",
+            "category_list_css_files": "",
+            "category_list_footer": "",
+            "category_list_header": "",
+            "category_list_head_content": "",
+            "category_list_inline_css": "",
+            "category_list_inline_js": "",
+            "category_list_js_files": "",
+            "category_list_title": "View By Category",
+            "category_social_og_type": "",
+            "category_title": "Category {{ categoryName }}",
+            "date_format": "F j, Y",
+            "feed_author": "",
+            "feed_category_description": "",
+            "feed_category_entry_title": "{{ title }}",
+            "feed_category_title": "Items in {{ categoryName }}",
+            "feed_copyright": "",
+            "feed_description": "",
+            "feed_email": "",
+            "feed_entry_title": "{{ title }}",
+            "feed_generator": "BranchCMS",
+            "feed_image": "",
+            "feed_item_description_source": "abstract",
+            "feed_language": "en-us",
+            "feed_skipDays": "",
+            "feed_skipHours": "",
+            "feed_tag_description": "",
+            "feed_tag_entry_title": "{{ title }}",
+            "feed_tag_title": "Items Tagged \"{{ tagName }}\"",
+            "feed_title": "Feed",
+            "feed_webmaster": "",
+            "home_body_class": "",
+            "home_css_files": "",
+            "home_footer": "",
+            "home_header": "",
+            "home_head_content": "",
+            "home_inline_css": "",
+            "home_inline_js": "",
+            "home_js_files": "",
+            "home_title": "Gallery",
+            "item_body_class": "",
+            "item_breadcrumb": "{{ itemName }}",
+            "item_css_files": "",
+            "item_footer": "",
+            "item_header": "",
+            "item_head_content": "",
+            "item_inline_css": "",
+            "item_inline_js": "",
+            "item_js_files": "",
+            "item_list_body_class": "",
+            "item_list_breadcrumb": "View all Items",
+            "item_list_css_files": "",
+            "item_list_footer": "",
+            "item_list_header": "",
+            "item_list_head_content": "",
+            "item_list_inline_css": "",
+            "item_list_inline_js": "",
+            "item_list_js_files": "",
+            "item_list_title": "Gallery Items",
+            "item_social_og_type": "",
+            "item_title": "Gallery - {{ itemName }}",
+            "pagination_page_range": "10",
+            "pagination_style": "Sliding",
+            "search_body_class": "",
+            "search_breadcrumb": "Search",
+            "search_css_files": "",
+            "search_footer": "",
+            "search_get_all_ids": "0",
+            "search_header": "",
+            "search_head_content": "",
+            "search_inline_css": "",
+            "search_inline_js": "",
+            "search_js_files": "",
+            "search_results_body_class": "",
+            "search_results_breadcrumb": "Search Results",
+            "search_results_css_files": "",
+            "search_results_footer": "",
+            "search_results_header": "",
+            "search_results_head_content": "",
+            "search_results_inline_css": "",
+            "search_results_inline_js": "",
+            "search_results_js_files": "",
+            "search_results_title": "Search Results",
+            "search_title": "Search",
+            "tag_body_class": "",
+            "tag_breadcrumb": "{{ tagName }}",
+            "tag_cloud_data_max_weight": "20",
+            "tag_cloud_data_min_weight": "10",
+            "tag_cloud_html_cloud_separator": "space",
+            "tag_cloud_html_cloud_separator_tag": "",
+            "tag_cloud_html_cloud_wrapper": [
+                {
+                    "tag": "ul"
+                }
+            ],
+            "tag_cloud_html_tag_classes": "",
+            "tag_cloud_html_tag_font_size_unit": "px",
+            "tag_cloud_html_tag_max_font_size": "20",
+            "tag_cloud_html_tag_min_font_size": "10",
+            "tag_cloud_html_tag_style": "font",
+            "tag_cloud_html_tag_wrapper": [
+                {
+                    "tag": "li"
+                }
+            ],
+            "tag_cloud_order": "date",
+            "tag_css_files": "",
+            "tag_footer": "",
+            "tag_header": "",
+            "tag_head_content": "",
+            "tag_inline_css": "",
+            "tag_inline_js": "",
+            "tag_js_files": "",
+            "tag_list_body_class": "",
+            "tag_list_breadcrumb": "View by Tag",
+            "tag_list_css_files": "",
+            "tag_list_footer": "",
+            "tag_list_header": "",
+            "tag_list_head_content": "",
+            "tag_list_inline_css": "",
+            "tag_list_inline_js": "",
+            "tag_list_js_files": "",
+            "tag_list_title": "View By Tag",
+            "tag_social_og_type": "",
+            "tag_title": "Tag - {{ tagName }}",
             "time_format": "g:i A"
         },
         "search": {
@@ -2831,6 +3735,320 @@
                 "zero"
             ],
             "term_minimum_length": "3"
+        },
+        "store": {
+            "account_body_class": "",
+            "account_breadcrumb": "My Account",
+            "account_css_files": "",
+            "account_edit_body_class": "",
+            "account_edit_breadcrumb": "Edit Account",
+            "account_edit_confirm_password": "0",
+            "account_edit_css_files": "",
+            "account_edit_footer": "",
+            "account_edit_header": "",
+            "account_edit_head_content": "",
+            "account_edit_inline_css": "",
+            "account_edit_inline_js": "",
+            "account_edit_js_files": "",
+            "account_edit_title": "Edit Account",
+            "account_footer": "",
+            "account_header": "",
+            "account_head_content": "",
+            "account_inline_css": "",
+            "account_inline_js": "",
+            "account_js_files": "",
+            "account_title": "My Account",
+            "additional_breadcrumb_links": "",
+            "addresses_add_body_class": "",
+            "addresses_add_breadcrumb": "Add Address",
+            "addresses_add_css_files": "",
+            "addresses_add_footer": "",
+            "addresses_add_header": "",
+            "addresses_add_head_content": "",
+            "addresses_add_inline_css": "",
+            "addresses_add_inline_js": "",
+            "addresses_add_js_files": "",
+            "addresses_add_title": "Add Address",
+            "addresses_body_class": "",
+            "addresses_breadcrumb": "My Addresses",
+            "addresses_css_files": "",
+            "addresses_delete_body_class": "",
+            "addresses_delete_breadcrumb": "Delete Address",
+            "addresses_delete_css_files": "",
+            "addresses_delete_footer": "",
+            "addresses_delete_header": "",
+            "addresses_delete_head_content": "",
+            "addresses_delete_inline_css": "",
+            "addresses_delete_inline_js": "",
+            "addresses_delete_js_files": "",
+            "addresses_delete_title": "Delete Address",
+            "addresses_edit_body_class": "",
+            "addresses_edit_breadcrumb": "Edit Address",
+            "addresses_edit_css_files": "",
+            "addresses_edit_footer": "",
+            "addresses_edit_header": "",
+            "addresses_edit_head_content": "",
+            "addresses_edit_inline_css": "",
+            "addresses_edit_inline_js": "",
+            "addresses_edit_js_files": "",
+            "addresses_edit_title": "Edit Address",
+            "addresses_footer": "",
+            "addresses_header": "",
+            "addresses_head_content": "",
+            "addresses_inline_css": "",
+            "addresses_inline_js": "",
+            "addresses_js_files": "",
+            "addresses_title": "My Addresses",
+            "app_item_not_found_custom_redirect": "",
+            "app_item_not_found_handler": "redirectAppHome",
+            "breadcrumb_text": "Store",
+            "cart_body_class": "",
+            "cart_breadcrumb": "Shopping Cart",
+            "cart_css_files": "",
+            "cart_empty_body_class": "",
+            "cart_empty_breadcrumb": "Shopping Cart",
+            "cart_empty_css_files": "",
+            "cart_empty_footer": "",
+            "cart_empty_header": "",
+            "cart_empty_head_content": "",
+            "cart_empty_inline_css": "",
+            "cart_empty_inline_js": "",
+            "cart_empty_js_files": "",
+            "cart_empty_title": "Shopping Cart",
+            "cart_footer": "",
+            "cart_header": "",
+            "cart_head_content": "",
+            "cart_inline_css": "",
+            "cart_inline_js": "",
+            "cart_js_files": "",
+            "cart_title": "Shopping Cart",
+            "category_body_class": "",
+            "category_breadcrumb": "{{ categoryName }}",
+            "category_css_files": "",
+            "category_footer": "",
+            "category_header": "",
+            "category_head_content": "",
+            "category_inline_css": "",
+            "category_inline_js": "",
+            "category_js_files": "",
+            "category_list_body_class": "",
+            "category_list_breadcrumb": "View by Category",
+            "category_list_css_files": "",
+            "category_list_footer": "",
+            "category_list_header": "",
+            "category_list_head_content": "",
+            "category_list_inline_css": "",
+            "category_list_inline_js": "",
+            "category_list_js_files": "",
+            "category_list_title": "View By Category",
+            "category_social_og_type": "product.group",
+            "category_title": "Category {{ categoryName }}",
+            "checkout_billing_body_class": "",
+            "checkout_billing_breadcrumb": "Checkout - Billing",
+            "checkout_billing_css_files": "",
+            "checkout_billing_disabled": "0",
+            "checkout_billing_footer": "",
+            "checkout_billing_header": "",
+            "checkout_billing_head_content": "",
+            "checkout_billing_inline_css": "",
+            "checkout_billing_inline_js": "",
+            "checkout_billing_js_files": "",
+            "checkout_billing_title": "Billing",
+            "checkout_error_body_class": "",
+            "checkout_error_breadcrumb": "Checkout - Error",
+            "checkout_error_css_files": "",
+            "checkout_error_footer": "",
+            "checkout_error_header": "",
+            "checkout_error_head_content": "",
+            "checkout_error_inline_css": "",
+            "checkout_error_inline_js": "",
+            "checkout_error_js_files": "",
+            "checkout_error_title": "Error",
+            "checkout_receipt_body_class": "",
+            "checkout_receipt_breadcrumb": "Checkout - Receipt",
+            "checkout_receipt_css_files": "",
+            "checkout_receipt_footer": "",
+            "checkout_receipt_header": "",
+            "checkout_receipt_head_content": "",
+            "checkout_receipt_inline_css": "",
+            "checkout_receipt_inline_js": "",
+            "checkout_receipt_js_files": "",
+            "checkout_receipt_title": "Receipt",
+            "checkout_review_body_class": "",
+            "checkout_review_breadcrumb": "Checkout - Review",
+            "checkout_review_css_files": "",
+            "checkout_review_footer": "",
+            "checkout_review_header": "",
+            "checkout_review_head_content": "",
+            "checkout_review_inline_css": "",
+            "checkout_review_inline_js": "",
+            "checkout_review_js_files": "",
+            "checkout_review_title": "Review",
+            "checkout_shipping_body_class": "",
+            "checkout_shipping_breadcrumb": "Checkout - Shipping",
+            "checkout_shipping_css_files": "",
+            "checkout_shipping_disabled": "0",
+            "checkout_shipping_footer": "",
+            "checkout_shipping_header": "",
+            "checkout_shipping_head_content": "",
+            "checkout_shipping_inline_css": "",
+            "checkout_shipping_inline_js": "",
+            "checkout_shipping_js_files": "",
+            "checkout_shipping_title": "Shipping",
+            "date_format": "F j, Y",
+            "home_body_class": "",
+            "home_css_files": "",
+            "home_footer": "",
+            "home_header": "",
+            "home_head_content": "",
+            "home_inline_css": "",
+            "home_inline_js": "",
+            "home_js_files": "",
+            "home_title": "Store",
+            "login_body_class": "",
+            "login_breadcrumb": "Log In",
+            "login_css_files": "",
+            "login_footer": "",
+            "login_header": "",
+            "login_head_content": "",
+            "login_inline_css": "",
+            "login_inline_js": "",
+            "login_js_files": "",
+            "login_title": "Log In",
+            "manufacturer_body_class": "",
+            "manufacturer_breadcrumb": "{{ manufacturerName }}",
+            "manufacturer_css_files": "",
+            "manufacturer_footer": "",
+            "manufacturer_header": "",
+            "manufacturer_head_content": "",
+            "manufacturer_inline_css": "",
+            "manufacturer_inline_js": "",
+            "manufacturer_js_files": "",
+            "manufacturer_list_body_class": "",
+            "manufacturer_list_breadcrumb": "View by Manufacturer",
+            "manufacturer_list_css_files": "",
+            "manufacturer_list_footer": "",
+            "manufacturer_list_header": "",
+            "manufacturer_list_head_content": "",
+            "manufacturer_list_inline_css": "",
+            "manufacturer_list_inline_js": "",
+            "manufacturer_list_js_files": "",
+            "manufacturer_list_title": "View By Manufacturer",
+            "manufacturer_social_og_type": "",
+            "manufacturer_title": "{{ manufacturerName }}",
+            "order_invoice_date_format": "n\/j\/Y",
+            "order_invoice_template": "<!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\"\r\n   \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\" lang=\"en\" xml:lang=\"en\">\r\n   <head>\r\n      <title>Invoice<\/title>\r\n      <meta http-equiv=\"Content-Type\" content=\"text\/html; charset=utf-8\">\r\n      <style>\r\n         body{font:12px\/16px Arial, Verdana, Helvetica, sans-serif;color:#333;background:#fff}\r\n         .container{width:650px}\r\n         th,td{text-align:left;vertical-align:top;padding:3px}\r\n         th{font-weight:700;white-space:nowrap}\r\n         .tblTop{width:100%}\r\n         .tblTop .col_2{width:25%}\r\n         .tblDateOrderNumber td,.tblDateOrderNumber th{width:50%;border-left:1px solid #000;border-bottom:1px solid #000}\r\n         .tblBillShip{width:100%;margin:20px 0}\r\n         .tblBillShip td{width:50%}\r\n         .tblBillShip td.col_2{text-align:right}\r\n         .tblBillTo,.tblShipTo{width:90%;border-top:1px solid #000;border-right:1px solid #000}\r\n         .tblBillTo{float:right}\r\n         .tblBoxes{width:100%;margin-bottom:20px}\r\n         .tblBoxes td{padding:0}\r\n         .tblBoxes .col_1{width:40%}\r\n         .tblBoxes .col_2,.tblBoxes .col_3{width:30%}\r\n         .tblShippingMethod{border-right:none}\r\n         .tblPaymentMethod td,.tblPaymentMethod th,.tblShippingMethod td,.tblShippingMethod th{border-left:1px solid #000;border-bottom:1px solid #000;padding:3px}\r\n         .tblProducts .col_1{width:10%}\r\n         .tblProducts tfoot td.footCol_1{border:none}\r\n         .tblProducts tfoot td.footCol_2{font-weight:700}\r\n         .tblProducts tfoot .order_total{font-weight:700;font-size:140%}\r\n         .tblTop .col_1,.tblProducts .col_2{width:75%}\r\n         .tblDateOrderNumber,.tblPaymentMethod,.tblShippingMethod,.tblProducts{width:100%;border-top:1px solid #000;border-right:1px solid #000}\r\n         .tblBillTo td,.tblBillTo th,.tblShipTo td,.tblShipTo th,.tblProducts th,.tblProducts td{border-left:1px solid #000;border-bottom:1px solid #000}\r\n         .tblProducts .col_3,.tblProducts .col_4,.tblProducts .col_5{width:5%}\r\n      <\/style>\r\n   <\/head>\r\n   <body>\r\n      <div class=\"container\">\r\n         <table cellspacing=\"0\" class=\"tblTop\">\r\n            <tr>\r\n               <td class=\"col_1\"><h1>{{ store.name }}<\/h1><\/td>\r\n               <td class=\"col_2\">\r\n                  <h3>Invoice <\/h3>\r\n                  <table cellspacing=\"0\" class=\"tblDateOrderNumber\">\r\n                     <tr>\r\n                        <th>Order Date<\/th><th>Order #<\/th>\r\n                     <\/tr>\r\n                     <tr>\r\n                       <td>{{ order.date }}<\/td>\r\n                       <td>{{ order.number }}<\/td>\r\n                     <\/tr>\r\n                  <\/table>\r\n               <\/td>\r\n            <\/tr>\r\n         <\/table>\r\n         <table cellspacing=\"0\" class=\"tblBillShip\">\r\n            <tr>\r\n              <td class=\"col_1\">\r\n     \t         <table cellspacing=\"0\" class=\"tblShipTo\">\r\n                    <tr><th>Ship To<\/th><\/tr>\r\n                    <tr>\r\n                        <td>\r\n                           {% if shipping.company %}{{ shipping.company }}<br \/>{% endif %}\r\n                           {{ shipping.firstName }} {{ shipping.lastName }}<br \/>\r\n                           {{ shipping.address }}\r\n                           {{ shipping.city }}, {{ shipping.state }} {{ shipping.zipCode }}<br \/>\r\n                           {{ shipping.country }}\r\n                        <\/td>\r\n                     <\/tr>\r\n                  <\/table>\r\n               <\/td>\r\n           <td class=\"col_2\">\r\n             <table cellspacing=\"0\" class=\"tblBillTo\">\r\n               <tr>\r\n                 <th>Bill To<\/th>\r\n               <\/tr>\r\n               <tr>\r\n                 <td>\r\n             \t{% if billing.company %}{{ billing.company }}<br \/>{% endif %}\r\n               \t{{ billing.firstName }} {{ billing.lastName }}<br \/>\r\n\t\t\t{{ billing.address }}\r\n\t\t\t{{ billing.city }}, {{ billing.state }} {{ billing.zipCode }}<br \/>\r\n\t\t\t{{ billing.country }}\r\n                 <\/td>\r\n               <\/tr>\r\n             <\/table>\r\n     \t  <\/td>\r\n         <\/tr>\r\n       <\/table>\r\n       <table cellspacing=\"0\" class=\"tblBoxes\">\r\n         <tr>\r\n           <td class=\"col_1\">&nbsp;<\/td>\r\n           <td class=\"col_2\">\r\n             <table cellspacing=\"0\" class=\"tblShippingMethod\">\r\n               <tr>\r\n                 <th>Ship Method<\/th>\r\n               <\/tr>\r\n               <tr>\r\n                 <td>{{ order.shipping.option }}<\/td>\r\n               <\/tr>\r\n             <\/table>\r\n           <\/td>\r\n           <td class=\"col_3\">\r\n             <table cellspacing=\"0\" class=\"tblPaymentMethod\">\r\n               <tr>\r\n                 <th>Payment Method<\/th>\r\n               <\/tr>\r\n               <tr>\r\n                 <td>\r\n                 \t{{ order.paymentMethod }}\r\n                 <\/td>\r\n               <\/tr>\r\n             <\/table>\r\n           <\/td>\r\n         <\/tr>\r\n       <\/table>\r\n       <table cellspacing=\"0\" class=\"tblProducts\">\r\n         <thead>\r\n            <tr>\r\n              <th class=\"col_1\">Item #<\/th>\r\n              <th class=\"col_2\">Item<\/th>\r\n              <th class=\"col_3\">Quantity<\/th>\r\n              <th class=\"col_4\">Unit Price<\/th>\r\n              <th class=\"col_5\">Product Total<\/th>\r\n            <\/tr>\r\n         <\/thead>\r\n         <tfoot>\r\n            <tr>\r\n               <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n     \t  <td class=\"footCol_2\">Subtotal<\/td>\r\n     \t  <td>{{ order.subtotalBeforeDiscounts }}<\/td>\r\n            <\/tr>\r\n            {% if order.coupons %}\r\n               {% for coupon in order.coupons %}\r\n                  <tr>\r\n                     <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n           \t        <td class=\"footCol_2\">{{ coupon.name }}<br \/>({{ coupon.code }})<\/td>\r\n           \t        <td>{{ coupon.savingsValue }}<\/td>\r\n                  <\/tr>\r\n               {% endfor %}\r\n               <tr>\r\n                  <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n        \t     <td class=\"footCol_2\">Subtotal<\/td>\r\n        \t     <td>{{ order.subtotal }}<\/td>\r\n               <\/tr>\r\n            {% endif %}\r\n     \t  <tr>\r\n     \t    <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n     \t\t<td class=\"footCol_2\">Shipping<\/td>\r\n     \t\t<td>{{ order.shipping.total }}<\/td>\r\n           <\/tr>\r\n     \t  <tr>\r\n     \t    <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n     \t\t<td class=\"footCol_2\">Tax<\/td>\r\n     \t\t<td>{{ order.tax.total }}<\/td>\r\n           <\/tr>\r\n     \t  <tr class=\"order_total\">\r\n     \t    <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n     \t\t<td class=\"footCol_2\">Total<\/td>\r\n     \t\t<td>{{ order.total }}<\/td>\r\n           <\/tr>\r\n     \t<\/tfoot>\r\n         <tbody>\r\n     \t{% for product in products %}\r\n               <tr>\r\n                 <td class=\"col_1\">{{ product.sku }}<\/td>\r\n                 <td class=\"col_2\"><strong>{{ product.productName }}<\/strong>{% for option in product.options %}<br\/><em>{{ option.label }}<\/em>:{% if option.value is iterable %}\r\n                  {{ option.value|join('<br \/>') }}\r\n               {% elseif option.file %}\r\n                  <a href=\"{{ option.file.src }}\">{{ option.value }}<\/a>\r\n               {% elseif option.image %}\r\n                     <a href=\"{{ option.image.src }}\">{{ option.value }}<\/a>\r\n                     {{ option.image.tag }}\r\n               {% else %}\r\n                  {{ option.value }}\r\n               {% endif %}{% endfor %}<\/td>\r\n                 <td class=\"col_3\">{{ product.quantityTotal.withFraction }}<\/td>\r\n                 <td class=\"col_4\">{{ product.price }}<\/td>\r\n                 <td class=\"col_5\">{{ product.totalPrice }}<\/td>\r\n               <\/tr>\r\n            {% endfor %}\r\n         <\/tbody>\r\n       <\/table>\r\n       {% if shipping.comments %}\r\n       \t<p><b>Shipping Comments:<\/b><br \/>{{ shipping.comments }}<\/p>\r\n       {% endif %}\r\n       {% if order.comments %}\r\n          <p><b>Order Comments<\/b><\/p>\r\n          {% for comment in order.comments %}\r\n             <div style=\"margin: 10px 0;\">{{ comment.createdOnDate }} - {{ comment.createdBy }}\r\n               <div style=\"margin-left: 20px; margin-top: 5px;\">{{ comment.comment }}<\/div>\r\n             <\/div>\r\n          {% endfor %}\r\n       {% endif %}\r\n     <\/div>\r\n <\/body>\r\n<\/html>",
+            "order_invoice_time_format": "g:i A",
+            "order_packing_list_date_format": "n\/j\/Y",
+            "order_packing_list_template": "<!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\"\r\n   \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\" lang=\"en\" xml:lang=\"en\">\r\n<head>\r\n\t<title>Packing List<\/title>\r\n\t<meta http-equiv=\"Content-Type\" content=\"text\/html; charset=utf-8\">\r\n    <style type=\"text\/css\">\r\n        body {          font: small Arial, Verdana, Helvetica, sans-serif;\r\n          color: #333;\r\n          background: #fff;\r\n        }\r\n        .container {\r\n          width: 650px;\r\n        }\r\n        th, td {\r\n          padding: 3px;\r\n          text-align: left;\r\n          vertical-align: top;\r\n        }\r\n        th {\r\n          font-weight: bold;\r\n          white-space: nowrap;\r\n        }\r\n        .tblTop {\r\n          width: 100%;\r\n        }\r\n        .tblTop .col_1 {\r\n          width: 75%;\r\n        }\r\n        .tblTop .col_2 {\r\n          width: 25%;\r\n        }\r\n        .tblDateOrderNumber {\r\n          width: 100%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblDateOrderNumber td, .tblDateOrderNumber th {\r\n          width: 50%;\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n        }\r\n        .tblBillShip {\r\n          width: 100%;\r\n          margin: 20px 0;\r\n        }\r\n        .tblBillShip td {\r\n          width: 50%;\r\n        }\r\n        .tblBillShip td.col_2{\r\n          text-align: right;\r\n        }\r\n        .tblBillTo, .tblShipTo {\r\n          width: 90%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblBillTo {\r\n          float: right;\r\n        }\r\n        .tblBillTo td, .tblBillTo th, .tblShipTo td, .tblShipTo th {\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n        }\r\n        .tblBoxes {\r\n          width: 100%;\r\n          margin-bottom: 20px;\r\n        }\r\n        .tblBoxes td {\r\n          padding: 0;\r\n        }\r\n        .tblBoxes .col_1 {\r\n          width: 40%;\r\n        }\r\n        .tblBoxes .col_2, .tblBoxes .col_3 {\r\n          width: 30%;\r\n        }\r\n        .tblPaymentMethod, .tblShippingMethod {\r\n          width: 100%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblPaymentMethod {\r\n          border-right: none;\r\n        }\r\n        .tblPaymentMethod td, .tblPaymentMethod th, .tblShippingMethod td, .tblShippingMethod th {\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n          padding: 3px;\r\n        }\r\n        .tblProducts {\r\n          width: 100%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblProducts th, .tblProducts td {\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n        }\r\n        .tblProducts .col_1 {\r\n          width: 15%;\r\n        }\r\n        .tblProducts .col_2 {\r\n          width: 80%;\r\n        }\r\n        .tblProducts .col_3 {\r\n          width: 5%;\r\n        }\r\n    <\/style>\r\n\t<\/head>\r\n\t<body>\r\n        <div class=\"container\">\r\n          <table cellspacing=\"0\" class=\"tblTop\">\r\n            <tr>\r\n              <td class=\"col_1\"><h1>{{ store.name }}<\/h1><\/td>\r\n              <td class=\"col_2\">\r\n                <h3>Packing List<\/h3>\r\n                <table cellspacing=\"0\" class=\"tblDateOrderNumber\">\r\n                  <tr>\r\n                    <th>Order Date<\/th>\r\n                    <th>Order #<\/th>\r\n                  <\/tr>\r\n                  <tr>\r\n                    <td>{{ order.date }}<\/td>\r\n                    <td>{{ order.number }}<\/td>\r\n                  <\/tr>\r\n                <\/table>\r\n              <\/td>\r\n            <\/tr>\r\n          <\/table>\r\n\r\n          <table cellspacing=\"0\" class=\"tblBillShip\">\r\n            <tr>\r\n              <td class=\"col_1\">\r\n        \t<table cellspacing=\"0\" class=\"tblShipTo\">\r\n                  <tr>\r\n                    <th>Ship To<\/th>\r\n                  <\/tr>\r\n                  <tr>\r\n                    <td>\r\n              \t\t\t{% if shipping.company %}{{ shipping.company }}<br \/>{% endif %}\r\n                  \t\t{{ shipping.firstName }} {{ shipping.lastName }}<br \/>\r\n\t\t\t\t\t\t{{ shipping.address }}\r\n\t\t\t\t\t\t{{ shipping.city }}, {{ shipping.state }} {{ shipping.zipCode }}<br \/>\r\n\t\t\t\t\t\t{{ shipping.country }}\r\n                  \t<\/td>\r\n                  <\/tr>\r\n                <\/table>\r\n              <\/td>\r\n              <td class=\"col_2\">\r\n                  <table cellspacing=\"0\" class=\"tblBillTo\">\r\n                  <tr>\r\n                    <th>Bill To<\/th>\r\n                  <\/tr>\r\n                  <tr>\r\n                  \t<td>\r\n              \t\t\t{% if billing.company %}{{ billing.company }}<br \/>{% endif %}\r\n                  \t\t{{ billing.firstName }} {{ billing.lastName }}<br \/>\r\n\t\t\t\t\t\t{{ billing.address }}\r\n\t\t\t\t\t\t{{ billing.city }}, {{ billing.state }} {{ billing.zipCode }}<br \/>\r\n\t\t\t\t\t\t{{ billing.country }}\r\n                  \t<\/td>\r\n                  <\/tr>\r\n                <\/table>\r\n        \t  <\/td>\r\n            <\/tr>\r\n          <\/table>\r\n          <table cellspacing=\"0\" class=\"tblBoxes\">\r\n            <tr>\r\n              <td class=\"col_1\">&nbsp;<\/td>\r\n              <td class=\"col_3\">\r\n                <table cellspacing=\"0\" class=\"tblShippingMethod\">\r\n                  <tr>\r\n                    <th>Ship Method<\/th>\r\n                  <\/tr>\r\n                  <tr>\r\n                    <td>{{ order.shipping.option }}<\/td>\r\n                  <\/tr>\r\n                  {% if shipment %}\r\n                    {% if shipment.carrierName %}\r\n                        <tr><td>{{ shipment.carrierName }}<\/td><\/tr>\r\n                    {% endif %}\r\n                    {% if shipment.trackingNumber %}\r\n                        <tr><td>Tracking #: {{ shipment.trackingNumber }}<\/td><\/tr>\r\n                    {% endif %}\r\n                    {% if shipment.notes %}\r\n                        <tr><td>{{ shipment.notes }}<\/td><\/tr>\r\n                    {% endif %}\r\n                  {% endif %}\r\n                <\/table>\r\n              <\/td>\r\n            <\/tr>\r\n          <\/table>\r\n          <table cellspacing=\"0\" class=\"tblProducts\">\r\n          \t<thead>\r\n                <tr>\r\n                  <th class=\"col_1\">Item #<\/th>\r\n                  <th class=\"col_2\">Item<\/th>\r\n                  <th class=\"col_3\">Quantity<\/th>\r\n                <\/tr>\r\n            <\/thead>\r\n            <tfoot><\/tfoot>\r\n            <tbody>\r\n            \t{% for product in products %}\r\n                <tr>\r\n                  <td class=\"col_1\">{{ product.sku }}<\/td>\r\n                  <td class=\"col_2\"><strong>{{ product.productName }}<\/strong>{% for option in product.options %}<br\/><em>{{ option.label }}<\/em>:{% if option.value is iterable %}\r\n                  {{ option.value|join('<br \/>') }}\r\n               {% elseif option.file %}\r\n                  <a href=\"{{ option.file.src }}\">{{ option.value }}<\/a>\r\n               {% elseif option.image %}\r\n                     <a href=\"{{ option.image.src }}\">{{ option.value }}<\/a>\r\n                     {{ option.image.tag }}\r\n               {% else %}\r\n                  {{ option.value }}\r\n               {% endif %}{% endfor %}<\/td>\r\n                  <td class=\"col_3\">{{ product.quantityTotal.withFraction }}<\/td>\r\n                <\/tr>\r\n                {% endfor %}\r\n            <\/tbody>\r\n          <\/table>\r\n        <\/div>\r\n    <\/body>\r\n<\/html>",
+            "order_packing_list_time_format": "g:i A",
+            "pagination_page_range": "10",
+            "pagination_style": "Sliding",
+            "password_reset_body_class": "",
+            "password_reset_breadcrumb": "Password Reset",
+            "password_reset_css_files": "",
+            "password_reset_footer": "",
+            "password_reset_header": "",
+            "password_reset_head_content": "",
+            "password_reset_inline_css": "",
+            "password_reset_inline_js": "",
+            "password_reset_js_files": "",
+            "password_reset_title": "Password Reset",
+            "product_body_class": "",
+            "product_breadcrumb": "{{ productName }}",
+            "product_css_files": "",
+            "product_footer": "",
+            "product_header": "",
+            "product_head_content": "",
+            "product_inline_css": "",
+            "product_inline_js": "",
+            "product_js_files": "",
+            "product_list_body_class": "",
+            "product_list_breadcrumb": "View all Products",
+            "product_list_css_files": "",
+            "product_list_footer": "",
+            "product_list_header": "",
+            "product_list_head_content": "",
+            "product_list_inline_css": "",
+            "product_list_inline_js": "",
+            "product_list_js_files": "",
+            "product_list_title": "Products",
+            "product_option_file_upload_path": "\/store\/customer-uploads",
+            "product_social_og_type": "product.item",
+            "product_title": "{{ productName }}",
+            "register_body_class": "",
+            "register_breadcrumb": "Register",
+            "register_css_files": "",
+            "register_footer": "",
+            "register_header": "",
+            "register_head_content": "",
+            "register_inline_css": "",
+            "register_inline_js": "",
+            "register_js_files": "",
+            "register_title": "Register",
+            "search_body_class": "",
+            "search_breadcrumb": "Search",
+            "search_css_files": "",
+            "search_footer": "",
+            "search_get_all_ids": "0",
+            "search_header": "",
+            "search_head_content": "",
+            "search_inline_css": "",
+            "search_inline_js": "",
+            "search_js_files": "",
+            "search_results_body_class": "",
+            "search_results_breadcrumb": "Search Results",
+            "search_results_css_files": "",
+            "search_results_footer": "",
+            "search_results_header": "",
+            "search_results_head_content": "",
+            "search_results_inline_css": "",
+            "search_results_inline_js": "",
+            "search_results_js_files": "",
+            "search_results_title": "Search Results",
+            "search_title": "Search",
+            "tag_body_class": "",
+            "tag_breadcrumb": "{{ tagName }}",
+            "tag_cloud_data_max_weight": "20",
+            "tag_cloud_data_min_weight": "10",
+            "tag_cloud_html_cloud_separator": "space",
+            "tag_cloud_html_cloud_separator_tag": "",
+            "tag_cloud_html_cloud_wrapper": [
+                {
+                    "tag": "ul"
+                }
+            ],
+            "tag_cloud_html_tag_classes": "",
+            "tag_cloud_html_tag_font_size_unit": "px",
+            "tag_cloud_html_tag_max_font_size": "20",
+            "tag_cloud_html_tag_min_font_size": "10",
+            "tag_cloud_html_tag_style": "font",
+            "tag_cloud_html_tag_wrapper": [
+                {
+                    "tag": "li"
+                }
+            ],
+            "tag_cloud_order": "date",
+            "tag_css_files": "",
+            "tag_footer": "",
+            "tag_header": "",
+            "tag_head_content": "",
+            "tag_inline_css": "",
+            "tag_inline_js": "",
+            "tag_js_files": "",
+            "tag_list_body_class": "",
+            "tag_list_breadcrumb": "View by Tag",
+            "tag_list_css_files": "",
+            "tag_list_footer": "",
+            "tag_list_header": "",
+            "tag_list_head_content": "",
+            "tag_list_inline_css": "",
+            "tag_list_inline_js": "",
+            "tag_list_js_files": "",
+            "tag_list_title": "View By Tag",
+            "tag_social_og_type": "",
+            "tag_title": "Tag - {{ tagName }}",
+            "time_format": "g:i A"
         }
     },
     "contentLayouts": [
@@ -3000,38 +4218,20 @@
                     },
                     "size": "",
                     "value": ""
-                },
-                {
-                    "key": "section8",
-                    "name": "Content Heading",
-                    "description": "",
-                    "type": "section",
-                    "size": "",
-                    "value": ""
-                },
-                {
-                    "key": "title",
-                    "name": "Title",
-                    "description": "",
-                    "type": "text",
-                    "configuration": {
-                        "allowCode": "no"
-                    },
-                    "size": "medium",
-                    "value": ""
-                },
-                {
-                    "key": "content",
-                    "name": "Content",
-                    "description": "",
-                    "type": "richTextEditor",
-                    "size": "",
-                    "value": ""
                 }
             ]
         }
     ],
-    "appForms": [],
+    "appForms": {
+        "blog": [
+            {
+                "key": "comment",
+                "name": "Comment",
+                "type": "comment",
+                "default": true
+            }
+        ]
+    },
     "widgets": {
         "collections": [],
         "feeds": []
