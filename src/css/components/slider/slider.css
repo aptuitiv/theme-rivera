@@ -270,7 +270,7 @@
         padding: 8px;
         position: relative;
         right: auto;
-        text-align: left;
+        text-align: center;
         text-shadow: none;
         top: auto;
         transform: none;
@@ -279,6 +279,7 @@
     .Slider-captionTitle {
         font-size: var(--base-typography-h1-fontSize);
         line-height: var(--base-typography-h1-lineHeight);
+        margin-bottom: 6px;
         max-width: 100%;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
     }

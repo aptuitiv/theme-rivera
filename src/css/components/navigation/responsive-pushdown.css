@@ -16,6 +16,7 @@
         display: none;
         font-size: var(--MainNav-fontSize);
         margin: 0;
+        width: 100%;
     }
 
     .MainNav-item {
@@ -40,7 +41,7 @@
 
     .MainNav-link.is-dropdown::after {
         border: 5px solid transparent;
-        border-left-color: #fff;
+        border-left-color: var(--MainNav-link-color);
         content: '';
         display: block;
         opacity: .7;

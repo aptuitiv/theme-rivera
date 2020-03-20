@@ -48,9 +48,6 @@
                     <a href="/" title="Go to home page" class="Header-logoLink">{{ _core.theme.settings.headerLogo.tag }}</a>
                 {% endif %}
             </div>
-            <nav class="NavBar" role="navigation">
-                {{ _api.navigation.get.key('main') }}
-            </nav>
             <div class="Header-social">
                 {% if _core.theme.settings.headerShowSocial == 'yes' %}
                     {% for social in _core.theme.settings.social %}
@@ -68,5 +65,8 @@
                 {% endspaceless %}
             {% endif %}
             <button class="SmScBtn js-ssNavBtn"><span class="SmScBtn-icon"></span>Menu</button>
+            <nav class="NavBar" role="navigation">
+                {{ _api.navigation.get.key('main') }}
+            </nav>
         </div>
     </header>

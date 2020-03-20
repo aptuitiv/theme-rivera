@@ -45,7 +45,15 @@
                     nextArrow: '<a href="#" class="VideoSlider-nav VideoSlider-navNext">{{ macros.iconImg("chevron-thin-right", "Slide Right", "VideoSlider-navIcon") }} </a>',
                     speed: 500,
                     slidesToShow: 2,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    responsive: [
+                        {
+                            breakpoint: 800,
+                            settings: {
+                                slidesToShow: 1
+                            }
+                        }
+                    ]
                 }).on('setPosition', function (event, slick) {
                     slick.$slides.css('height', 'auto');
                 });

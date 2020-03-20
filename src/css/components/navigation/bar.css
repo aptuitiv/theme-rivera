@@ -10,5 +10,13 @@
     display: flex;
     flex: 1 1 auto;
     justify-content: flex-start;
+    order: 2;
     padding-left: 20px;
+}
+
+@media (--c-bp-smallScreenNav) {
+    .NavBar {
+        order: 5;
+        padding-left: 0;
+    }
 }

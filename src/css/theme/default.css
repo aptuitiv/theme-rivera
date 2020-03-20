@@ -68,6 +68,8 @@
     --theme-nav-dropdown-background-hover: #fff;
     --theme-nav-dropdown-color: var(--theme-typography-color);
     --theme-nav-dropdown-color-hover: var(--theme-primary-color);
+    --theme-nav-sm-screen-btn-background: var(--theme-primary-color);
+    --theme-nav-sm-screen-parent-arrow-color: var(--theme-primary-color);
 }
 
 /* Full page slider */
