@@ -93,7 +93,10 @@
 
 .Header-button {
     display: inline-block;
+    font-weight: 500;
+    letter-spacing: 1px;
     margin-left: 10px;
+    text-transform: uppercase;
 }
 
 .Header-button:first-child {

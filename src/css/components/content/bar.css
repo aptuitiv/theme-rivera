@@ -65,9 +65,16 @@
 }
 
 /* postcss-bem-linter: ignore */
+
 .ContentBar--dark .Button:active,
 .ContentBar--dark .Button:focus,
 .ContentBar--dark .Button:hover {
     background: var(--theme-content-bar-button-background-hover);
     color: var(--theme-content-bar-button-color-hover);
+}
+
+/* postcss-bem-linter: ignore */
+
+.ContentBar--dark .u-headingCentered:after {
+    background: #fff;
 }

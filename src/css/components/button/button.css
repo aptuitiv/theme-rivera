@@ -23,7 +23,7 @@
     --Button-disabled-opacity: .6;
     --Button-fontFamily: var(--theme-button-font);
     --Button-fontSize: inherit;
-    --Button-letterSpacing: inherit;
+    --Button-letterSpacing: 1px;
     --Button-lineHeight: 1.4;
     --Button-padding: .35em 1.5em;
     --Button-paddingLg: .7em 2em;
@@ -46,6 +46,7 @@
     display: inline-block;
     font-family: var(--Button-fontFamily);
     font-size: var(--Button-fontSize);
+    font-weight: 500;
     letter-spacing: var(--Button-letterSpacing);
     line-height: var(--Button-lineHeight);
     margin: 0;
@@ -53,6 +54,7 @@
     position: relative;
     text-align: center;
     text-decoration: none;
+    text-transform: uppercase;
     user-select: none; /* 2 */
 }
 
@@ -70,6 +72,10 @@
 
 .Button--withIcon {
     padding-right: .6em;
+}
+
+.Button--withIconLeft {
+    padding-left: .6em;
 }
 
 .Button-icon {
@@ -112,4 +118,18 @@
  */
 .Button--square {
     border-radius: 0;
+}
+
+.Button--outline {
+    background: transparent;
+    border: 2px solid var(--Button-background);
+    color: var(--Button-background);
+}
+
+.Button:hover,
+.Button:focus,
+.Button:active {
+    background: var(--Button-background);
+    border: 2px solid var(--Button-background);
+    color: var(--Button-color);
 }
