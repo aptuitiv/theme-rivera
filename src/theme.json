@@ -4058,6 +4058,24 @@
             "description": "",
             "attributes": [
                 {
+                    "key": "spacingAfterHeader",
+                    "name": "Spacing after header",
+                    "description": "How much whitespace to be between the header image and the content that follows it.",
+                    "type": "select",
+                    "size": "medium",
+                    "value": "",
+                    "values": [
+                        {
+                            "value": "Default",
+                            "default": false
+                        },
+                        {
+                            "value": "None",
+                            "default": false
+                        }
+                    ]
+                },
+                {
                     "key": "displayType",
                     "name": "Display Type",
                     "description": "\u201cSingle slide\u201d will display only the first slide content",
