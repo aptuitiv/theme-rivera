@@ -265,10 +265,11 @@
         }
     ],
     "contentBuilder": {
-        "groups": [
-            {
+        "groups": {
+            "_bd-simple-content-elements": {
                 "key": "_bd-simple-content-elements",
                 "name": "Content Elements",
+                "display_order": "1",
                 "elements": [
                     {
                         "key": "columned-feature",
@@ -283,13 +284,6 @@
                                 "key": "columns",
                                 "name": "Columns",
                                 "type": "repeating",
-                                "configuration": {
-                                    "collectionItemSort": "1",
-                                    "collectionItemDelete": "1",
-                                    "collectionMinNumItems": "",
-                                    "collectionMaxNumItems": 4,
-                                    "collectionOrientation": "vertical"
-                                },
                                 "value": "",
                                 "description": "",
                                 "fields": [
@@ -297,23 +291,24 @@
                                         "key": "heading",
                                         "name": "Heading",
                                         "type": "text",
+                                        "size": "",
+                                        "value": "",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        }
                                     },
                                     {
                                         "key": "image",
                                         "name": "Image",
                                         "type": "image",
-                                        "configuration": {
-                                            "path": "\/images\/columned-feature",
-                                            "height": 400,
-                                            "width": 400
-                                        },
                                         "value": "",
-                                        "description": ""
+                                        "description": "",
+                                        "configuration": {
+                                            "height": 400,
+                                            "path": "\/images\/columned-feature",
+                                            "width": 400
+                                        }
                                     },
                                     {
                                         "key": "content",
@@ -326,6 +321,7 @@
                                         "key": "link",
                                         "name": "Link",
                                         "type": "url",
+                                        "size": "",
                                         "value": "",
                                         "description": ""
                                     },
@@ -333,13 +329,21 @@
                                         "key": "buttonText",
                                         "name": "Button Text",
                                         "type": "text",
+                                        "size": "",
+                                        "value": "Learn More",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "Learn More",
-                                        "description": ""
+                                        }
                                     }
-                                ]
+                                ],
+                                "configuration": {
+                                    "collectionItemDelete": "1",
+                                    "collectionItemSort": "1",
+                                    "collectionMaxNumItems": 4,
+                                    "collectionMinNumItems": "",
+                                    "collectionOrientation": "vertical"
+                                }
                             }
                         ]
                     },
@@ -399,14 +403,6 @@
                                 "key": "columns",
                                 "name": "Columns",
                                 "type": "repeating",
-                                "configuration": {
-                                    "collectionItemSort": "1",
-                                    "collectionItemDelete": "1",
-                                    "collectionMinNumItems": "",
-                                    "collectionMaxNumItems": "",
-                                    "collectionOrientation": "vertical",
-                                    "collectionItemName": "Column"
-                                },
                                 "value": "",
                                 "description": "",
                                 "fields": [
@@ -414,16 +410,18 @@
                                         "key": "title",
                                         "name": "Title",
                                         "type": "text",
+                                        "size": "medium",
+                                        "value": "",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        }
                                     },
                                     {
                                         "key": "link",
                                         "name": "Link",
                                         "type": "url",
+                                        "size": "medium",
                                         "value": "",
                                         "description": ""
                                     },
@@ -431,11 +429,12 @@
                                         "key": "linkText",
                                         "name": "Link Text",
                                         "type": "text",
+                                        "size": "medium",
+                                        "value": "Learn More",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "Learn More",
-                                        "description": ""
+                                        }
                                     },
                                     {
                                         "key": "content",
@@ -444,7 +443,15 @@
                                         "value": "",
                                         "description": ""
                                     }
-                                ]
+                                ],
+                                "configuration": {
+                                    "collectionItemDelete": "1",
+                                    "collectionItemName": "Column",
+                                    "collectionItemSort": "1",
+                                    "collectionMaxNumItems": "",
+                                    "collectionMinNumItems": "",
+                                    "collectionOrientation": "vertical"
+                                }
                             }
                         ]
                     },
@@ -506,7 +513,7 @@
                             {
                                 "key": "parent",
                                 "name": "Content",
-                                "type": "formElementParent",
+                                "type": "parent",
                                 "value": "",
                                 "description": "Drop content elements here"
                             }
@@ -525,11 +532,12 @@
                                 "key": "facebookVideoUrl",
                                 "name": "Facebook video URL",
                                 "type": "text",
+                                "size": "medium",
+                                "value": "",
+                                "description": "",
                                 "configuration": {
                                     "allowCode": "no"
-                                },
-                                "value": "",
-                                "description": ""
+                                }
                             }
                         ]
                     },
@@ -546,14 +554,6 @@
                                 "key": "videos",
                                 "name": "Videos",
                                 "type": "repeating",
-                                "configuration": {
-                                    "collectionItemSort": "1",
-                                    "collectionItemDelete": "1",
-                                    "collectionMinNumItems": "",
-                                    "collectionMaxNumItems": "",
-                                    "collectionOrientation": "vertical",
-                                    "collectionItemName": "Video"
-                                },
                                 "value": "",
                                 "description": "",
                                 "fields": [
@@ -561,13 +561,22 @@
                                         "key": "facebookVideoUrl",
                                         "name": "Facebook video URL",
                                         "type": "text",
+                                        "size": "medium",
+                                        "value": "",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        }
                                     }
-                                ]
+                                ],
+                                "configuration": {
+                                    "collectionItemDelete": "1",
+                                    "collectionItemName": "Video",
+                                    "collectionItemSort": "1",
+                                    "collectionMaxNumItems": "",
+                                    "collectionMinNumItems": "",
+                                    "collectionOrientation": "vertical"
+                                }
                             }
                         ]
                     },
@@ -597,21 +606,23 @@
                                 "key": "content",
                                 "name": "Content",
                                 "type": "textarea",
+                                "size": "medium",
+                                "value": "",
+                                "description": "",
                                 "configuration": {
                                     "allowCode": "no"
-                                },
-                                "value": "",
-                                "description": ""
+                                }
                             },
                             {
                                 "key": "subTitle",
                                 "name": "Sub Title",
                                 "type": "text",
+                                "size": "medium",
+                                "value": "",
+                                "description": "",
                                 "configuration": {
                                     "allowCode": "no"
-                                },
-                                "value": "",
-                                "description": ""
+                                }
                             }
                         ]
                     },
@@ -646,22 +657,23 @@
                                 "key": "image",
                                 "name": "Image",
                                 "type": "image",
+                                "value": "",
+                                "description": "",
                                 "configuration": {
                                     "path": "\/images",
                                     "width": 1200
-                                },
-                                "value": "",
-                                "description": ""
+                                }
                             },
                             {
                                 "key": "caption",
                                 "name": "Caption",
                                 "type": "text",
+                                "size": "",
+                                "value": "",
+                                "description": "",
                                 "configuration": {
                                     "allowCode": "no"
-                                },
-                                "value": "",
-                                "description": ""
+                                }
                             }
                         ]
                     },
@@ -678,6 +690,7 @@
                                 "key": "code",
                                 "name": "HTML Code",
                                 "type": "code",
+                                "size": "",
                                 "value": "",
                                 "description": ""
                             }
@@ -725,16 +738,18 @@
                                 "key": "title",
                                 "name": "Title",
                                 "type": "text",
+                                "size": "medium",
+                                "value": "",
+                                "description": "Defaults to 'Embedded iframe'",
                                 "configuration": {
                                     "allowCode": "no"
-                                },
-                                "value": "",
-                                "description": "Defaults to 'Embedded iframe'"
+                                }
                             },
                             {
                                 "key": "iframeTag",
                                 "name": "Iframe Tag",
                                 "type": "iframeEmbed",
+                                "size": "",
                                 "value": "",
                                 "description": "Description: Use this to embed an iframe like a Google Map iframe. Use the Media Embed element for YouTube videos or other media."
                             }
@@ -753,23 +768,24 @@
                                 "key": "heading",
                                 "name": "Heading",
                                 "type": "text",
+                                "size": "medium",
+                                "value": "",
+                                "description": "",
                                 "configuration": {
                                     "allowCode": "no"
-                                },
-                                "value": "",
-                                "description": ""
+                                }
                             },
                             {
                                 "key": "image",
                                 "name": "Image",
                                 "type": "image",
-                                "configuration": {
-                                    "path": "\/images",
-                                    "height": 600,
-                                    "width": 600
-                                },
                                 "value": "",
-                                "description": ""
+                                "description": "",
+                                "configuration": {
+                                    "height": 600,
+                                    "path": "\/images",
+                                    "width": 600
+                                }
                             },
                             {
                                 "key": "imageSize",
@@ -817,6 +833,7 @@
                                 "key": "link",
                                 "name": "Link",
                                 "type": "url",
+                                "size": "medium",
                                 "value": "",
                                 "description": ""
                             },
@@ -824,11 +841,12 @@
                                 "key": "buttonText",
                                 "name": "Button text",
                                 "type": "text",
+                                "size": "medium",
+                                "value": "Learn more",
+                                "description": "",
                                 "configuration": {
                                     "allowCode": "no"
-                                },
-                                "value": "Learn more",
-                                "description": ""
+                                }
                             },
                             {
                                 "key": "content",
@@ -852,14 +870,6 @@
                                 "key": "columns",
                                 "name": "Columns",
                                 "type": "repeating",
-                                "configuration": {
-                                    "collectionItemSort": "1",
-                                    "collectionItemDelete": "1",
-                                    "collectionMinNumItems": "",
-                                    "collectionMaxNumItems": "",
-                                    "collectionOrientation": "vertical",
-                                    "collectionItemName": "Column"
-                                },
                                 "value": "",
                                 "description": "",
                                 "fields": [
@@ -867,28 +877,30 @@
                                         "key": "title",
                                         "name": "Title",
                                         "type": "text",
+                                        "size": "medium",
+                                        "value": "",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        }
                                     },
                                     {
                                         "key": "image",
                                         "name": "Image",
                                         "type": "image",
-                                        "configuration": {
-                                            "path": "\/images\/grid",
-                                            "height": 500,
-                                            "width": 500
-                                        },
                                         "value": "",
-                                        "description": ""
+                                        "description": "",
+                                        "configuration": {
+                                            "height": 500,
+                                            "path": "\/images\/grid",
+                                            "width": 500
+                                        }
                                     },
                                     {
                                         "key": "link",
                                         "name": "Link",
                                         "type": "url",
+                                        "size": "",
                                         "value": "",
                                         "description": ""
                                     },
@@ -909,7 +921,15 @@
                                             }
                                         ]
                                     }
-                                ]
+                                ],
+                                "configuration": {
+                                    "collectionItemDelete": "1",
+                                    "collectionItemName": "Column",
+                                    "collectionItemSort": "1",
+                                    "collectionMaxNumItems": "",
+                                    "collectionMinNumItems": "",
+                                    "collectionOrientation": "vertical"
+                                }
                             },
                             {
                                 "key": "numberOfColumns",
@@ -1055,14 +1075,6 @@
                                 "key": "columns",
                                 "name": "Columns",
                                 "type": "repeating",
-                                "configuration": {
-                                    "collectionItemSort": "1",
-                                    "collectionItemDelete": "1",
-                                    "collectionMinNumItems": "",
-                                    "collectionMaxNumItems": "",
-                                    "collectionOrientation": "vertical",
-                                    "collectionItemName": "Column"
-                                },
                                 "value": "",
                                 "description": "",
                                 "fields": [
@@ -1070,16 +1082,18 @@
                                         "key": "title",
                                         "name": "Title",
                                         "type": "text",
+                                        "size": "medium",
+                                        "value": "",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        }
                                     },
                                     {
                                         "key": "link",
                                         "name": "Link",
                                         "type": "url",
+                                        "size": "",
                                         "value": "",
                                         "description": ""
                                     },
@@ -1087,13 +1101,13 @@
                                         "key": "image",
                                         "name": "Image",
                                         "type": "image",
-                                        "configuration": {
-                                            "path": "\/images\/grid",
-                                            "height": 500,
-                                            "width": 500
-                                        },
                                         "value": "",
-                                        "description": ""
+                                        "description": "",
+                                        "configuration": {
+                                            "height": 500,
+                                            "path": "\/images\/grid",
+                                            "width": 500
+                                        }
                                     },
                                     {
                                         "key": "displayImage",
@@ -1119,7 +1133,15 @@
                                         "value": "",
                                         "description": ""
                                     }
-                                ]
+                                ],
+                                "configuration": {
+                                    "collectionItemDelete": "1",
+                                    "collectionItemName": "Column",
+                                    "collectionItemSort": "1",
+                                    "collectionMaxNumItems": "",
+                                    "collectionMinNumItems": "",
+                                    "collectionOrientation": "vertical"
+                                }
                             }
                         ]
                     },
@@ -1169,10 +1191,6 @@
                                 "key": "sliderSpeed",
                                 "name": "Slider Speed",
                                 "type": "select",
-                                "configuration": {
-                                    "0": "",
-                                    "after": " seconds"
-                                },
                                 "value": "",
                                 "description": "",
                                 "options": [
@@ -1200,33 +1218,26 @@
                                         "value": "8",
                                         "default": false
                                     }
-                                ]
+                                ],
+                                "configuration": {
+                                    "after": " seconds",
+                                    "0": ""
+                                }
                             },
                             {
                                 "key": "autoPlaySlides",
                                 "name": "Auto play slides",
                                 "type": "selectYesNo",
+                                "value": "yes",
+                                "description": "",
                                 "configuration": {
-                                    "yesNoSelectLabels": "yesno",
-                                    "labels": "yesno",
-                                    "yesNoSelectValue": "1",
-                                    "defaultValue": "1"
-                                },
-                                "value": "",
-                                "description": ""
+                                    "optionLabel": "yesNo"
+                                }
                             },
                             {
                                 "key": "slides",
                                 "name": "Slides",
                                 "type": "repeating",
-                                "configuration": {
-                                    "collectionItemSort": "1",
-                                    "collectionItemDelete": "1",
-                                    "collectionMinNumItems": "",
-                                    "collectionMaxNumItems": "",
-                                    "collectionOrientation": "vertical",
-                                    "collectionItemName": "Slide"
-                                },
                                 "value": "",
                                 "description": "",
                                 "fields": [
@@ -1234,18 +1245,19 @@
                                         "key": "image",
                                         "name": "Image",
                                         "type": "image",
-                                        "configuration": {
-                                            "path": "\/images\/slides",
-                                            "height": 600,
-                                            "width": 600
-                                        },
                                         "value": "",
-                                        "description": ""
+                                        "description": "",
+                                        "configuration": {
+                                            "height": 600,
+                                            "path": "\/images\/slides",
+                                            "width": 600
+                                        }
                                     },
                                     {
                                         "key": "link",
                                         "name": "Link",
                                         "type": "url",
+                                        "size": "medium",
                                         "value": "",
                                         "description": ""
                                     },
@@ -1253,11 +1265,12 @@
                                         "key": "title",
                                         "name": "Title",
                                         "type": "text",
+                                        "size": "medium",
+                                        "value": "",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        }
                                     },
                                     {
                                         "key": "content",
@@ -1266,7 +1279,15 @@
                                         "value": "",
                                         "description": ""
                                     }
-                                ]
+                                ],
+                                "configuration": {
+                                    "collectionItemDelete": "1",
+                                    "collectionItemName": "Slide",
+                                    "collectionItemSort": "1",
+                                    "collectionMaxNumItems": "",
+                                    "collectionMinNumItems": "",
+                                    "collectionOrientation": "vertical"
+                                }
                             }
                         ]
                     },
@@ -1283,21 +1304,23 @@
                                 "key": "heading",
                                 "name": "Heading",
                                 "type": "text",
+                                "size": "medium",
+                                "value": "",
+                                "description": "",
                                 "configuration": {
                                     "allowCode": "no"
-                                },
-                                "value": "",
-                                "description": ""
+                                }
                             },
                             {
                                 "key": "address",
                                 "name": "Address",
                                 "type": "textarea",
+                                "size": "medium",
+                                "value": "",
+                                "description": "",
                                 "configuration": {
                                     "allowCode": "no"
-                                },
-                                "value": "",
-                                "description": ""
+                                }
                             },
                             {
                                 "key": "embedRatio",
@@ -1340,6 +1363,7 @@
                                 "key": "iframeTag",
                                 "name": "Iframe tag",
                                 "type": "iframeEmbed",
+                                "size": "medium",
                                 "value": "",
                                 "description": "Copy the Iframe embed tag from Google Maps and paste it here"
                             }
@@ -1387,16 +1411,18 @@
                                 "key": "title",
                                 "name": "Title",
                                 "type": "text",
+                                "size": "medium",
+                                "value": "",
+                                "description": "Defaults to 'Embedded media'",
                                 "configuration": {
                                     "allowCode": "no"
-                                },
-                                "value": "",
-                                "description": "Defaults to 'Embedded media'"
+                                }
                             },
                             {
                                 "key": "embedUrl",
                                 "name": "Embed URL",
                                 "type": "embedUrl",
+                                "size": "medium",
                                 "value": "",
                                 "description": "Enter the URL of the media content. For example, for YouTube simply enter the URL to view the video on the YouTube website."
                             }
@@ -1440,23 +1466,24 @@
                                 "key": "image",
                                 "name": "Image",
                                 "type": "image",
-                                "configuration": {
-                                    "path": "\/images",
-                                    "height": 400,
-                                    "width": 400
-                                },
                                 "value": "",
-                                "description": ""
+                                "description": "",
+                                "configuration": {
+                                    "height": 400,
+                                    "path": "\/images",
+                                    "width": 400
+                                }
                             },
                             {
                                 "key": "caption",
                                 "name": "Caption",
                                 "type": "text",
+                                "size": "",
+                                "value": "",
+                                "description": "",
                                 "configuration": {
                                     "allowCode": "no"
-                                },
-                                "value": "",
-                                "description": ""
+                                }
                             }
                         ]
                     },
@@ -1513,14 +1540,6 @@
                                 "key": "people",
                                 "name": "People",
                                 "type": "repeating",
-                                "configuration": {
-                                    "collectionItemSort": "1",
-                                    "collectionItemDelete": "1",
-                                    "collectionMinNumItems": "",
-                                    "collectionMaxNumItems": "",
-                                    "collectionOrientation": "vertical",
-                                    "collectionItemName": "Person"
-                                },
                                 "value": "",
                                 "description": "",
                                 "fields": [
@@ -1528,53 +1547,57 @@
                                         "key": "name",
                                         "name": "Name",
                                         "type": "text",
+                                        "size": "medium",
+                                        "value": "",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        }
                                     },
                                     {
                                         "key": "title",
                                         "name": "Title",
                                         "type": "text",
+                                        "size": "medium",
+                                        "value": "",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        }
                                     },
                                     {
                                         "key": "email",
                                         "name": "Email",
                                         "type": "text",
+                                        "size": "medium",
+                                        "value": "",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        }
                                     },
                                     {
                                         "key": "phoneNumber",
                                         "name": "Phone Number",
                                         "type": "text",
+                                        "size": "medium",
+                                        "value": "",
+                                        "description": "",
                                         "configuration": {
                                             "allowCode": "no"
-                                        },
-                                        "value": "",
-                                        "description": ""
+                                        }
                                     },
                                     {
                                         "key": "image",
                                         "name": "Image",
                                         "type": "image",
-                                        "configuration": {
-                                            "path": "\/images\/staff",
-                                            "height": 500,
-                                            "width": 500
-                                        },
                                         "value": "",
-                                        "description": ""
+                                        "description": "",
+                                        "configuration": {
+                                            "height": 500,
+                                            "path": "\/images\/staff",
+                                            "width": 500
+                                        }
                                     },
                                     {
                                         "key": "bio",
@@ -1583,7 +1606,15 @@
                                         "value": "",
                                         "description": ""
                                     }
-                                ]
+                                ],
+                                "configuration": {
+                                    "collectionItemDelete": "1",
+                                    "collectionItemName": "Person",
+                                    "collectionItemSort": "1",
+                                    "collectionMaxNumItems": "",
+                                    "collectionMinNumItems": "",
+                                    "collectionOrientation": "vertical"
+                                }
                             },
                             {
                                 "key": "alignImages",
@@ -1610,9 +1641,10 @@
                     }
                 ]
             },
-            {
+            "_bd-text-headings": {
                 "key": "_bd-text-headings",
                 "name": "Text Headings",
+                "display_order": "2",
                 "elements": [
                     {
                         "key": "_bd-heading1",
@@ -1627,6 +1659,7 @@
                                 "key": "heading",
                                 "name": "Heading 1",
                                 "type": "text",
+                                "size": "medium",
                                 "value": "",
                                 "description": ""
                             }
@@ -1645,6 +1678,7 @@
                                 "key": "heading",
                                 "name": "Heading 2",
                                 "type": "text",
+                                "size": "medium",
                                 "value": "",
                                 "description": ""
                             }
@@ -1663,6 +1697,7 @@
                                 "key": "heading",
                                 "name": "Heading 3",
                                 "type": "text",
+                                "size": "medium",
                                 "value": "",
                                 "description": ""
                             }
@@ -1681,6 +1716,7 @@
                                 "key": "heading",
                                 "name": "Heading 4",
                                 "type": "text",
+                                "size": "medium",
                                 "value": "",
                                 "description": ""
                             }
@@ -1699,6 +1735,7 @@
                                 "key": "heading",
                                 "name": "Heading 5",
                                 "type": "text",
+                                "size": "medium",
                                 "value": "",
                                 "description": ""
                             }
@@ -1717,6 +1754,7 @@
                                 "key": "heading",
                                 "name": "Heading 6",
                                 "type": "text",
+                                "size": "medium",
                                 "value": "",
                                 "description": ""
                             }
@@ -1724,9 +1762,10 @@
                     }
                 ]
             },
-            {
+            "_bd-grids": {
                 "key": "_bd-grids",
                 "name": "Column Layouts",
+                "display_order": "3",
                 "elements": [
                     {
                         "key": "_bd-grid2-12-12",
@@ -1912,7 +1951,7 @@
                     }
                 ]
             }
-        ]
+        }
     },
     "templates": [
         {
@@ -4056,7 +4095,7 @@
             "key": "header",
             "name": "Header",
             "description": "",
-            "attributes": [
+            "fields": [
                 {
                     "key": "spacingAfterHeader",
                     "name": "Spacing after header",
@@ -4106,28 +4145,22 @@
                     "name": "Auto play slides",
                     "description": "",
                     "type": "selectYesNo",
-                    "configuration": {
-                        "yesNoSelectLabels": "yesno",
-                        "labels": "yesno",
-                        "yesNoSelectValue": "1",
-                        "defaultValue": "1"
-                    },
                     "size": "medium",
-                    "value": ""
+                    "value": "yes",
+                    "configuration": {
+                        "optionLabel": "yesNo"
+                    }
                 },
                 {
                     "key": "showDots",
                     "name": "Show dots",
                     "description": "",
                     "type": "selectYesNo",
-                    "configuration": {
-                        "yesNoSelectLabels": "yesno",
-                        "labels": "yesno",
-                        "yesNoSelectValue": "1",
-                        "defaultValue": "1"
-                    },
                     "size": "medium",
-                    "value": ""
+                    "value": "yes",
+                    "configuration": {
+                        "optionLabel": "yesNo"
+                    }
                 },
                 {
                     "key": "dotPosition",
@@ -4156,26 +4189,23 @@
                     "name": "Show arrows",
                     "description": "",
                     "type": "selectYesNo",
-                    "configuration": {
-                        "yesNoSelectLabels": "yesno",
-                        "labels": "yesno",
-                        "yesNoSelectValue": "1",
-                        "defaultValue": "1"
-                    },
                     "size": "medium",
-                    "value": ""
+                    "value": "yes",
+                    "configuration": {
+                        "optionLabel": "yesNo"
+                    }
                 },
                 {
                     "key": "sliderSpeed",
                     "name": "Slider speed",
                     "description": "",
                     "type": "select",
-                    "configuration": {
-                        "0": "",
-                        "after": " seconds"
-                    },
                     "size": "",
                     "value": "",
+                    "configuration": {
+                        "after": " seconds",
+                        "0": ""
+                    },
                     "values": [
                         {
                             "value": "3",
@@ -4226,16 +4256,175 @@
                     "name": "Slides",
                     "description": "",
                     "type": "repeating",
-                    "configuration": {
-                        "collectionItemSort": "1",
-                        "collectionItemDelete": "1",
-                        "collectionMinNumItems": "",
-                        "collectionMaxNumItems": "",
-                        "collectionOrientation": "vertical",
-                        "collectionItemName": "Slide"
-                    },
                     "size": "",
-                    "value": ""
+                    "value": "",
+                    "configuration": {
+                        "collectionItemDelete": "1",
+                        "collectionItemName": "Slide",
+                        "collectionItemSort": "1",
+                        "collectionMaxNumItems": "",
+                        "collectionMinNumItems": "",
+                        "collectionOrientation": "vertical"
+                    },
+                    "children": [
+                        {
+                            "key": "images",
+                            "name": "Image",
+                            "description": "",
+                            "type": "imageSet",
+                            "size": "medium",
+                            "value": "",
+                            "configuration": {
+                                "imgSetSingleUpload": "single"
+                            },
+                            "children": [
+                                {
+                                    "key": "large",
+                                    "name": "Large",
+                                    "description": "",
+                                    "type": "image",
+                                    "size": "medium",
+                                    "value": "",
+                                    "configuration": {
+                                        "height": 720,
+                                        "path": "\/images\/header",
+                                        "width": 2000
+                                    }
+                                },
+                                {
+                                    "key": "medium",
+                                    "name": "Medium",
+                                    "description": "",
+                                    "type": "image",
+                                    "size": "medium",
+                                    "value": "",
+                                    "configuration": {
+                                        "height": 432,
+                                        "path": "\/images\/header",
+                                        "width": 1200
+                                    }
+                                },
+                                {
+                                    "key": "small",
+                                    "name": "Small",
+                                    "description": "",
+                                    "type": "image",
+                                    "size": "medium",
+                                    "value": "",
+                                    "configuration": {
+                                        "height": 216,
+                                        "path": "\/images\/header",
+                                        "width": 600
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "key": "imageEffect",
+                            "name": "Image effect",
+                            "description": "",
+                            "type": "select",
+                            "size": "medium",
+                            "value": "",
+                            "values": [
+                                {
+                                    "value": "None",
+                                    "default": false
+                                },
+                                {
+                                    "value": "Blur Small",
+                                    "default": false
+                                },
+                                {
+                                    "value": "Blur Medium",
+                                    "default": false
+                                },
+                                {
+                                    "value": "Blur Large",
+                                    "default": false
+                                },
+                                {
+                                    "value": "Grayscale",
+                                    "default": false
+                                }
+                            ]
+                        },
+                        {
+                            "key": "altText",
+                            "name": "Image Alt Text",
+                            "description": "",
+                            "type": "text",
+                            "size": "medium",
+                            "value": "",
+                            "configuration": {
+                                "allowCode": "no"
+                            }
+                        },
+                        {
+                            "key": "link",
+                            "name": "Link",
+                            "description": "",
+                            "type": "url",
+                            "size": "medium",
+                            "value": ""
+                        },
+                        {
+                            "key": "captionPosition",
+                            "name": "Caption Position",
+                            "description": "",
+                            "type": "select",
+                            "size": "medium",
+                            "value": "",
+                            "values": [
+                                {
+                                    "value": "Center Left",
+                                    "default": false
+                                },
+                                {
+                                    "value": "Center",
+                                    "default": false
+                                },
+                                {
+                                    "value": "Center Right",
+                                    "default": false
+                                },
+                                {
+                                    "value": "Bottom Left",
+                                    "default": false
+                                },
+                                {
+                                    "value": "Bottom Center",
+                                    "default": false
+                                },
+                                {
+                                    "value": "Bottom Right",
+                                    "default": false
+                                }
+                            ]
+                        },
+                        {
+                            "key": "captionTitle",
+                            "name": "Caption Title",
+                            "description": "",
+                            "type": "text",
+                            "size": "medium",
+                            "value": "",
+                            "configuration": {
+                                "allowCode": "no"
+                            }
+                        },
+                        {
+                            "key": "caption",
+                            "name": "Caption",
+                            "description": "",
+                            "type": "textarea",
+                            "size": "medium",
+                            "value": "",
+                            "configuration": {
+                                "allowCode": "no"
+                            }
+                        }
+                    ]
                 }
             ]
         }
