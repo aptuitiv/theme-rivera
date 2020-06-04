@@ -1,3 +1,4 @@
+{% import 'macros/macros' as macros %}
 <h1>{{ product.productName }}</h1>
 <div class="Grid Grid--withGutter">
 
@@ -61,10 +62,16 @@
     {% endif %}
 </div>
 
+{#
+{{ macros.altLoadMagnific() }}
+#}
+
 {% do _page.addJs('drift-zoom/Drift.js'|theme_url) %}
+
 
 {% do _page.addJs('magnific/jquery.magnific-popup.js'|theme_url) %}
 {% do _page.addCss('magnific/magnific-popup.css') %}
+
 
 {% inlinejs %}
 $(function() {
