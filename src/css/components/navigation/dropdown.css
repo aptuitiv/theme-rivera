@@ -100,12 +100,12 @@
         text-decoration: none;
     }
 
-    .Dropdown-link:hover:after,
-    .Dropdown-link:hover:before,
-    .Dropdown-link.is-current:after,
-    .Dropdown-link.is-current:before,
+    .Dropdown-link:hover::after,
+    .Dropdown-link:hover::before,
+    .Dropdown-link.is-current::after,
+    .Dropdown-link.is-current::before,
     .Dropdown-link.is-currentParent:active,
-    .Dropdown-link.is-currentParent:before {
+    .Dropdown-link.is-currentParent::before {
         background-color: var(--Dropdown-link-colorHover);
     }
 }
