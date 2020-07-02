@@ -20,8 +20,8 @@
 @media (--c-bp-smallScreenNav) {
     .SmScBtn {
         display: block;
-        order: 4;
         margin-top: 20px;
+        order: 4;
         width: 100%;
     }
 }
