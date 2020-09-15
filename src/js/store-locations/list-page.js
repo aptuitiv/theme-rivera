@@ -195,10 +195,12 @@ var storeLocations = {
     fieldLon: null,
     fieldLocation: null,
     form: null,
+    formattedAddress: null,
     geocoder: null,
     itemIds: [],
     latitude: 45,
     longitude: -69,
+    placesApi: null,
 
     init: function() {
         this.form = document.querySelector('.js-slSearchForm');
@@ -209,6 +211,8 @@ var storeLocations = {
         this.geocoder = new google.maps.Geocoder;
 
         this.setupSearch();
+
+        this.placesApi = new google.maps.places.PlacesService(storeLocationsListMap.mapObj.map);
 
         var locations = document.querySelector('.js-locations');
         locations.addEventListener('click', function (e) {
@@ -232,7 +236,7 @@ var storeLocations = {
             _self.itemIds = [];
             $('.js-locations').html('<p>SEARCHING...</p>');
 
-            if (_self.fieldLocation.value.length > 0) {
+            if (_self.fieldLocation.value.length > 0 && _self.fieldLocation.value !== _self.formattedAddress) {
                 _self.getLocation(function () {
                     _self.search();
                 });
@@ -251,10 +255,8 @@ var storeLocations = {
         $(this.form).ajaxSubmit({
             dataType: 'json',
             success: function (data) {
-                var total,
-                    ids;
+                var total;
                 total = parseInt(data.total);
-                console.log('Total: ', total);
                 if (total > 0) {
                     _self.setItemIds(data.ids);
 
@@ -358,21 +360,35 @@ var storeLocations = {
     getLocation: function(callback) {
         var address = this.fieldLocation.value;
         if (address.length > 0) {
-            this.geocoder.geocode({
-                address: encodeURI(address),
-                // componentRestrictions: {
-                //     'country': 'US'
-                // }
-            }, function(results, status){
-                if (status == 'OK' && results.length > 0) {
-                    console.log(results);
+            var request = {
+                query: this.fieldLocation.value,
+                fields: ['formatted_address','geometry']
+            };
+
+            this.placesApi.findPlaceFromQuery(request, function(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    storeLocations.setAddress(results[0].formatted_address);
+                    storeLocationsListMap.mapObj.map.setCenter(results[0].geometry.location);
                     storeLocations.setLocation(results[0].geometry.location);
                     if (typeof callback == 'function') {
                         callback.apply();
                     }
+                } else {
+                    storeLocations.showNotFound();
                 }
             });
         }
+    },
+
+    /**
+     * Set the formatted address
+     *
+     * @private
+     * @param {string} address
+     */
+    setAddress: function(address) {
+        storeLocations.formattedAddress = address;
+        storeLocations.fieldLocation.value = address;
     },
 
     setLocation: function(latlng) {

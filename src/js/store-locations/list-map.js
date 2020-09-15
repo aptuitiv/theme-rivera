@@ -298,6 +298,8 @@ storeLocationsListMap = {
             _self.setupMarkerClusters();
 
             _self._loadContent();
+
+            storeLocations.init();
         });
 
         if (supportsHistoryApi()) {
