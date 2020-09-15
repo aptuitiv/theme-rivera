@@ -232,9 +232,14 @@ var storeLocations = {
             _self.itemIds = [];
             $('.js-locations').html('<p>SEARCHING...</p>');
 
-            _self.getLocation(function() {
+            if (_self.fieldLocation.value.length > 0) {
+                _self.getLocation(function () {
+                    _self.search();
+                });
+            } else {
+                // Use the lat/lng already retrieved.
                 _self.search();
-            });
+            }
         });
     },
 
