@@ -219,10 +219,11 @@ var storeLocations = {
         this.placesApi = new google.maps.places.PlacesService(storeLocationsListMap.mapObj.map);
 
         document.querySelector('.js-locations').addEventListener('click', function (e) {
-            e.preventDefault();
             if (e.target.classList.contains('js-locationBtn')) {
+                e.preventDefault();
                 storeLocationsListMap.mapObj.clickMarker(e.target.getAttribute('data-id'));
             } else if (e.target.classList.contains('js-locationReset')) {
+                e.preventDefault();
                 _self.resetSidebar();
                 storeLocationsListMap.clearMap();
                 storeLocationsListMap.showMapView();
