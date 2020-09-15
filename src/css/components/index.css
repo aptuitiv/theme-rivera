@@ -10,10 +10,12 @@
 @import './grid';
 @import './header';
 @import './icon';
+@import './map';
 @import './navigation';
+@import './notification';
 @import './pagination';
 @import './search';
 @import './sidebar';
 @import './slider';
 @import './staff';
-@import './notification';
+@import './store-locations';
