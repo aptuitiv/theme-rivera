@@ -286,8 +286,7 @@ storeLocationsListMap = {
             _self.zoom = _self.mapObj.map.getZoom();
             mapTypes.run();
             _self.mapObj.setupGeoLocation(function(lat, lng) {
-                storeLocations.setLatitude(lat);
-                storeLocations.setLongitude(lng);
+                storeLocations.setOriginalLocation(lat, lng);
                 _self.location.lat = lat;
                 _self.location.lng = lng;
             });

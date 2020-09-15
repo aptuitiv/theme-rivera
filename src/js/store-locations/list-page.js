@@ -198,8 +198,8 @@ var storeLocations = {
     formattedAddress: null,
     geocoder: null,
     itemIds: [],
-    latitude: 45,
-    longitude: -69,
+    latitude: null,
+    longitude: null,
     placesApi: null,
     sidebarLocations: null,
 
@@ -365,6 +365,21 @@ var storeLocations = {
      */
     showNotFound: function() {
         this.sidebarLocations.html('<p><b>No locations were found near you</b>');
+    },
+
+    /**
+     * Sets the latitude and longitude for the first time that the geolocation is determined
+     *
+     * By using this method the latitude and longitude values won't be overwritten each time the GPS location changes
+     *
+     * @param {string} latitude
+     * @param {string} longitude
+     */
+    setOriginalLocation: function(latitude, longitude) {
+        if (this.latitude === null || this.longitude === null) {
+            this.setLatitude(latitude);
+            this.setLongitude(longitude);
+        }
     },
 
     setLatitude: function (latitude) {
