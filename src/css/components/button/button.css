@@ -140,14 +140,3 @@
     border: 2px solid var(--Button-background);
     color: var(--Button-background);
 }
-
-.Button:hover,
-.Button[href^=tel]:hover,
-.Button:focus,
-.Button[href^=tel]:focus,
-.Button:active,
-.Button[href^=tel]:active {
-    background: var(--Button-background);
-    border: 2px solid var(--Button-background);
-    color: var(--Button-color);
-}

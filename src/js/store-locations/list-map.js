@@ -291,8 +291,6 @@ storeLocationsListMap = {
                 _self.location.lat = lat;
                 _self.location.lng = lng;
             });
-            //_self.setupPlacesSearch();
-            //_self.setupResetButton();
 
             // Setup marker clustering
             _self.setupMarkerClusters();
@@ -654,7 +652,7 @@ storeLocationsListMap = {
         // Hide search markers, pins, and show original
         if (searching) {
             this.clearMap();
-            this._showMapView();
+            this.showMapView();
         }
 
         // Show search box
@@ -762,7 +760,7 @@ storeLocationsListMap = {
      * instead of the map view
      * @private
      */
-    _showMapView: function() {
+    showMapView: function() {
         $('.js-searchTotalTrails').hide();
         $('.js-totalTrails').show();
         if (this.markers.data.length == 0) {
@@ -772,6 +770,8 @@ storeLocationsListMap = {
             this.mapObj.setupTrailMarkers(this.markers.data);
             this.mapObj.fitToBounds();
             this.mapObj.repaintMarkerCluster();
+            this.mapObj.fitToBounds(true);
+            storeLocations.buildSidebar(this.markers.data);
         }
     },
 

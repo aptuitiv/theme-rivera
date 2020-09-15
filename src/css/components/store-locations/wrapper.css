@@ -1,0 +1,11 @@
+/* =========================================================================== *\
+    Store Locations wrapper
+\* =========================================================================== */
+
+
+/* @define StoreLocationsWrapper */
+
+.StoreLocationsWrapper {
+    margin-bottom: 20px;
+    overflow: hidden;
+}

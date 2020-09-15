@@ -201,8 +201,10 @@ var storeLocations = {
     latitude: 45,
     longitude: -69,
     placesApi: null,
+    sidebarLocations: null,
 
     init: function() {
+        var _self = this;
         this.form = document.querySelector('.js-slSearchForm');
         this.fieldDistance = document.querySelector('.js-searchDistance');
         this.fieldLat = document.querySelector('.js-geoLocationLat');
@@ -212,15 +214,32 @@ var storeLocations = {
 
         this.setupSearch();
 
+        this.sidebarLocations = $('.js-locations');
+
         this.placesApi = new google.maps.places.PlacesService(storeLocationsListMap.mapObj.map);
 
-        var locations = document.querySelector('.js-locations');
-        locations.addEventListener('click', function (e) {
+        document.querySelector('.js-locations').addEventListener('click', function (e) {
             e.preventDefault();
             if (e.target.classList.contains('js-locationBtn')) {
                 storeLocationsListMap.mapObj.clickMarker(e.target.getAttribute('data-id'));
+            } else if (e.target.classList.contains('js-locationReset')) {
+                _self.resetSidebar();
+                storeLocationsListMap.clearMap();
+                storeLocationsListMap.showMapView();
             }
         });
+
+        $(window).on('resize', function() {
+            storeLocations.setHeight();
+        });
+
+        this.setHeight();
+    },
+
+    setHeight: function() {
+        var h = $(window).height() - 100;
+        $('.js-storeLocationWrapper').height(h);
+        storeLocationsListMap.mapObj.fitToBounds(true);
     },
 
     /**
@@ -234,7 +253,7 @@ var storeLocations = {
             e.preventDefault();
 
             _self.itemIds = [];
-            $('.js-locations').html('<p>SEARCHING...</p>');
+            _self.sidebarLocations.html('<p>SEARCHING...</p>');
 
             if (_self.fieldLocation.value.length > 0 && _self.fieldLocation.value !== _self.formattedAddress) {
                 _self.getLocation(function () {
@@ -299,7 +318,7 @@ var storeLocations = {
                 data: {'id': _self.itemIds},
                 dataType: 'json',
                 success: function (data) {
-                    $('.js-locations').empty();
+                    _self.resetSidebar();
                     storeLocationsListMap.clearMap();
                     storeLocationsListMap.search.markers = data;
                     storeLocationsListMap.mapObj.setupTrailMarkers(data);
@@ -308,27 +327,36 @@ var storeLocations = {
 
                     // Show items in sidebar
 
-                    if (ap.isArray(data)) {
-                        var item, el;
-                        for (var key in data) {
-                            if (data.hasOwnProperty(key)) {
-                                item = data[key];
-                                el = '<div class="StoreLocations-item">';
-                                el += '<div class="StoreLocations-title"><a href="' + item.url + '" target="_blank" class="u-linkSubtle">' + item.name + '</a></div>';
-                                el += '<div class="StoreLocations-address">';
-                                el += item.addr + '<br>' + item.city + ', ' + item.state + ' ' + item.zip;
-                                el += '</div>'; // End StoreLocations-address
-                                el += '<div class="StoreLocations-buttons">';
-                                el += '<button type="button" class="StoreLocations-button">View on Map</button>';
-                                el += '<a href="' + item.url + '" class="StoreLocations-button" target="_blank">View Details</a>';
-                                el += '</div>'; // End StoreLocations-buttons
-                                el += '</div>'; // End StoreLocations-item
-                                $('.js-locations').append(el);
-                            }
-                        }
-                    }
+                    _self.sidebarLocations.append('<button type="button" class="Button u-sizeFull u-margBottom2 js-locationReset">Reset</button>');
+                    _self.buildSidebar(data);
                 }
             });
+        }
+    },
+
+    resetSidebar: function() {
+        this.sidebarLocations.empty();
+    },
+
+    buildSidebar: function(data) {
+        if (ap.isArray(data)) {
+            var item, el;
+            for (var key in data) {
+                if (data.hasOwnProperty(key)) {
+                    item = data[key];
+                    el = '<div class="StoreLocations-item">';
+                    el += '<div class="StoreLocations-title"><a href="' + item.url + '" target="_blank" class="u-linkSubtle">' + item.name + '</a></div>';
+                    el += '<div class="StoreLocations-address">';
+                    el += item.addr + '<br>' + item.city + ', ' + item.state + ' ' + item.zip;
+                    el += '</div>'; // End StoreLocations-address
+                    el += '<div class="StoreLocations-buttons">';
+                    el += '<button type="button" class="StoreLocations-button js-locationBtn" data-id="' + item.id + '">View on Map</button>';
+                    el += '<a href="' + item.url + '" class="StoreLocations-button" target="_blank">View Details</a>';
+                    el += '</div>'; // End StoreLocations-buttons
+                    el += '</div>'; // End StoreLocations-item
+                    this.sidebarLocations.append(el);
+                }
+            }
         }
     },
 
@@ -336,16 +364,7 @@ var storeLocations = {
      * Shows the not found message
      */
     showNotFound: function() {
-        $('.js-locations').html('<p><b>No locations were found near you</b>');
-        // $('.js-mapOverlay').hide();
-        // $('.js-mapCanvas').hide();
-        // $('.js-searchNoResults').show();
-        // $('.js-searchTotalTrails').hide();
-        // $('.js-totalTrails').hide();
-        // $('.js-mapList').hide();
-        // if (!$('.js-loadItems').hasClass('u-hidden')) {
-        //     $('.js-loadItems').hide();
-        // }
+        this.sidebarLocations.html('<p><b>No locations were found near you</b>');
     },
 
     setLatitude: function (latitude) {
