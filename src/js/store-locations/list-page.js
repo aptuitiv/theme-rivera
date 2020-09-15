@@ -328,7 +328,7 @@ var storeLocations = {
 
                     // Show items in sidebar
 
-                    _self.sidebarLocations.append('<button type="button" class="Button u-sizeFull u-margBottom2 js-locationReset">Reset</button>');
+                    _self.showResetButton();
                     _self.buildSidebar(data);
                 }
             });
@@ -337,6 +337,10 @@ var storeLocations = {
 
     resetSidebar: function() {
         this.sidebarLocations.empty();
+    },
+
+    showResetButton: function() {
+        this.sidebarLocations.append('<button type="button" class="Button u-sizeFull u-margBottom2 js-locationReset">Reset</button>');
     },
 
     buildSidebar: function(data) {
@@ -365,7 +369,9 @@ var storeLocations = {
      * Shows the not found message
      */
     showNotFound: function() {
-        this.sidebarLocations.html('<p><b>No locations were found near you</b>');
+        this.resetSidebar();
+        this.showResetButton();
+        this.sidebarLocations.append('<p><b>No locations were found near you</b>');
     },
 
     /**
