@@ -2,26 +2,15 @@
     Global Javascript for all pages
 \* =========================================================================== */
 
-$(() => {
-    smallScreenNav.init();
-    navAccess.init();
-    setupNotifications();
-
-    const link = document.querySelector('.js-btop');
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
-        });
-    });
-
-    if (document.documentElement.clientWidth > 800) {
-        observeSticky(document.querySelector('.js-header'));
-    }
-});
+/**
+ * Tests to see if the thing is a number
+ *
+ * @param {number} thing
+ * @returns {boolean}
+ */
+function isNumber(thing) {
+    return typeof thing === 'number';
+}
 
 /**
  * Watches a DOM element and adds a class to it if it's sticky or not.
@@ -29,28 +18,27 @@ $(() => {
  * Inspired by https://developers.google.com/web/updates/2017/09/sticky-headers
  * @param {Element} el The DOM element to mark as sticky
  */
-function observeSticky(el, options) {
+function observeSticky(el) {
     /**
      * Test to see if the required features exist before doing anything else.
-     * Browsers that don't support all this either won't have the sticky element (becuase it doesn't support the CSS)
-     * or it won't have the notification that the element is sticky because it doesn't support the following Javascript features.
+     * Browsers that don't support all this either won't have the sticky element
+     * (becuase it doesn't support the CSS)
+     * or it won't have the notification that the element is sticky because it
+     * doesn't support the following Javascript features.
      */
     if ('IntersectionObserver' in window && typeof CSS !== 'undefined' && typeof CSS.supports === 'function' && CSS.supports('position', 'sticky')) {
-        let config = {
+        const config = {
             offset: 0,
             lowThreshold: 0.25,
             highThreshold: 0.75,
         };
-        if (isObject(options)) {
-            config = extend(config, options);
-        }
         /**
          * Create an element before the sticky element to watch.
          * Because styles could be changing on the sticky element (like height) it's important
-         * for this sentinel element to be at least half the height of the sticky element. That way
-         * the sticky element won't be changed to quickly. If you're scrolling really slowly then it would
-         * be possible to trigger the sticky/unsticky event rapidly, which looks bad. This sentinel element
-         * prevents that.
+         * for this sentinel element to be at least half the height of the sticky element.
+         * That way the sticky element won't be changed to quickly.
+         * If you're scrolling really slowly then it would be possible to trigger the
+         * sticky/unsticky event rapidly, which looks bad. This sentinel element prevents that.
          */
         const sentinel = document.createElement('div');
         let style = `position: absolute; z-index: -1; width: 1px; height: ${el.clientHeight / 2}px;`;
@@ -61,14 +49,16 @@ function observeSticky(el, options) {
         el.parentNode.insertBefore(sentinel, el);
 
         // Setup the observer
-        const observer = new IntersectionObserver(((entries, observer) => {
+        const observer = new IntersectionObserver(((entries) => {
             entries.forEach((entry) => {
                 // Check for stickyness by checking how much of the element is visible
                 if (entry.intersectionRatio <= config.lowThreshold) {
-                    // Less than the low threshold percentage of the sentinel is visible so mark the element as sticky
+                    // Less than the low threshold percentage of the
+                    // sentinel is visible so mark the element as sticky
                     el.classList.add('is-sticky');
                 } else if (entry.intersectionRatio >= config.highThreshold) {
-                    // More than this high threshold of the sentinel is visible, almost to the top of the element so mark it as not sticky
+                    // More than this high threshold of the sentinel is visible,
+                    // almost to the top of the element so mark it as not sticky
                     el.classList.remove('is-sticky');
                 }
             });
@@ -83,7 +73,7 @@ function observeSticky(el, options) {
 /**
  * Small screen navigation
  */
-var smallScreenNav = {
+const smallScreenNav = {
     button: null,
     /**
      * Holds the navigation object
@@ -113,7 +103,7 @@ var smallScreenNav = {
             self.nav.toggle();
         });
 
-        $('.js-dropdown').on('click', function (e) {
+        $('.js-dropdown').on('click', function onClick(e) {
             if ($(window).width() <= self.width) {
                 e.preventDefault();
                 $(this).toggleClass('is-active').parent().toggleClass('is-active');
@@ -128,18 +118,19 @@ var smallScreenNav = {
  *
  * Add "data-access-nav" attribute to the navigation menu.
  * Add "js-navLink" class to the navigation link tags.
- * Add "js-skip" class to any items that should be skipped. Useful for items that are hidden for small screens.
+ * Add "js-skip" class to any items that should be skipped.
+ * Useful for items that are hidden for small screens.
  * Add "js-dropdownMenu" class to the <ul> tag that contains the sub navigation
  * Add "js-dropdownParent" class to a <li> tag that contains a sub list for a drop down.
  * Add "js-dropdown" to any link tags that have a drop down.
  */
-var navAccess = {
+const navAccess = {
     init() {
         const menus = document.querySelectorAll('[data-access-nav]');
-        const _self = this;
+        const self = this;
         if (menus.length > 0) {
             menus.forEach((menu) => {
-                _self.setupMenu(menu);
+                self.setupMenu(menu);
             });
         }
     },
@@ -150,9 +141,9 @@ var navAccess = {
      */
     setupMenu(menu) {
         const nav = menu.querySelectorAll('.js-navLink');
-        const subs = menu.querySelectorAll('.js-dropdownMenu');
-        const mainnav = menu.children;
-        const _self = this;
+        // const subs = menu.querySelectorAll('.js-dropdownMenu');
+        // const mainnav = menu.children;
+        const self = this;
         let key;
         const next = ['ArrowDown', 'Down', 'Tab', 'Spacebar', ' '];
         const prev = ['ArrowUp', 'Up', 'Tab', 'Spacebar', ' '];
@@ -167,30 +158,30 @@ var navAccess = {
                     // Going forwards
                     if (e.shiftKey) {
                         // Shift key was down
-                        _self.focus(e, e.target);
+                        self.focus(e, e.target);
                     } else {
                         // Moving forward
-                        _self.focus(e, e.target, true);
+                        self.focus(e, e.target, true);
                     }
                 } else if (prev.indexOf(key) >= 0) {
                     // Going backwards
                     if (e.shiftKey) {
                         // Negating going backwards so going forwards
-                        _self.focus(e, e.target, true);
+                        self.focus(e, e.target, true);
                     } else {
-                        _self.focus(e, e.target);
+                        self.focus(e, e.target);
                     }
                 } else if (left.indexOf(key) >= 0) {
                     // Jumping backwards
-                    _self.focus(e, e.target, false, true);
+                    self.focus(e, e.target, false, true);
                 } else if (right.indexOf(key) >= 0) {
                     // Jumping forwards
-                    _self.focus(e, e.target, true, true);
-                } else if (key == 'Escape') {
+                    self.focus(e, e.target, true, true);
+                } else if (key === 'Escape') {
                     // Close the menu
-                    const parentLi = _self.getParent(e.target).parentNode;
+                    const parentLi = self.getParent(e.target).parentNode;
                     if (parentLi !== null) {
-                        focusEl = _self.getLink(parentLi);
+                        focusEl = self.getLink(parentLi);
                         focusEl.focus();
                     }
                 }
@@ -206,9 +197,9 @@ var navAccess = {
      */
     focus(event, el, next, jumping) {
         let focusEl = null;
-        var isFirst = false;
+        let isFirst = false;
         const isLast = this.isDropdownLast(el);
-        var isFirst = this.isDropdownFirst(el);
+        isFirst = this.isDropdownFirst(el);
         let sibling;
         if (next) {
             if (jumping) {
@@ -222,7 +213,7 @@ var navAccess = {
                 }
                 sibling = el.nextElementSibling;
                 // If next element is a dropdown, expand it
-                if (sibling !== null && sibling.nodeName.toLowerCase() == 'ul') {
+                if (sibling !== null && sibling.nodeName.toLowerCase() === 'ul') {
                     this.activate(el.parentNode);
                 }
                 focusEl = this.getNextLink(el); // next navLink
@@ -238,7 +229,8 @@ var navAccess = {
         } else {
             sibling = el.parentNode.previousElementSibling;
             if (sibling !== null && sibling.classList.contains('js-dropdownParent')) {
-                focusEl = this.getPrevInLevel(el); // Link before a sibling with dropdown (skip over dropdown)
+                // Link before a sibling with dropdown (skip over dropdown)
+                focusEl = this.getPrevInLevel(el);
             } else {
                 focusEl = this.getPrevLink(el); // Get the previous navLink
             }
@@ -275,7 +267,8 @@ var navAccess = {
     // Returns returns true is the first element of a dropdown list
     isDropdownFirst(el) {
         const dropdownNavs = Array.prototype.slice.call(this.getParent(el).parentNode.querySelectorAll('.js-navLink')); // get all children links in dropdown
-        return dropdownNavs.indexOf(el) === 1; // if it is the first link (after the main navigation link)
+        // if it is the first link (after the main navigation link)
+        return dropdownNavs.indexOf(el) === 1;
     },
     // Returns true if the last element of a dropdown
     isDropdownLast(el) {
@@ -332,75 +325,13 @@ var navAccess = {
 };
 
 /**
- * Sets the height of all the elements to be the same
- * @param elements
+ * Get a cookie value
+ * @param {string} cname Cookie name
+ * @returns string
  */
-function equalSize(elements) {
-    let maxHeight = 0;
-    let h;
-    elements.css('height', '');
-    elements.each(function () {
-        h = $(this).height();
-        if (h > maxHeight) {
-            maxHeight = h;
-        }
-    });
-    elements.height(maxHeight);
-}
-
-/**
- * Checks if `value` is the
- * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
- * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
- *
- * @static
- * @memberOf _
- * @since 0.1.0
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is an object, else `false`.
- * @example
- *
- * _.isObject({});
- * // => true
- *
- * _.isObject([1, 2, 3]);
- * // => true
- *
- * _.isObject(_.noop);
- * // => true
- *
- * _.isObject(null);
- * // => false
- */
-function isObject(value) {
-    const type = typeof value;
-    return !!value && (type == 'object' || type == 'function');
-}
-
-/**
- * Tests to see if the thing is a number
- *
- * @param {number} thing
- * @returns {boolean}
- */
-function isNumber(thing) {
-    return typeof thing === 'number';
-}
-
-/**
- * Set up the notifications bar functionality
- */
-function setupNotifications() {
-    let id; let
-        parent;
-    $('.js-notificationClose').on('click', function (e) {
-        e.preventDefault();
-        parent = $(this).parents('.js-notification:first');
-        parent.hide();
-        id = this.getAttribute('data-id');
-        setCookie('notificationMsgHide', id, 10);
-    });
+function getCookieValue(cname) {
+    const b = document.cookie.match(`(^|;)\\s*${cname}\\s*=\\s*([^;]+)`);
+    return b ? b.pop() : '';
 }
 
 /**
@@ -412,20 +343,47 @@ function setupNotifications() {
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     const existing = getCookieValue(cname);
+    let cookieValue = cvalue;
     if (existing.length > 0) {
-        cvalue = `${existing}-${cvalue}`;
+        cookieValue = `${existing}-${cookieValue}`;
     }
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     const expires = `expires=${d.toUTCString()}`;
-    document.cookie = `${cname}=${cvalue}; ${expires};path=/`;
+    document.cookie = `${cname}=${cookieValue}; ${expires};path=/`;
 }
 
 /**
- * Get a cookie value
- * @param {string} cname Cookie name
- * @returns string
+ * Set up the notifications bar functionality
  */
-function getCookieValue(cname) {
-    const b = document.cookie.match(`(^|;)\\s*${cname}\\s*=\\s*([^;]+)`);
-    return b ? b.pop() : '';
+function setupNotifications() {
+    let id; let
+        parent;
+    $('.js-notificationClose').on('click', function onClick(e) {
+        e.preventDefault();
+        parent = $(this).parents('.js-notification:first');
+        parent.hide();
+        id = this.getAttribute('data-id');
+        setCookie('notificationMsgHide', id, 10);
+    });
 }
+
+$(() => {
+    smallScreenNav.init();
+    navAccess.init();
+    setupNotifications();
+
+    const link = document.querySelector('.js-btop');
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+        });
+    });
+
+    if (document.documentElement.clientWidth > 800) {
+        observeSticky(document.querySelector('.js-header'));
+    }
+});
