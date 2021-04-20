@@ -87,6 +87,7 @@ module.exports = {
     images: image.images,
     pullTheme: theme.pull,
     pushTheme: theme.push,
+    jslint: js.jslint,
     scripts: js.scripts,
     stylelint: css.stylelint,
     svgSprite: svg.sprite,
