@@ -147,7 +147,6 @@ module.exports = {
         {
             name: 'main.js',
             src: [
-                src + '/js/modernizr-flexbox-detection.js',
                 'node_modules/jquery/dist/jquery.js',
                 src + '/js/main.js'
             ]
