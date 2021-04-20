@@ -30,7 +30,6 @@ module.exports = {
             css: [
                 src + '/css/main.css',
             ],
-            cssBase: src + '/css',
             font: src + '/fonts/**/*.{eot,ttf,woff,woff2}',
             icon: src + '/icons/**/*.svg',
             img: src + '/images/**/*.{gif,jpg,jpeg,png,svg,webp}',
@@ -43,6 +42,9 @@ module.exports = {
         build: {
             base: build,
             css: build + '/css'
+        },
+        criticalCss: {
+            src: dist + '/css/main.css'
         },
         dist: {
             base: dist,
