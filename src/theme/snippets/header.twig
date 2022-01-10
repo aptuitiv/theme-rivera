@@ -45,7 +45,7 @@
                 {% if _core.theme.settings.headerLogo %}
                     {% set _core.theme.settings.headerLogo.class = 'Header-logo' %}
                     {% if _core.theme.settings.headerLogo.alt|length == 0 %}
-                        {% set _core.theme.settings.headerLogo.alt = _core.theme.settings.company %}
+                        {% set _core.theme.settings.headerLogo.alt = _core.settings.companyName %}
                     {% endif %}
                     <a href="/" title="Go to home page" class="Header-logoLink">{{ _core.theme.settings.headerLogo.tag }}</a>
                 {% endif %}
