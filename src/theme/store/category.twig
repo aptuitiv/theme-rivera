@@ -12,12 +12,12 @@
 
         {% if product.orderForm.fields.options|length > 0 %}
             <div class="u-weightBold u-margBottom1"><a href="{{ product.url }}">{{ product.productName }}</a></div>
-            <div class="u-weightBold u-fontSize4">Starting at {{ product.currentPrice.value }}{% if product.pricePerUnit is defined && product.pricePerUnit != "None" %} / {{ product.pricePerUnit }}{% endif %}</div>
+            <div class="u-weightBold u-fontSize4">Starting at {{ product.currentPrice }}{% if product.pricePerUnit is defined && product.pricePerUnit != "None" %} / {{ product.pricePerUnit }}{% endif %}</div>
             <div>{{ product.shortDescription }}</div>
         {% else %}
             <div class="u-spaced2 u-flexGrow1">
                 <div class="u-weightBold u-margBottom1"><a href="{{ product.url }}">{{ product.productName }}</a></div>
-                <div class="u-weightBold u-fontSize4">{{ product.currentPrice.value }}{% if product.pricePerUnit is defined && product.pricePerUnit != "None" %} / {{ product.pricePerUnit }}{% endif %}</div>
+                <div class="u-weightBold u-fontSize4">{{ product.currentPrice }}{% if product.pricePerUnit is defined && product.pricePerUnit != "None" %} / {{ product.pricePerUnit }}{% endif %}</div>
                 <div>{{ product.shortDescription }}</div>
             </div>
             {{ product.orderForm.openTag }}
