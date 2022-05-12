@@ -47,7 +47,7 @@ function setupNotifications() {
     });
 }
 
-$(() => {
+document.onreadystatechange = function () {
     smallScreenNav.init();
     navAccess.init();
     setupNotifications();
@@ -66,4 +66,4 @@ $(() => {
     if (document.documentElement.clientWidth > 800) {
         observeSticky(document.querySelector('.js-header'));
     }
-});
+};
