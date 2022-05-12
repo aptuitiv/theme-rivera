@@ -48,22 +48,24 @@ function setupNotifications() {
 }
 
 document.onreadystatechange = function () {
-    smallScreenNav.init();
-    navAccess.init();
-    setupNotifications();
+    if (document.readyState !== 'loading') {
+        smallScreenNav.init();
+        navAccess.init();
+        setupNotifications();
 
-    const link = document.querySelector('.js-btop');
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth',
+        const link = document.querySelector('.js-btop');
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth',
+            });
         });
-    });
 
-    if (document.documentElement.clientWidth > 800) {
-        observeSticky(document.querySelector('.js-header'));
+        if (document.documentElement.clientWidth > 800) {
+            observeSticky(document.querySelector('.js-header'));
+        }
     }
 };
