@@ -102,6 +102,13 @@
     margin-left: 0;
 }
 
+@media (--c-bp-sm) {
+    .Header-buttons {
+        text-align: center;
+        width: 100%;
+    }
+}
+
 .Header-skipToMain {
     height: 1px;
     left: -10000px;
