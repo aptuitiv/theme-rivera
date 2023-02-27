@@ -3,6 +3,6 @@
 {% if iframeTag %}
     <div class="FlexEmbed">
         <div class="FlexEmbed-ratio FlexEmbed-ratio--{{ embedRatio }}"></div>
-        <iframe class="FlexEmbed-content" frameborder="0" title="{{ heading ?: "Embedded iframe" }}" allowfullscreen src="{{ iframeTag.src }}"></iframe>
+        <iframe class="FlexEmbed-content" frameborder="0" title="{{ heading ?: "Embedded iframe" }}" allowfullscreen src="{{ iframeTag.src }}" loading="lazy"></iframe>
     </div>
 {% endif %}
