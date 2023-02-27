@@ -136,7 +136,7 @@
                         "label": "Logo",
                         "type": "image",
                         "path": "images",
-                        "default": "\/theme\/custom\/images\/logo.jpg"
+                        "default": "/theme/custom/images/logo.jpg"
                     },
                     {
                         "name": "headerButtons",
@@ -240,15 +240,12 @@
                                 "description": "",
                                 "fields": [
                                     {
-                                        "key": "heading",
-                                        "name": "Heading",
-                                        "type": "text",
+                                        "key": "link",
+                                        "name": "Link",
+                                        "type": "url",
                                         "size": "",
                                         "value": "",
-                                        "description": "",
-                                        "configuration": {
-                                            "allowCode": "no"
-                                        }
+                                        "description": ""
                                     },
                                     {
                                         "key": "image",
@@ -258,7 +255,7 @@
                                         "description": "",
                                         "configuration": {
                                             "height": 400,
-                                            "path": "\/images\/columned-feature",
+                                            "path": "/images/columned-feature",
                                             "width": 400
                                         }
                                     },
@@ -270,12 +267,15 @@
                                         "description": ""
                                     },
                                     {
-                                        "key": "link",
-                                        "name": "Link",
-                                        "type": "url",
+                                        "key": "heading",
+                                        "name": "Heading",
+                                        "type": "text",
                                         "size": "",
                                         "value": "",
-                                        "description": ""
+                                        "description": "",
+                                        "configuration": {
+                                            "allowCode": "no"
+                                        }
                                     },
                                     {
                                         "key": "buttonText",
@@ -533,19 +533,6 @@
                         ]
                     },
                     {
-                        "key": "featured-content-wrapper",
-                        "name": "Featured Content Wrapper",
-                        "type": "grid",
-                        "template": "featured-content-wrapper",
-                        "enabled": true,
-                        "parse": true,
-                        "columns": "1",
-                        "sizes": "12",
-                        "size": "12",
-                        "description": "",
-                        "fields": []
-                    },
-                    {
                         "key": "featured-text",
                         "name": "Featured Text",
                         "type": "full",
@@ -612,7 +599,7 @@
                                 "value": "",
                                 "description": "",
                                 "configuration": {
-                                    "path": "\/images",
+                                    "path": "/images",
                                     "width": 1200
                                 }
                             },
@@ -735,7 +722,7 @@
                                 "description": "",
                                 "configuration": {
                                     "height": 600,
-                                    "path": "\/images",
+                                    "path": "/images",
                                     "width": 600
                                 }
                             },
@@ -747,19 +734,19 @@
                                 "description": "",
                                 "options": [
                                     {
-                                        "value": "1\/4",
+                                        "value": "1/4",
                                         "default": false
                                     },
                                     {
-                                        "value": "1\/3",
+                                        "value": "1/3",
                                         "default": false
                                     },
                                     {
-                                        "value": "2\/5",
+                                        "value": "2/5",
                                         "default": false
                                     },
                                     {
-                                        "value": "1\/2",
+                                        "value": "1/2",
                                         "default": false
                                     }
                                 ]
@@ -844,7 +831,7 @@
                                         "description": "",
                                         "configuration": {
                                             "height": 500,
-                                            "path": "\/images\/grid",
+                                            "path": "/images/grid",
                                             "width": 500
                                         }
                                     },
@@ -884,31 +871,6 @@
                                 }
                             },
                             {
-                                "key": "numberOfColumns",
-                                "name": "Number of columns per row",
-                                "type": "select",
-                                "value": "",
-                                "description": "Number of columns to display at the largest screen size.\n\"Auto\" will determine the number of columns based on the number of items.",
-                                "options": [
-                                    {
-                                        "value": "Auto",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "2",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "3",
-                                        "default": false
-                                    },
-                                    {
-                                        "value": "4",
-                                        "default": false
-                                    }
-                                ]
-                            },
-                            {
                                 "key": "displayTitle",
                                 "name": "Display title",
                                 "type": "select",
@@ -933,6 +895,31 @@
                                     },
                                     {
                                         "value": "Bottom of Image",
+                                        "default": false
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "numberOfColumns",
+                                "name": "Number of columns per row",
+                                "type": "select",
+                                "value": "",
+                                "description": "Number of columns to display at the largest screen size.\n\"Auto\" will determine the number of columns based on the number of items.",
+                                "options": [
+                                    {
+                                        "value": "Auto",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "2",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "3",
+                                        "default": false
+                                    },
+                                    {
+                                        "value": "4",
                                         "default": false
                                     }
                                 ]
@@ -1057,7 +1044,7 @@
                                         "description": "",
                                         "configuration": {
                                             "height": 500,
-                                            "path": "\/images\/grid",
+                                            "path": "/images/grid",
                                             "width": 500
                                         }
                                     },
@@ -1172,8 +1159,8 @@
                                     }
                                 ],
                                 "configuration": {
-                                    "after": " seconds",
-                                    "0": ""
+                                    "0": "",
+                                    "after": "seconds"
                                 }
                             },
                             {
@@ -1201,7 +1188,7 @@
                                         "description": "",
                                         "configuration": {
                                             "height": 600,
-                                            "path": "\/images\/slides",
+                                            "path": "/images/slides",
                                             "width": 600
                                         }
                                     },
@@ -1390,6 +1377,29 @@
                         "description": "",
                         "fields": [
                             {
+                                "key": "image",
+                                "name": "Image",
+                                "type": "image",
+                                "value": "",
+                                "description": "",
+                                "configuration": {
+                                    "height": 400,
+                                    "path": "/images",
+                                    "width": 400
+                                }
+                            },
+                            {
+                                "key": "caption",
+                                "name": "Caption",
+                                "type": "text",
+                                "size": "",
+                                "value": "",
+                                "description": "",
+                                "configuration": {
+                                    "allowCode": "no"
+                                }
+                            },
+                            {
                                 "key": "alignment",
                                 "name": "Alignment",
                                 "type": "select",
@@ -1413,29 +1423,6 @@
                                         "default": false
                                     }
                                 ]
-                            },
-                            {
-                                "key": "image",
-                                "name": "Image",
-                                "type": "image",
-                                "value": "",
-                                "description": "",
-                                "configuration": {
-                                    "height": 400,
-                                    "path": "\/images",
-                                    "width": 400
-                                }
-                            },
-                            {
-                                "key": "caption",
-                                "name": "Caption",
-                                "type": "text",
-                                "size": "",
-                                "value": "",
-                                "description": "",
-                                "configuration": {
-                                    "allowCode": "no"
-                                }
                             }
                         ]
                     },
@@ -1496,19 +1483,15 @@
                                 "description": "",
                                 "fields": [
                                     {
-                                        "key": "name",
-                                        "name": "Name",
-                                        "type": "text",
-                                        "size": "medium",
+                                        "key": "bio",
+                                        "name": "Bio",
+                                        "type": "richTextEditor",
                                         "value": "",
-                                        "description": "",
-                                        "configuration": {
-                                            "allowCode": "no"
-                                        }
+                                        "description": ""
                                     },
                                     {
-                                        "key": "title",
-                                        "name": "Title",
+                                        "key": "name",
+                                        "name": "Name",
                                         "type": "text",
                                         "size": "medium",
                                         "value": "",
@@ -1529,8 +1512,20 @@
                                         }
                                     },
                                     {
-                                        "key": "phoneNumber",
-                                        "name": "Phone Number",
+                                        "key": "image",
+                                        "name": "Image",
+                                        "type": "image",
+                                        "value": "",
+                                        "description": "",
+                                        "configuration": {
+                                            "height": 500,
+                                            "path": "/images/staff",
+                                            "width": 500
+                                        }
+                                    },
+                                    {
+                                        "key": "title",
+                                        "name": "Title",
                                         "type": "text",
                                         "size": "medium",
                                         "value": "",
@@ -1540,23 +1535,15 @@
                                         }
                                     },
                                     {
-                                        "key": "image",
-                                        "name": "Image",
-                                        "type": "image",
+                                        "key": "phoneNumber",
+                                        "name": "Phone Number",
+                                        "type": "text",
+                                        "size": "medium",
                                         "value": "",
                                         "description": "",
                                         "configuration": {
-                                            "height": 500,
-                                            "path": "\/images\/staff",
-                                            "width": 500
+                                            "allowCode": "no"
                                         }
-                                    },
-                                    {
-                                        "key": "bio",
-                                        "name": "Bio",
-                                        "type": "richTextEditor",
-                                        "value": "",
-                                        "description": ""
                                     }
                                 ],
                                 "configuration": {
@@ -1721,7 +1708,7 @@
                 "elements": [
                     {
                         "key": "_bd-grid2-12-12",
-                        "name": "2 Columns (1\/2 - 1\/2)",
+                        "name": "2 Columns (1/2 - 1/2)",
                         "type": "grid",
                         "template": "2-columns-1-2-1-2",
                         "enabled": true,
@@ -1734,7 +1721,7 @@
                     },
                     {
                         "key": "2-columns-1-2-1-2-bottom-align",
-                        "name": "2 Columns (1\/2 - 1\/2) Bottom Align",
+                        "name": "2 Columns (1/2 - 1/2) Bottom Align",
                         "type": "grid",
                         "template": "2-columns-1-2-1-2-bottom-align",
                         "enabled": true,
@@ -1747,7 +1734,7 @@
                     },
                     {
                         "key": "2-columns-1-2-1-2-center-align",
-                        "name": "2 Columns (1\/2 - 1\/2) Center Align",
+                        "name": "2 Columns (1/2 - 1/2) Center Align",
                         "type": "grid",
                         "template": "2-columns-1-2-1-2-center-align",
                         "enabled": true,
@@ -1760,7 +1747,7 @@
                     },
                     {
                         "key": "_bd-grid2-13-23",
-                        "name": "2 Columns (1\/3 - 2\/3)",
+                        "name": "2 Columns (1/3 - 2/3)",
                         "type": "grid",
                         "template": "2-columns-1-3-2-3",
                         "enabled": true,
@@ -1773,7 +1760,7 @@
                     },
                     {
                         "key": "_bd-grid2-14-34",
-                        "name": "2 Columns (1\/4 - 3\/4)",
+                        "name": "2 Columns (1/4 - 3/4)",
                         "type": "grid",
                         "template": "2-columns-1-4-3-4",
                         "enabled": true,
@@ -1786,7 +1773,7 @@
                     },
                     {
                         "key": "_bd-grid2-23-13",
-                        "name": "2 Columns (2\/3 - 1\/3)",
+                        "name": "2 Columns (2/3 - 1/3)",
                         "type": "grid",
                         "template": "2-columns-2-3-1-3",
                         "enabled": true,
@@ -1799,7 +1786,7 @@
                     },
                     {
                         "key": "_bd-grid2-34-14",
-                        "name": "2 Columns (3\/4 - 1\/4)",
+                        "name": "2 Columns (3/4 - 1/4)",
                         "type": "grid",
                         "template": "2-columns-3-4-1-4",
                         "enabled": true,
@@ -1812,7 +1799,7 @@
                     },
                     {
                         "key": "_bd-grid3-12-14-14",
-                        "name": "3 Columns (1\/2 - 1\/4 - 1\/4)",
+                        "name": "3 Columns (1/2 - 1/4 - 1/4)",
                         "type": "grid",
                         "template": "3-columns-1-2-1-4-1-4",
                         "enabled": true,
@@ -1825,7 +1812,7 @@
                     },
                     {
                         "key": "_bd-grid3-13-13-13",
-                        "name": "3 Columns (1\/3 - 1\/3 - 1\/3)",
+                        "name": "3 Columns (1/3 - 1/3 - 1/3)",
                         "type": "grid",
                         "template": "3-columns-1-3-1-3-1-3",
                         "enabled": true,
@@ -1838,7 +1825,7 @@
                     },
                     {
                         "key": "_bd-grid3-14-12-14",
-                        "name": "3 Columns (1\/4 - 1\/2 - 1\/4)",
+                        "name": "3 Columns (1/4 - 1/2 - 1/4)",
                         "type": "grid",
                         "template": "3-columns-1-4-1-2-1-4",
                         "enabled": true,
@@ -1851,7 +1838,7 @@
                     },
                     {
                         "key": "_bd-grid3-14-14-12",
-                        "name": "3 Columns (1\/4 - 1\/4- 1\/2)",
+                        "name": "3 Columns (1/4 - 1/4- 1/2)",
                         "type": "grid",
                         "template": "3-columns-1-4-1-4-1-2",
                         "enabled": true,
@@ -1864,7 +1851,7 @@
                     },
                     {
                         "key": "_bd-grid4-14-14-14-14",
-                        "name": "4 Columns (1\/4 - 1\/4 - 1\/4 - 1\/4)",
+                        "name": "4 Columns (1/4 - 1/4 - 1/4 - 1/4)",
                         "type": "grid",
                         "template": "4-columns-1-4-1-4-1-4-1-4",
                         "enabled": true,
@@ -1877,7 +1864,7 @@
                     },
                     {
                         "key": "_bd-grid5-15-15-15-15-15",
-                        "name": "5 Columns (1\/5 - 1\/5 - 1\/5 - 1\/5 - 1\/5)",
+                        "name": "5 Columns (1/5 - 1/5 - 1/5 - 1/5 - 1/5)",
                         "type": "grid",
                         "template": "5-columns-1-5-1-5-1-5-1-5-1-5",
                         "enabled": true,
@@ -1890,7 +1877,7 @@
                     },
                     {
                         "key": "_bd-grid6-16-16-16-16-16-16",
-                        "name": "6 Columns (1\/6 - 1\/6 - 1\/6 - 1\/6 - 1\/6 - 1\/6)",
+                        "name": "6 Columns (1/6 - 1/6 - 1/6 - 1/6 - 1/6 - 1/6)",
                         "type": "grid",
                         "template": "6-columns-1-6-1-6-1-6-1-6-1-6-1-6",
                         "enabled": true,
@@ -1934,355 +1921,554 @@
             ]
         },
         {
-            "key": "snippets\/footer",
+            "key": "snippets/footer",
             "name": "footer"
         },
         {
-            "key": "snippets\/header",
+            "key": "snippets/header",
             "name": "header"
         },
         {
-            "key": "snippets\/pagination",
+            "key": "snippets/pagination",
             "name": "pagination"
         },
         {
-            "key": "snippets\/svg-icons",
+            "key": "snippets/svg-icons",
             "name": "svg-icons"
         },
         {
-            "key": "navigation\/sidebar",
+            "key": "navigation/sidebar",
             "name": "sidebar"
         },
         {
-            "key": "navigation\/main",
+            "key": "navigation/main",
             "name": "main"
         },
         {
-            "key": "navigation\/footer",
+            "key": "navigation/footer",
             "name": "footer"
         },
         {
-            "key": "navigation\/main-alt",
-            "name": "main-alt"
-        },
-        {
-            "key": "navigation\/embeded-navigation",
+            "key": "navigation/embeded-navigation",
             "name": "embeded-navigation"
         },
         {
-            "key": "content-builder\/heading-1",
+            "key": "content-builder/heading-1",
             "name": "Heading 1"
         },
         {
-            "key": "content-builder\/heading-2",
+            "key": "content-builder/heading-2",
             "name": "Heading 2"
         },
         {
-            "key": "content-builder\/heading-3",
+            "key": "content-builder/heading-3",
             "name": "Heading 3"
         },
         {
-            "key": "content-builder\/heading-4",
+            "key": "content-builder/heading-4",
             "name": "Heading 4"
         },
         {
-            "key": "content-builder\/heading-5",
+            "key": "content-builder/heading-5",
             "name": "Heading 5"
         },
         {
-            "key": "content-builder\/heading-6",
+            "key": "content-builder/heading-6",
             "name": "Heading 6"
         },
         {
-            "key": "content-builder\/html-code",
+            "key": "content-builder/html-code",
             "name": "HTML Code"
         },
         {
-            "key": "content-builder\/content",
+            "key": "content-builder/content",
             "name": "Content"
         },
         {
-            "key": "content-builder\/full-width-image",
+            "key": "content-builder/full-width-image",
             "name": "Full Width Image"
         },
         {
-            "key": "content-builder\/small-image",
+            "key": "content-builder/small-image",
             "name": "Small Image"
         },
         {
-            "key": "content-builder\/form",
+            "key": "content-builder/form",
             "name": "Form"
         },
         {
-            "key": "content-builder\/2-columns-1-2-1-2",
-            "name": "2 Columns (1\/2 - 1\/2)"
+            "key": "content-builder/2-columns-1-2-1-2",
+            "name": "2 Columns (1/2 - 1/2)"
         },
         {
-            "key": "content-builder\/2-columns-1-3-2-3",
-            "name": "2 Columns (1\/3 - 2\/3)"
+            "key": "content-builder/2-columns-1-3-2-3",
+            "name": "2 Columns (1/3 - 2/3)"
         },
         {
-            "key": "content-builder\/2-columns-2-3-1-3",
-            "name": "2 Columns (2\/3 - 1\/3)"
+            "key": "content-builder/2-columns-2-3-1-3",
+            "name": "2 Columns (2/3 - 1/3)"
         },
         {
-            "key": "content-builder\/2-columns-1-4-3-4",
-            "name": "2 Columns (1\/4 - 3\/4)"
+            "key": "content-builder/2-columns-1-4-3-4",
+            "name": "2 Columns (1/4 - 3/4)"
         },
         {
-            "key": "content-builder\/2-columns-3-4-1-4",
-            "name": "2 Columns (3\/4 - 1\/4)"
+            "key": "content-builder/2-columns-3-4-1-4",
+            "name": "2 Columns (3/4 - 1/4)"
         },
         {
-            "key": "content-builder\/3-columns-1-3-1-3-1-3",
-            "name": "3 Columns (1\/3 - 1\/3 - 1\/3)"
+            "key": "content-builder/3-columns-1-3-1-3-1-3",
+            "name": "3 Columns (1/3 - 1/3 - 1/3)"
         },
         {
-            "key": "content-builder\/3-columns-1-2-1-4-1-4",
-            "name": "3 Columns (1\/2 - 1\/4 - 1\/4)"
+            "key": "content-builder/3-columns-1-2-1-4-1-4",
+            "name": "3 Columns (1/2 - 1/4 - 1/4)"
         },
         {
-            "key": "content-builder\/3-columns-1-4-1-2-1-4",
-            "name": "3 Columns (1\/4 - 1\/2 - 1\/4)"
+            "key": "content-builder/3-columns-1-4-1-2-1-4",
+            "name": "3 Columns (1/4 - 1/2 - 1/4)"
         },
         {
-            "key": "content-builder\/3-columns-1-4-1-4-1-2",
-            "name": "3 Columns (1\/4 - 1\/4- 1\/2)"
+            "key": "content-builder/3-columns-1-4-1-4-1-2",
+            "name": "3 Columns (1/4 - 1/4- 1/2)"
         },
         {
-            "key": "content-builder\/4-columns-1-4-1-4-1-4-1-4",
-            "name": "4 Columns (1\/4 - 1\/4 - 1\/4 - 1\/4)"
+            "key": "content-builder/4-columns-1-4-1-4-1-4-1-4",
+            "name": "4 Columns (1/4 - 1/4 - 1/4 - 1/4)"
         },
         {
-            "key": "content-builder\/5-columns-1-5-1-5-1-5-1-5-1-5",
-            "name": "5 Columns (1\/5 - 1\/5 - 1\/5 - 1\/5 - 1\/5)"
+            "key": "content-builder/5-columns-1-5-1-5-1-5-1-5-1-5",
+            "name": "5 Columns (1/5 - 1/5 - 1/5 - 1/5 - 1/5)"
         },
         {
-            "key": "content-builder\/6-columns-1-6-1-6-1-6-1-6-1-6-1-6",
-            "name": "6 Columns (1\/6 - 1\/6 - 1\/6 - 1\/6 - 1\/6 - 1\/6)"
+            "key": "content-builder/6-columns-1-6-1-6-1-6-1-6-1-6-1-6",
+            "name": "6 Columns (1/6 - 1/6 - 1/6 - 1/6 - 1/6 - 1/6)"
         },
         {
-            "key": "content-builder\/featured-text",
+            "key": "content-builder/featured-text",
             "name": "Featured Text"
         },
         {
-            "key": "content-builder\/featured-content-wrapper",
-            "name": "Featured Content Wrapper"
-        },
-        {
-            "key": "content-builder\/media-embed",
+            "key": "content-builder/media-embed",
             "name": "Media Embed"
         },
         {
-            "key": "content-builder\/iframe-embed",
+            "key": "content-builder/iframe-embed",
             "name": "Iframe Embed"
         },
         {
-            "key": "content-builder\/spacer",
+            "key": "content-builder/spacer",
             "name": "Spacer"
         },
         {
-            "key": "content-builder\/content-grid",
+            "key": "content-builder/content-grid",
             "name": "Content Grid"
         },
         {
-            "key": "content-builder\/2-columns-1-2-1-2-bottom-align",
-            "name": "2 Columns (1\/2 - 1\/2) Bottom Align"
+            "key": "content-builder/2-columns-1-2-1-2-bottom-align",
+            "name": "2 Columns (1/2 - 1/2) Bottom Align"
         },
         {
-            "key": "content-builder\/2-columns-1-2-1-2-center-align",
-            "name": "2 Columns (1\/2 - 1\/2) Center Align"
+            "key": "content-builder/2-columns-1-2-1-2-center-align",
+            "name": "2 Columns (1/2 - 1/2) Center Align"
         },
         {
-            "key": "content-builder\/image-grid",
+            "key": "content-builder/image-grid",
             "name": "Image Grid"
         },
         {
-            "key": "content-builder\/image-grid-with-content",
+            "key": "content-builder/image-grid-with-content",
             "name": "Image Grid With Content"
         },
         {
-            "key": "content-builder\/staff",
+            "key": "content-builder/staff",
             "name": "Staff"
         },
         {
-            "key": "content-builder\/image-beside-content",
+            "key": "content-builder/image-beside-content",
             "name": "Image Beside Content"
         },
         {
-            "key": "content-builder\/image-slider",
+            "key": "content-builder/image-slider",
             "name": "Image Slider"
         },
         {
-            "key": "content-builder\/columned-feature",
+            "key": "content-builder/columned-feature",
             "name": "Columned Feature"
         },
         {
-            "key": "content-builder\/content-wrap",
+            "key": "content-builder/content-wrap",
             "name": "Content Wrap"
         },
         {
-            "key": "content-builder\/location-map",
+            "key": "content-builder/location-map",
             "name": "Location Map"
         },
         {
-            "key": "content-builder\/facebook-video",
+            "key": "content-builder/facebook-video",
             "name": "Facebook video"
         },
         {
-            "key": "content-builder\/facebook-video-slider",
+            "key": "content-builder/facebook-video-slider",
             "name": "Facebook video slider"
         },
         {
-            "key": "content-layouts\/header",
+            "key": "content-layouts/header",
             "name": "Header"
         },
         {
-            "key": "forms\/grid",
+            "key": "forms/grid",
             "name": "grid"
         },
         {
-            "key": "forms\/label-above-field",
+            "key": "forms/label-above-field",
             "name": "label-above-field"
         },
         {
-            "key": "blog\/post-detail",
+            "key": "widgets/collections/notification-bar",
+            "name": "Default",
+            "collection": "notification-bar",
+            "default": true
+        },
+        {
+            "key": "app/home",
+            "name": "home",
+            "type": ""
+        },
+        {
+            "key": "app/item",
+            "name": "item",
+            "type": ""
+        },
+        {
+            "key": "app/search-results",
+            "name": "search-results",
+            "type": ""
+        },
+        {
+            "key": "app/search",
+            "name": "search",
+            "type": ""
+        },
+        {
+            "key": "blog/post-detail",
             "name": "post-detail",
             "type": "post-detail"
         },
         {
-            "key": "blog\/category-detail",
+            "key": "blog/category-detail",
             "name": "category-detail",
             "type": "category-detail"
         },
         {
-            "key": "blog\/sidebar",
+            "key": "blog/sidebar",
             "name": "sidebar",
             "type": "blank"
         },
         {
-            "key": "blog\/post-list",
+            "key": "blog/post-list",
             "name": "post-list",
+            "type": ""
+        },
+        {
+            "key": "blog/api-category-filter",
+            "name": "api-category-filter",
+            "type": ""
+        },
+        {
+            "key": "blog/api-post-archive",
+            "name": "api-post-archive",
+            "type": ""
+        },
+        {
+            "key": "blog/api-recent-comments",
+            "name": "api-recent-comments",
+            "type": ""
+        },
+        {
+            "key": "blog/api-recent-posts-footer",
+            "name": "api-recent-posts-footer",
+            "type": ""
+        },
+        {
+            "key": "blog/api-recent-posts",
+            "name": "api-recent-posts",
+            "type": ""
+        },
+        {
+            "key": "blog/api-tag-filter",
+            "name": "api-tag-filter",
+            "type": ""
+        },
+        {
+            "key": "blog/archive",
+            "name": "archive",
+            "type": ""
+        },
+        {
+            "key": "blog/categories",
+            "name": "categories",
+            "type": ""
+        },
+        {
+            "key": "blog/category",
+            "name": "category",
+            "type": ""
+        },
+        {
+            "key": "blog/home",
+            "name": "home",
+            "type": ""
+        },
+        {
+            "key": "blog/post-list-item-simple",
+            "name": "post-list-item-simple",
+            "type": ""
+        },
+        {
+            "key": "blog/post",
+            "name": "post",
+            "type": ""
+        },
+        {
+            "key": "blog/posts",
+            "name": "posts",
             "type": "post-list"
         },
         {
-            "key": "blog\/forms\/comments",
+            "key": "blog/tag",
+            "name": "tag",
+            "type": ""
+        },
+        {
+            "key": "blog/tags",
+            "name": "tags",
+            "type": ""
+        },
+        {
+            "key": "blog/forms/comments",
             "name": "Default Template",
             "type": "form",
             "default": true,
             "formKey": "comment"
         },
         {
-            "key": "calendar\/tag-list",
+            "key": "calendar/tag-list",
             "name": "tag-list",
             "type": "tag-list"
         },
         {
-            "key": "calendar\/event-list-list-format",
+            "key": "calendar/event-list-list-format",
             "name": "event-list-list-format",
             "type": "event-list-list"
         },
         {
-            "key": "calendar\/search-results",
+            "key": "calendar/search-results",
             "name": "search-results",
             "type": "search-results"
         },
         {
-            "key": "calendar\/event-list-agenda-format",
+            "key": "calendar/event-list-agenda-format",
             "name": "event-list-agenda-format",
             "type": "event-list-agenda"
         },
         {
-            "key": "calendar\/event-detail",
+            "key": "calendar/event-detail",
             "name": "event-detail",
             "type": "event-detail"
         },
         {
-            "key": "calendar\/tag-detail",
+            "key": "calendar/tag-detail",
             "name": "tag-detail",
             "type": "tag-detail"
         },
         {
-            "key": "calendar\/search",
+            "key": "calendar/search",
             "name": "search",
             "type": "search"
         },
         {
-            "key": "calendar\/event-list-grid-format",
+            "key": "calendar/event-list-grid-format",
             "name": "event-list-grid-format",
             "type": "event-list-grid"
         },
         {
-            "key": "calendar\/calendar-home",
+            "key": "calendar/calendar-home",
             "name": "calendar-home",
             "type": "home"
         },
         {
-            "key": "gallery\/category-detail",
+            "key": "gallery/category-detail",
             "name": "category-detail",
             "type": "category-detail"
         },
         {
-            "key": "gallery\/sidebar",
+            "key": "gallery/sidebar",
             "name": "sidebar",
             "type": "blank"
         },
         {
-            "key": "gallery\/category-list",
+            "key": "gallery/category-list",
             "name": "category-list",
             "type": "category-list"
         },
         {
-            "key": "gallery\/api-category-filter",
+            "key": "gallery/api-category-filter",
             "name": "api-category-filter",
             "type": "api-category-filter"
         },
         {
-            "key": "gallery\/item-detail",
+            "key": "gallery/item-detail",
             "name": "item-detail",
             "type": "item-detail"
         },
         {
-            "key": "gallery\/categories",
+            "key": "gallery/categories",
             "name": "categories",
             "type": ""
         },
         {
-            "key": "gallery\/category",
+            "key": "gallery/category",
             "name": "category",
             "type": ""
         },
         {
-            "key": "gallery\/home",
+            "key": "gallery/home",
             "name": "home",
             "type": ""
         },
         {
-            "key": "gallery\/item",
+            "key": "gallery/item",
             "name": "item",
             "type": ""
         },
         {
-            "key": "gallery\/items",
+            "key": "gallery/items",
             "name": "items",
+            "type": ""
+        },
+        {
+            "key": "store/cart",
+            "name": "cart",
+            "type": ""
+        },
+        {
+            "key": "store/category",
+            "name": "category",
+            "type": ""
+        },
+        {
+            "key": "store/checkout-error",
+            "name": "checkout-error",
+            "type": ""
+        },
+        {
+            "key": "store/checkout-payment",
+            "name": "checkout-payment",
+            "type": ""
+        },
+        {
+            "key": "store/checkout-receipt",
+            "name": "checkout-receipt",
+            "type": ""
+        },
+        {
+            "key": "store/checkout-review",
+            "name": "checkout-review",
+            "type": ""
+        },
+        {
+            "key": "store/checkout-shipping",
+            "name": "checkout-shipping",
+            "type": ""
+        },
+        {
+            "key": "store/home",
+            "name": "home",
+            "type": ""
+        },
+        {
+            "key": "store/index",
+            "name": "index",
+            "type": ""
+        },
+        {
+            "key": "store/product",
+            "name": "product",
+            "type": ""
+        },
+        {
+            "key": "store/products",
+            "name": "products",
+            "type": ""
+        },
+        {
+            "key": "store-locations/home",
+            "name": "home",
+            "type": ""
+        },
+        {
+            "key": "store-locations/item",
+            "name": "item",
+            "type": ""
+        },
+        {
+            "key": "store-locations/search-results",
+            "name": "search-results",
+            "type": ""
+        },
+        {
+            "key": "store-locations/search",
+            "name": "search",
             "type": ""
         }
     ],
     "siteSettings": {
         "breadcrumb_active_template": "{{ item.text }}",
-        "breadcrumb_container_template": "<div class=\"breadcrumb\">{{ breadcrumb }}<\/div>",
-        "breadcrumb_custom_template": "<div class=\"Breadcrumb\">\n    {% for item in items %}\n        {% if item.isActive %}\n            {{ item.text }}\n        {% else %}\n            <a href=\"{{ item.link }}\" class=\"Breadcrumb-link\">{{ item.text }}<\/a> &gt;\n        {% endif %}\n    {% endfor %}\n<\/div>",
-        "breadcrumb_inactive_template": "<a href=\"{{ item.link }}\">{{ item.text }}<\/a>",
+        "breadcrumb_container_template": "<div class=\"breadcrumb\">{{ breadcrumb }}</div>",
+        "breadcrumb_custom_template": "<div class=\"Breadcrumb\">\n    {% for item in items %}\n        {% if item.isActive %}\n            {{ item.text }}\n        {% else %}\n            <a href=\"{{ item.link }}\" class=\"Breadcrumb-link\">{{ item.text }}</a> &gt;\n        {% endif %}\n    {% endfor %}\n</div>",
+        "breadcrumb_inactive_template": "<a href=\"{{ item.link }}\">{{ item.text }}</a>",
         "breadcrumb_separator": " &gt; ",
         "breadcrumb_template_type": "custom",
         "custom_favicon": "",
         "doctype": "HTML5",
-        "navigationImagePath": "\/images\/navigation\/",
+        "navigationImagePath": "/images/navigation/",
         "public_admin_bar_enabled": "no",
-        "robots_text": "User-agent: *\nDisallow: \/",
+        "robots_text": "User-agent: *\nDisallow: /",
         "tinymce_allow_scripts": "0",
         "tinymce_allow_unsafe_link_target_protection": "1",
-        "tinymce_block_classes": [],
+        "tinymce_block_classes": [
+            {
+                "title": "X-Large Text",
+                "class": "u-textXLarge",
+                "tag": "p,div,ol,ul,li,h1,h2,h3,h4,h5,h6"
+            },
+            {
+                "title": "H1 Size Text",
+                "class": "u-textH1",
+                "tag": "p,div,ol,ul,li,h1,h2,h3,h4,h5,h6"
+            },
+            {
+                "title": "H2 Size Text",
+                "class": "u-textH2",
+                "tag": "p,div,ol,ul,li,h1,h2,h3,h4,h5,h6"
+            },
+            {
+                "title": "H3 Size Text",
+                "class": "u-textH3",
+                "tag": "p,div,ol,ul,li,h1,h2,h3,h4,h5,h6"
+            },
+            {
+                "title": "H4 Size Text",
+                "class": "u-textH4",
+                "tag": "p,div,ol,ul,li,h1,h2,h3,h4,h5,h6"
+            },
+            {
+                "title": "Heading Centered Underline",
+                "class": "u-headingCentered",
+                "tag": "h1,h2,h3,h4,h5,h6"
+            }
+        ],
         "tinymce_css": "",
         "tinymce_file_browser": "apBrowser",
         "tinymce_font_family": [
@@ -2367,10 +2553,32 @@
         "tinymce_image_title": "0",
         "tinymce_import_stylesheets": [
             {
-                "import_file": "https:\/\/bcms-files.s3.amazonaws.com\/m9agGKxgOW-1417\/theme\/custom\/css\/main.css"
+                "import_file": "https://bcms-files.s3.amazonaws.com/m9agGKxgOW-1417/theme/custom/css/main.css"
             }
         ],
-        "tinymce_inline_classes": [],
+        "tinymce_inline_classes": [
+            {
+                "title": "X-Large Text inline",
+                "class": "u-textXLarge"
+            },
+            {
+                "title": "H1 Size Text inline",
+                "class": "u-textH1"
+            },
+            {
+                "title": "H2 Size Text inline",
+                "class": "u-textH2"
+            },
+            {
+                "title": "H3 Size Text inline",
+                "class": "u-textH3"
+            },
+            {
+                "title": "H4 Size Text inline",
+                "class": "u-textH4"
+            }
+        ],
+        "tinymce_invalid_styles": "",
         "tinymce_link_classes": [
             {
                 "title": "Button",
@@ -2399,6 +2607,7 @@
         ],
         "tinymce_paste_as_text": "0",
         "tinymce_show_contextmenu": "0",
+        "tinymce_table_allow_resize": "1",
         "tinymce_table_cell_classes": [],
         "tinymce_table_classes": [
             {
@@ -2406,7 +2615,25 @@
                 "class": "Table--themed"
             }
         ],
+        "tinymce_table_column_resizing": "preservetable",
+        "tinymce_table_default_attributes": [
+            {
+                "name": "border",
+                "val": "1"
+            }
+        ],
+        "tinymce_table_default_styles": [
+            {
+                "name": "border-collapse",
+                "val": "collapse"
+            },
+            {
+                "name": "width",
+                "val": "100%"
+            }
+        ],
         "tinymce_table_row_classes": [],
+        "tinymce_table_sizing_mode": "auto",
         "tinymce_use_background_color": "0",
         "tinymce_use_font": "0",
         "tinymce_use_font_color": "0",
@@ -2457,7 +2684,7 @@
             "app_item_not_found_custom_redirect": "",
             "app_item_not_found_handler": "redirectAppHome",
             "avatar_height": "48",
-            "avatar_image_path": "\/images\/account\/avatar\/",
+            "avatar_image_path": "/images/account/avatar/",
             "avatar_width": "48",
             "breadcrumb_text": "My Account",
             "contacts_enabled": "1",
@@ -2488,9 +2715,11 @@
             "login_ip_allow": "0",
             "login_js_files": "",
             "login_method": "username_password",
+            "login_page": "default",
+            "login_page_custom_url": "",
             "login_redirect_custom": "0",
             "login_redirect_referrer": "1",
-            "login_redirect_url": "\/account",
+            "login_redirect_url": "/account",
             "login_title": "Login",
             "myaccount_body_class": "",
             "myaccount_css_files": "",
@@ -2503,7 +2732,7 @@
             "myaccount_title": "My Account",
             "not_allowed_body_class": "",
             "not_allowed_breadcrumb": "Not Allowed",
-            "not_allowed_content": "<p>You are not allowed to access that page.<\/p>",
+            "not_allowed_content": "<p>You are not allowed to access that page.</p>",
             "not_allowed_css_files": "",
             "not_allowed_footer": "",
             "not_allowed_header": "",
@@ -2519,7 +2748,7 @@
             "password_reset_css_files": "",
             "password_reset_email_from_email": "hello@everly-theme.branchcms.com",
             "password_reset_email_from_name": "everly-theme.branchcms.com",
-            "password_reset_email_html": "<html>\r\n<head>\r\n\t<meta http-equiv=\"Content-Type\" content=\"text\/html; charset=utf-8\" \/>\r\n<\/head>\r\n<body>\r\n\t<p>Your request to reset your password has been processed. Your new password is: {#account.newPassword}<\/p>  \r\n\t<p>You can go to <a href=\"{#urls.login}\">{#urls.login}<\/a> to log in.<\/p>\r\n\t<p>Once you log in you can change your password.<\/p>\r\n<\/body>\r\n<\/html>",
+            "password_reset_email_html": "<html>\r\n<head>\r\n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\r\n</head>\r\n<body>\r\n\t<p>Your request to reset your password has been processed. Your new password is: {#account.newPassword}</p>  \r\n\t<p>You can go to <a href=\"{#urls.login}\">{#urls.login}</a> to log in.</p>\r\n\t<p>Once you log in you can change your password.</p>\r\n</body>\r\n</html>",
             "password_reset_email_subject": "Password Reset",
             "password_reset_email_text": "Your request to reset your password has been processed. Your new password is: {#account.newPassword}  \r\n\r\nYou can go to {#urls.login} to log in.\r\n\r\nOnce you log in you can change your password.",
             "password_reset_footer": "",
@@ -2578,6 +2807,185 @@
             "session_gcmaxlifetime_units": "hours",
             "time_format": "g:i A"
         },
+        "app": {
+            "account_items_body_class": "",
+            "account_items_breadcrumb": "Account Items",
+            "account_items_css_files": "",
+            "account_items_footer": "",
+            "account_items_header": "",
+            "account_items_head_content": "",
+            "account_items_inline_css": "",
+            "account_items_inline_js": "",
+            "account_items_js_files": "",
+            "account_items_title": "Account Items",
+            "additional_breadcrumb_links": "",
+            "add_item_body_class": "",
+            "add_item_breadcrumb": "Add Item",
+            "add_item_css_files": "",
+            "add_item_footer": "",
+            "add_item_header": "",
+            "add_item_head_content": "",
+            "add_item_inline_css": "",
+            "add_item_inline_js": "",
+            "add_item_js_files": "",
+            "add_item_not_logged_in_action": "404",
+            "add_item_not_logged_in_action_redirect": "",
+            "add_item_title": "Add Item",
+            "app_item_not_found_custom_redirect": "",
+            "app_item_not_found_handler": "redirectAppHome",
+            "breadcrumb_text": "Store Locator",
+            "category_body_class": "",
+            "category_breadcrumb": "{{ categoryName }}",
+            "category_css_files": "",
+            "category_footer": "",
+            "category_header": "",
+            "category_head_content": "",
+            "category_inline_css": "",
+            "category_inline_js": "",
+            "category_js_files": "",
+            "category_list_body_class": "",
+            "category_list_breadcrumb": "View by Category",
+            "category_list_css_files": "",
+            "category_list_footer": "",
+            "category_list_header": "",
+            "category_list_head_content": "",
+            "category_list_inline_css": "",
+            "category_list_inline_js": "",
+            "category_list_js_files": "",
+            "category_list_title": "View By Category",
+            "category_social_og_type": "",
+            "category_title": "{{ categoryName }}",
+            "date_format": "F j, Y",
+            "edit_item_body_class": "",
+            "edit_item_breadcrumb": "Edit Item",
+            "edit_item_css_files": "",
+            "edit_item_footer": "",
+            "edit_item_header": "",
+            "edit_item_head_content": "",
+            "edit_item_inline_css": "",
+            "edit_item_inline_js": "",
+            "edit_item_js_files": "",
+            "edit_item_partial_update": "1",
+            "edit_item_title": "Edit Item",
+            "feed_author": "",
+            "feed_category_description": "",
+            "feed_category_entry_title": "{{ title }}",
+            "feed_category_title": "Items in {{ categoryName }}",
+            "feed_comment_description": "",
+            "feed_comment_entry_title": "By {{ commentAuthor.fullName }}",
+            "feed_comment_title": "Comments",
+            "feed_copyright": "",
+            "feed_description": "",
+            "feed_email": "",
+            "feed_entry_title": "{{ title }}",
+            "feed_generator": "BranchCMS",
+            "feed_image": "",
+            "feed_item_description_source": "content",
+            "feed_language": "en-us",
+            "feed_skipDays": "",
+            "feed_skipHours": "",
+            "feed_tag_description": "",
+            "feed_tag_entry_title": "{{ title }}",
+            "feed_tag_title": "Items Tagged \"{{ tagName }}\"",
+            "feed_title": "Feed",
+            "feed_webmaster": "",
+            "home_body_class": "",
+            "home_css_files": "",
+            "home_footer": "",
+            "home_header": "",
+            "home_head_content": "",
+            "home_inline_css": "",
+            "home_inline_js": "",
+            "home_js_files": "",
+            "home_title": "Store Locator",
+            "item_body_class": "",
+            "item_breadcrumb": "{{ itemName }}",
+            "item_css_files": "",
+            "item_footer": "",
+            "item_header": "",
+            "item_head_content": "",
+            "item_inline_css": "",
+            "item_inline_js": "",
+            "item_js_files": "",
+            "item_list_body_class": "",
+            "item_list_breadcrumb": "",
+            "item_list_css_files": "",
+            "item_list_footer": "",
+            "item_list_header": "",
+            "item_list_head_content": "",
+            "item_list_inline_css": "",
+            "item_list_inline_js": "",
+            "item_list_js_files": "",
+            "item_list_title": "Locations",
+            "item_social_og_type": "",
+            "item_title": "{{ itemName }}",
+            "pagination_page_range": "10",
+            "pagination_style": "Sliding",
+            "search_body_class": "",
+            "search_breadcrumb": "Search",
+            "search_css_files": "",
+            "search_footer": "",
+            "search_get_all_ids": "0",
+            "search_header": "",
+            "search_head_content": "",
+            "search_inline_css": "",
+            "search_inline_js": "",
+            "search_js_files": "",
+            "search_results_body_class": "",
+            "search_results_breadcrumb": "Search Results",
+            "search_results_css_files": "",
+            "search_results_footer": "",
+            "search_results_header": "",
+            "search_results_head_content": "",
+            "search_results_inline_css": "",
+            "search_results_inline_js": "",
+            "search_results_js_files": "",
+            "search_results_title": "Search Results",
+            "search_title": "Search",
+            "search_wildcard_term": "0",
+            "tag_body_class": "",
+            "tag_breadcrumb": "{{ tagName }}",
+            "tag_cloud_data_max_weight": "20",
+            "tag_cloud_data_min_weight": "10",
+            "tag_cloud_html_cloud_separator": "space",
+            "tag_cloud_html_cloud_separator_tag": "",
+            "tag_cloud_html_cloud_wrapper": [
+                {
+                    "tag": "ul"
+                }
+            ],
+            "tag_cloud_html_tag_classes": "",
+            "tag_cloud_html_tag_font_size_unit": "px",
+            "tag_cloud_html_tag_max_font_size": "20",
+            "tag_cloud_html_tag_min_font_size": "10",
+            "tag_cloud_html_tag_style": "font",
+            "tag_cloud_html_tag_wrapper": [
+                {
+                    "tag": "li"
+                }
+            ],
+            "tag_cloud_order": "date",
+            "tag_css_files": "",
+            "tag_footer": "",
+            "tag_header": "",
+            "tag_head_content": "",
+            "tag_inline_css": "",
+            "tag_inline_js": "",
+            "tag_js_files": "",
+            "tag_list_body_class": "",
+            "tag_list_breadcrumb": "View by Tag",
+            "tag_list_css_files": "",
+            "tag_list_footer": "",
+            "tag_list_header": "",
+            "tag_list_head_content": "",
+            "tag_list_inline_css": "",
+            "tag_list_inline_js": "",
+            "tag_list_js_files": "",
+            "tag_list_title": "View By Tag",
+            "tag_social_og_type": "",
+            "tag_title": "{{ tagName }}",
+            "time_format": "g:i A"
+        },
         "blog": {
             "additional_breadcrumb_links": "",
             "app_item_not_found_custom_redirect": "",
@@ -2592,6 +3000,27 @@
             "archive_inline_js": "",
             "archive_js_files": "",
             "archive_title": "Blog Archive",
+            "author_body_class": "",
+            "author_breadcrumb": "{{ firstName }} {{ lastName }}",
+            "author_css_files": "",
+            "author_footer": "",
+            "author_header": "",
+            "author_head_content": "",
+            "author_inline_css": "",
+            "author_inline_js": "",
+            "author_js_files": "",
+            "author_list_body_class": "",
+            "author_list_breadcrumb": "Authors",
+            "author_list_css_files": "",
+            "author_list_footer": "",
+            "author_list_header": "",
+            "author_list_head_content": "",
+            "author_list_inline_css": "",
+            "author_list_inline_js": "",
+            "author_list_js_files": "",
+            "author_list_title": "Authors",
+            "author_social_og_type": "",
+            "author_title": "{{ firstName }} {{ lastName }}",
             "breadcrumb_text": "Blog",
             "category_body_class": "",
             "category_breadcrumb": "{{ categoryName }}",
@@ -2639,8 +3068,8 @@
             "feed_webmaster": "",
             "home_body_class": "",
             "home_css_files": "",
-            "home_footer": "<p>This is a sample blog footer that can appear at the bottom of the list of blog posts.<\/p>",
-            "home_header": "<p>This shows a sample blog. You can create as many posts as you want. Newer posts will show first.<\/p>",
+            "home_footer": "<p>This is a sample blog footer that can appear at the bottom of the list of blog posts.</p>",
+            "home_header": "<p>This shows a sample blog. You can create as many posts as you want. Newer posts will show first.</p>",
             "home_head_content": "",
             "home_inline_css": "",
             "home_inline_js": "",
@@ -2660,8 +3089,8 @@
             "post_list_body_class": "",
             "post_list_breadcrumb": "View all Posts",
             "post_list_css_files": "",
-            "post_list_footer": "<p>This is a sample blog footer that can appear at the bottom of the list of blog posts.<\/p>",
-            "post_list_header": "<h1>Our Blog<\/h1>\n<p>This shows a sample blog. You can create as many posts as you want. Newer posts will show first.<\/p>",
+            "post_list_footer": "<p>This is a sample blog footer that can appear at the bottom of the list of blog posts.</p>",
+            "post_list_header": "<h1>Our Blog</h1>\n<p>This shows a sample blog. You can create as many posts as you want. Newer posts will show first.</p>",
             "post_list_head_content": "",
             "post_list_inline_css": "",
             "post_list_inline_js": "",
@@ -2689,6 +3118,7 @@
             "search_results_js_files": "",
             "search_results_title": "Search Results",
             "search_title": "Search",
+            "search_wildcard_term": "0",
             "tag_body_class": "",
             "tag_breadcrumb": "{{ tagName }}",
             "tag_cloud_data_max_weight": "20",
@@ -2895,7 +3325,7 @@
             "list_view_js_files": "",
             "list_view_title": "Calendar of Events - {{ dateRange }}",
             "next_text": "&#62;&#62;",
-            "no_events_message": "<p>There are no events for this date range<\/p>",
+            "no_events_message": "<p>There are no events for this date range</p>",
             "pagination_page_range": "10",
             "pagination_style": "Sliding",
             "previous_text": "&#60;&#60;",
@@ -2932,6 +3362,7 @@
             "search_results_title": "Search Results",
             "search_sort": "relevance",
             "search_title": "Search",
+            "search_wildcard_term": "0",
             "tag_body_class": "",
             "tag_breadcrumb": "{{ tagName }}",
             "tag_cloud_data_max_weight": "20",
@@ -3074,6 +3505,7 @@
             "search_results_js_files": "",
             "search_results_title": "Search Results",
             "search_title": "Search",
+            "search_wildcard_term": "0",
             "tag_body_class": "",
             "tag_breadcrumb": "{{ tagName }}",
             "tag_cloud_data_max_weight": "20",
@@ -3122,13 +3554,13 @@
             "date_format": "F j, Y",
             "description_highlight": "bold",
             "description_length": "250",
-            "elasticsearch_index_name": "everly-theme_branchcms_com",
-            "enabled": "0",
+            "elasticsearch_index_name": "rivera_branchcmsthemes_com",
+            "enabled": "1",
             "force_wildcard_search": "no",
             "index_directory": "ap-search-index",
             "index_url": "0",
-            "last_manual_update": "",
-            "last_updated": "",
+            "last_manual_update": "1600187717",
+            "last_updated": "1606322508",
             "log_add_document": "no",
             "log_queries": "no",
             "num_results_per_page": "10",
@@ -3834,17 +4266,6 @@
             "category_list_title": "View By Category",
             "category_social_og_type": "product.group",
             "category_title": "Category {{ categoryName }}",
-            "checkout_billing_body_class": "",
-            "checkout_billing_breadcrumb": "Checkout - Billing",
-            "checkout_billing_css_files": "",
-            "checkout_billing_disabled": "0",
-            "checkout_billing_footer": "",
-            "checkout_billing_header": "",
-            "checkout_billing_head_content": "",
-            "checkout_billing_inline_css": "",
-            "checkout_billing_inline_js": "",
-            "checkout_billing_js_files": "",
-            "checkout_billing_title": "Billing",
             "checkout_error_body_class": "",
             "checkout_error_breadcrumb": "Checkout - Error",
             "checkout_error_css_files": "",
@@ -3855,6 +4276,17 @@
             "checkout_error_inline_js": "",
             "checkout_error_js_files": "",
             "checkout_error_title": "Error",
+            "checkout_payment_body_class": "",
+            "checkout_payment_breadcrumb": "Checkout - Billing",
+            "checkout_payment_css_files": "",
+            "checkout_payment_disabled": "0",
+            "checkout_payment_footer": "",
+            "checkout_payment_header": "",
+            "checkout_payment_head_content": "",
+            "checkout_payment_inline_css": "",
+            "checkout_payment_inline_js": "",
+            "checkout_payment_js_files": "",
+            "checkout_payment_title": "Billing",
             "checkout_receipt_body_class": "",
             "checkout_receipt_breadcrumb": "Checkout - Receipt",
             "checkout_receipt_css_files": "",
@@ -3875,17 +4307,28 @@
             "checkout_review_inline_js": "",
             "checkout_review_js_files": "",
             "checkout_review_title": "Review",
-            "checkout_shipping_body_class": "",
-            "checkout_shipping_breadcrumb": "Checkout - Shipping",
-            "checkout_shipping_css_files": "",
+            "checkout_shipping_address_body_class": "",
+            "checkout_shipping_address_breadcrumb": "Checkout - Shipping",
+            "checkout_shipping_address_css_files": "",
+            "checkout_shipping_address_footer": "",
+            "checkout_shipping_address_header": "",
+            "checkout_shipping_address_head_content": "",
+            "checkout_shipping_address_inline_css": "",
+            "checkout_shipping_address_inline_js": "",
+            "checkout_shipping_address_js_files": "",
+            "checkout_shipping_address_title": "Shipping",
             "checkout_shipping_disabled": "0",
-            "checkout_shipping_footer": "",
-            "checkout_shipping_header": "",
-            "checkout_shipping_head_content": "",
-            "checkout_shipping_inline_css": "",
-            "checkout_shipping_inline_js": "",
-            "checkout_shipping_js_files": "",
-            "checkout_shipping_title": "Shipping",
+            "checkout_shipping_method_body_class": "",
+            "checkout_shipping_method_breadcrumb": "Checkout - Shipping Method",
+            "checkout_shipping_method_css_files": "",
+            "checkout_shipping_method_footer": "",
+            "checkout_shipping_method_header": "",
+            "checkout_shipping_method_head_content": "",
+            "checkout_shipping_method_inline_css": "",
+            "checkout_shipping_method_inline_js": "",
+            "checkout_shipping_method_js_files": "",
+            "checkout_shipping_method_title": "Shipping Methods",
+            "currency": "USD",
             "date_format": "F j, Y",
             "home_body_class": "",
             "home_css_files": "",
@@ -3927,11 +4370,11 @@
             "manufacturer_list_title": "View By Manufacturer",
             "manufacturer_social_og_type": "",
             "manufacturer_title": "{{ manufacturerName }}",
-            "order_invoice_date_format": "n\/j\/Y",
-            "order_invoice_template": "<!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\"\r\n   \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\" lang=\"en\" xml:lang=\"en\">\r\n   <head>\r\n      <title>Invoice<\/title>\r\n      <meta http-equiv=\"Content-Type\" content=\"text\/html; charset=utf-8\">\r\n      <style>\r\n         body{font:12px\/16px Arial, Verdana, Helvetica, sans-serif;color:#333;background:#fff}\r\n         .container{width:650px}\r\n         th,td{text-align:left;vertical-align:top;padding:3px}\r\n         th{font-weight:700;white-space:nowrap}\r\n         .tblTop{width:100%}\r\n         .tblTop .col_2{width:25%}\r\n         .tblDateOrderNumber td,.tblDateOrderNumber th{width:50%;border-left:1px solid #000;border-bottom:1px solid #000}\r\n         .tblBillShip{width:100%;margin:20px 0}\r\n         .tblBillShip td{width:50%}\r\n         .tblBillShip td.col_2{text-align:right}\r\n         .tblBillTo,.tblShipTo{width:90%;border-top:1px solid #000;border-right:1px solid #000}\r\n         .tblBillTo{float:right}\r\n         .tblBoxes{width:100%;margin-bottom:20px}\r\n         .tblBoxes td{padding:0}\r\n         .tblBoxes .col_1{width:40%}\r\n         .tblBoxes .col_2,.tblBoxes .col_3{width:30%}\r\n         .tblShippingMethod{border-right:none}\r\n         .tblPaymentMethod td,.tblPaymentMethod th,.tblShippingMethod td,.tblShippingMethod th{border-left:1px solid #000;border-bottom:1px solid #000;padding:3px}\r\n         .tblProducts .col_1{width:10%}\r\n         .tblProducts tfoot td.footCol_1{border:none}\r\n         .tblProducts tfoot td.footCol_2{font-weight:700}\r\n         .tblProducts tfoot .order_total{font-weight:700;font-size:140%}\r\n         .tblTop .col_1,.tblProducts .col_2{width:75%}\r\n         .tblDateOrderNumber,.tblPaymentMethod,.tblShippingMethod,.tblProducts{width:100%;border-top:1px solid #000;border-right:1px solid #000}\r\n         .tblBillTo td,.tblBillTo th,.tblShipTo td,.tblShipTo th,.tblProducts th,.tblProducts td{border-left:1px solid #000;border-bottom:1px solid #000}\r\n         .tblProducts .col_3,.tblProducts .col_4,.tblProducts .col_5{width:5%}\r\n      <\/style>\r\n   <\/head>\r\n   <body>\r\n      <div class=\"container\">\r\n         <table cellspacing=\"0\" class=\"tblTop\">\r\n            <tr>\r\n               <td class=\"col_1\"><h1>{{ store.name }}<\/h1><\/td>\r\n               <td class=\"col_2\">\r\n                  <h3>Invoice <\/h3>\r\n                  <table cellspacing=\"0\" class=\"tblDateOrderNumber\">\r\n                     <tr>\r\n                        <th>Order Date<\/th><th>Order #<\/th>\r\n                     <\/tr>\r\n                     <tr>\r\n                       <td>{{ order.date }}<\/td>\r\n                       <td>{{ order.number }}<\/td>\r\n                     <\/tr>\r\n                  <\/table>\r\n               <\/td>\r\n            <\/tr>\r\n         <\/table>\r\n         <table cellspacing=\"0\" class=\"tblBillShip\">\r\n            <tr>\r\n              <td class=\"col_1\">\r\n     \t         <table cellspacing=\"0\" class=\"tblShipTo\">\r\n                    <tr><th>Ship To<\/th><\/tr>\r\n                    <tr>\r\n                        <td>\r\n                           {% if shipping.company %}{{ shipping.company }}<br \/>{% endif %}\r\n                           {{ shipping.firstName }} {{ shipping.lastName }}<br \/>\r\n                           {{ shipping.address }}\r\n                           {{ shipping.city }}, {{ shipping.state }} {{ shipping.zipCode }}<br \/>\r\n                           {{ shipping.country }}\r\n                        <\/td>\r\n                     <\/tr>\r\n                  <\/table>\r\n               <\/td>\r\n           <td class=\"col_2\">\r\n             <table cellspacing=\"0\" class=\"tblBillTo\">\r\n               <tr>\r\n                 <th>Bill To<\/th>\r\n               <\/tr>\r\n               <tr>\r\n                 <td>\r\n             \t{% if billing.company %}{{ billing.company }}<br \/>{% endif %}\r\n               \t{{ billing.firstName }} {{ billing.lastName }}<br \/>\r\n\t\t\t{{ billing.address }}\r\n\t\t\t{{ billing.city }}, {{ billing.state }} {{ billing.zipCode }}<br \/>\r\n\t\t\t{{ billing.country }}\r\n                 <\/td>\r\n               <\/tr>\r\n             <\/table>\r\n     \t  <\/td>\r\n         <\/tr>\r\n       <\/table>\r\n       <table cellspacing=\"0\" class=\"tblBoxes\">\r\n         <tr>\r\n           <td class=\"col_1\">&nbsp;<\/td>\r\n           <td class=\"col_2\">\r\n             <table cellspacing=\"0\" class=\"tblShippingMethod\">\r\n               <tr>\r\n                 <th>Ship Method<\/th>\r\n               <\/tr>\r\n               <tr>\r\n                 <td>{{ order.shipping.option }}<\/td>\r\n               <\/tr>\r\n             <\/table>\r\n           <\/td>\r\n           <td class=\"col_3\">\r\n             <table cellspacing=\"0\" class=\"tblPaymentMethod\">\r\n               <tr>\r\n                 <th>Payment Method<\/th>\r\n               <\/tr>\r\n               <tr>\r\n                 <td>\r\n                 \t{{ order.paymentMethod }}\r\n                 <\/td>\r\n               <\/tr>\r\n             <\/table>\r\n           <\/td>\r\n         <\/tr>\r\n       <\/table>\r\n       <table cellspacing=\"0\" class=\"tblProducts\">\r\n         <thead>\r\n            <tr>\r\n              <th class=\"col_1\">Item #<\/th>\r\n              <th class=\"col_2\">Item<\/th>\r\n              <th class=\"col_3\">Quantity<\/th>\r\n              <th class=\"col_4\">Unit Price<\/th>\r\n              <th class=\"col_5\">Product Total<\/th>\r\n            <\/tr>\r\n         <\/thead>\r\n         <tfoot>\r\n            <tr>\r\n               <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n     \t  <td class=\"footCol_2\">Subtotal<\/td>\r\n     \t  <td>{{ order.subtotalBeforeDiscounts }}<\/td>\r\n            <\/tr>\r\n            {% if order.coupons %}\r\n               {% for coupon in order.coupons %}\r\n                  <tr>\r\n                     <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n           \t        <td class=\"footCol_2\">{{ coupon.name }}<br \/>({{ coupon.code }})<\/td>\r\n           \t        <td>{{ coupon.savingsValue }}<\/td>\r\n                  <\/tr>\r\n               {% endfor %}\r\n               <tr>\r\n                  <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n        \t     <td class=\"footCol_2\">Subtotal<\/td>\r\n        \t     <td>{{ order.subtotal }}<\/td>\r\n               <\/tr>\r\n            {% endif %}\r\n     \t  <tr>\r\n     \t    <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n     \t\t<td class=\"footCol_2\">Shipping<\/td>\r\n     \t\t<td>{{ order.shipping.total }}<\/td>\r\n           <\/tr>\r\n     \t  <tr>\r\n     \t    <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n     \t\t<td class=\"footCol_2\">Tax<\/td>\r\n     \t\t<td>{{ order.tax.total }}<\/td>\r\n           <\/tr>\r\n     \t  <tr class=\"order_total\">\r\n     \t    <td colspan=\"3\" class=\"footCol_1\">&nbsp;<\/td>\r\n     \t\t<td class=\"footCol_2\">Total<\/td>\r\n     \t\t<td>{{ order.total }}<\/td>\r\n           <\/tr>\r\n     \t<\/tfoot>\r\n         <tbody>\r\n     \t{% for product in products %}\r\n               <tr>\r\n                 <td class=\"col_1\">{{ product.sku }}<\/td>\r\n                 <td class=\"col_2\"><strong>{{ product.productName }}<\/strong>{% for option in product.options %}<br\/><em>{{ option.label }}<\/em>:{% if option.value is iterable %}\r\n                  {{ option.value|join('<br \/>') }}\r\n               {% elseif option.file %}\r\n                  <a href=\"{{ option.file.src }}\">{{ option.value }}<\/a>\r\n               {% elseif option.image %}\r\n                     <a href=\"{{ option.image.src }}\">{{ option.value }}<\/a>\r\n                     {{ option.image.tag }}\r\n               {% else %}\r\n                  {{ option.value }}\r\n               {% endif %}{% endfor %}<\/td>\r\n                 <td class=\"col_3\">{{ product.quantityTotal.withFraction }}<\/td>\r\n                 <td class=\"col_4\">{{ product.price }}<\/td>\r\n                 <td class=\"col_5\">{{ product.totalPrice }}<\/td>\r\n               <\/tr>\r\n            {% endfor %}\r\n         <\/tbody>\r\n       <\/table>\r\n       {% if shipping.comments %}\r\n       \t<p><b>Shipping Comments:<\/b><br \/>{{ shipping.comments }}<\/p>\r\n       {% endif %}\r\n       {% if order.comments %}\r\n          <p><b>Order Comments<\/b><\/p>\r\n          {% for comment in order.comments %}\r\n             <div style=\"margin: 10px 0;\">{{ comment.createdOnDate }} - {{ comment.createdBy }}\r\n               <div style=\"margin-left: 20px; margin-top: 5px;\">{{ comment.comment }}<\/div>\r\n             <\/div>\r\n          {% endfor %}\r\n       {% endif %}\r\n     <\/div>\r\n <\/body>\r\n<\/html>",
+            "order_invoice_date_format": "n/j/Y",
+            "order_invoice_template": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\r\n   \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">\r\n   <head>\r\n      <title>Invoice</title>\r\n      <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n      <style>\r\n         body{font:12px/16px Arial, Verdana, Helvetica, sans-serif;color:#333;background:#fff}\r\n         .container{width:650px}\r\n         th,td{text-align:left;vertical-align:top;padding:3px}\r\n         th{font-weight:700;white-space:nowrap}\r\n         .tblTop{width:100%}\r\n         .tblTop .col_2{width:25%}\r\n         .tblDateOrderNumber td,.tblDateOrderNumber th{width:50%;border-left:1px solid #000;border-bottom:1px solid #000}\r\n         .tblBillShip{width:100%;margin:20px 0}\r\n         .tblBillShip td{width:50%}\r\n         .tblBillShip td.col_2{text-align:right}\r\n         .tblBillTo,.tblShipTo{width:90%;border-top:1px solid #000;border-right:1px solid #000}\r\n         .tblBillTo{float:right}\r\n         .tblBoxes{width:100%;margin-bottom:20px}\r\n         .tblBoxes td{padding:0}\r\n         .tblBoxes .col_1{width:40%}\r\n         .tblBoxes .col_2,.tblBoxes .col_3{width:30%}\r\n         .tblShippingMethod{border-right:none}\r\n         .tblPaymentMethod td,.tblPaymentMethod th,.tblShippingMethod td,.tblShippingMethod th{border-left:1px solid #000;border-bottom:1px solid #000;padding:3px}\r\n         .tblProducts .col_1{width:10%}\r\n         .tblProducts tfoot td.footCol_1{border:none}\r\n         .tblProducts tfoot td.footCol_2{font-weight:700}\r\n         .tblProducts tfoot .order_total{font-weight:700;font-size:140%}\r\n         .tblTop .col_1,.tblProducts .col_2{width:75%}\r\n         .tblDateOrderNumber,.tblPaymentMethod,.tblShippingMethod,.tblProducts{width:100%;border-top:1px solid #000;border-right:1px solid #000}\r\n         .tblBillTo td,.tblBillTo th,.tblShipTo td,.tblShipTo th,.tblProducts th,.tblProducts td{border-left:1px solid #000;border-bottom:1px solid #000}\r\n         .tblProducts .col_3,.tblProducts .col_4,.tblProducts .col_5{width:5%}\r\n      </style>\r\n   </head>\r\n   <body>\r\n      <div class=\"container\">\r\n         <table cellspacing=\"0\" class=\"tblTop\">\r\n            <tr>\r\n               <td class=\"col_1\"><h1>{{ store.name }}</h1></td>\r\n               <td class=\"col_2\">\r\n                  <h3>Invoice </h3>\r\n                  <table cellspacing=\"0\" class=\"tblDateOrderNumber\">\r\n                     <tr>\r\n                        <th>Order Date</th><th>Order #</th>\r\n                     </tr>\r\n                     <tr>\r\n                       <td>{{ order.date }}</td>\r\n                       <td>{{ order.number }}</td>\r\n                     </tr>\r\n                  </table>\r\n               </td>\r\n            </tr>\r\n         </table>\r\n         <table cellspacing=\"0\" class=\"tblBillShip\">\r\n            <tr>\r\n              <td class=\"col_1\">\r\n     \t         <table cellspacing=\"0\" class=\"tblShipTo\">\r\n                    <tr><th>Ship To</th></tr>\r\n                    <tr>\r\n                        <td>\r\n                           {% if shipping.company %}{{ shipping.company }}<br />{% endif %}\r\n                           {{ shipping.firstName }} {{ shipping.lastName }}<br />\r\n                           {{ shipping.address }}\r\n                           {{ shipping.city }}, {{ shipping.state }} {{ shipping.zipCode }}<br />\r\n                           {{ shipping.country }}\r\n                        </td>\r\n                     </tr>\r\n                  </table>\r\n               </td>\r\n           <td class=\"col_2\">\r\n             <table cellspacing=\"0\" class=\"tblBillTo\">\r\n               <tr>\r\n                 <th>Bill To</th>\r\n               </tr>\r\n               <tr>\r\n                 <td>\r\n             \t{% if billing.company %}{{ billing.company }}<br />{% endif %}\r\n               \t{{ billing.firstName }} {{ billing.lastName }}<br />\r\n\t\t\t{{ billing.address }}\r\n\t\t\t{{ billing.city }}, {{ billing.state }} {{ billing.zipCode }}<br />\r\n\t\t\t{{ billing.country }}\r\n                 </td>\r\n               </tr>\r\n             </table>\r\n     \t  </td>\r\n         </tr>\r\n       </table>\r\n       <table cellspacing=\"0\" class=\"tblBoxes\">\r\n         <tr>\r\n           <td class=\"col_1\">&nbsp;</td>\r\n           <td class=\"col_2\">\r\n             <table cellspacing=\"0\" class=\"tblShippingMethod\">\r\n               <tr>\r\n                 <th>Ship Method</th>\r\n               </tr>\r\n               <tr>\r\n                 <td>{{ order.shipping.option }}</td>\r\n               </tr>\r\n             </table>\r\n           </td>\r\n           <td class=\"col_3\">\r\n             <table cellspacing=\"0\" class=\"tblPaymentMethod\">\r\n               <tr>\r\n                 <th>Payment Method</th>\r\n               </tr>\r\n               <tr>\r\n                 <td>\r\n                 \t{{ order.paymentMethod }}\r\n                 </td>\r\n               </tr>\r\n             </table>\r\n           </td>\r\n         </tr>\r\n       </table>\r\n       <table cellspacing=\"0\" class=\"tblProducts\">\r\n         <thead>\r\n            <tr>\r\n              <th class=\"col_1\">Item #</th>\r\n              <th class=\"col_2\">Item</th>\r\n              <th class=\"col_3\">Quantity</th>\r\n              <th class=\"col_4\">Unit Price</th>\r\n              <th class=\"col_5\">Product Total</th>\r\n            </tr>\r\n         </thead>\r\n         <tfoot>\r\n            <tr>\r\n               <td colspan=\"3\" class=\"footCol_1\">&nbsp;</td>\r\n     \t  <td class=\"footCol_2\">Subtotal</td>\r\n     \t  <td>{{ order.subtotalBeforeDiscounts }}</td>\r\n            </tr>\r\n            {% if order.coupons %}\r\n               {% for coupon in order.coupons %}\r\n                  <tr>\r\n                     <td colspan=\"3\" class=\"footCol_1\">&nbsp;</td>\r\n           \t        <td class=\"footCol_2\">{{ coupon.name }}<br />({{ coupon.code }})</td>\r\n           \t        <td>{{ coupon.savingsValue }}</td>\r\n                  </tr>\r\n               {% endfor %}\r\n               <tr>\r\n                  <td colspan=\"3\" class=\"footCol_1\">&nbsp;</td>\r\n        \t     <td class=\"footCol_2\">Subtotal</td>\r\n        \t     <td>{{ order.subtotal }}</td>\r\n               </tr>\r\n            {% endif %}\r\n     \t  <tr>\r\n     \t    <td colspan=\"3\" class=\"footCol_1\">&nbsp;</td>\r\n     \t\t<td class=\"footCol_2\">Shipping</td>\r\n     \t\t<td>{{ order.shipping.total }}</td>\r\n           </tr>\r\n     \t  <tr>\r\n     \t    <td colspan=\"3\" class=\"footCol_1\">&nbsp;</td>\r\n     \t\t<td class=\"footCol_2\">Tax</td>\r\n     \t\t<td>{{ order.tax.total }}</td>\r\n           </tr>\r\n     \t  <tr class=\"order_total\">\r\n     \t    <td colspan=\"3\" class=\"footCol_1\">&nbsp;</td>\r\n     \t\t<td class=\"footCol_2\">Total</td>\r\n     \t\t<td>{{ order.total }}</td>\r\n           </tr>\r\n     \t</tfoot>\r\n         <tbody>\r\n     \t{% for product in products %}\r\n               <tr>\r\n                 <td class=\"col_1\">{{ product.sku }}</td>\r\n                 <td class=\"col_2\"><strong>{{ product.productName }}</strong>{% for option in product.options %}<br/><em>{{ option.label }}</em>:{% if option.value is iterable %}\r\n                  {{ option.value|join('<br />') }}\r\n               {% elseif option.file %}\r\n                  <a href=\"{{ option.file.src }}\">{{ option.value }}</a>\r\n               {% elseif option.image %}\r\n                     <a href=\"{{ option.image.src }}\">{{ option.value }}</a>\r\n                     {{ option.image.tag }}\r\n               {% else %}\r\n                  {{ option.value }}\r\n               {% endif %}{% endfor %}</td>\r\n                 <td class=\"col_3\">{{ product.quantityTotal.withFraction }}</td>\r\n                 <td class=\"col_4\">{{ product.price }}</td>\r\n                 <td class=\"col_5\">{{ product.totalPrice }}</td>\r\n               </tr>\r\n            {% endfor %}\r\n         </tbody>\r\n       </table>\r\n       {% if shipping.comments %}\r\n       \t<p><b>Shipping Comments:</b><br />{{ shipping.comments }}</p>\r\n       {% endif %}\r\n       {% if order.comments %}\r\n          <p><b>Order Comments</b></p>\r\n          {% for comment in order.comments %}\r\n             <div style=\"margin: 10px 0;\">{{ comment.createdOnDate }} - {{ comment.createdBy }}\r\n               <div style=\"margin-left: 20px; margin-top: 5px;\">{{ comment.comment }}</div>\r\n             </div>\r\n          {% endfor %}\r\n       {% endif %}\r\n     </div>\r\n </body>\r\n</html>",
             "order_invoice_time_format": "g:i A",
-            "order_packing_list_date_format": "n\/j\/Y",
-            "order_packing_list_template": "<!DOCTYPE html PUBLIC \"-\/\/W3C\/\/DTD XHTML 1.0 Transitional\/\/EN\"\r\n   \"http:\/\/www.w3.org\/TR\/xhtml1\/DTD\/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\" lang=\"en\" xml:lang=\"en\">\r\n<head>\r\n\t<title>Packing List<\/title>\r\n\t<meta http-equiv=\"Content-Type\" content=\"text\/html; charset=utf-8\">\r\n    <style type=\"text\/css\">\r\n        body {          font: small Arial, Verdana, Helvetica, sans-serif;\r\n          color: #333;\r\n          background: #fff;\r\n        }\r\n        .container {\r\n          width: 650px;\r\n        }\r\n        th, td {\r\n          padding: 3px;\r\n          text-align: left;\r\n          vertical-align: top;\r\n        }\r\n        th {\r\n          font-weight: bold;\r\n          white-space: nowrap;\r\n        }\r\n        .tblTop {\r\n          width: 100%;\r\n        }\r\n        .tblTop .col_1 {\r\n          width: 75%;\r\n        }\r\n        .tblTop .col_2 {\r\n          width: 25%;\r\n        }\r\n        .tblDateOrderNumber {\r\n          width: 100%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblDateOrderNumber td, .tblDateOrderNumber th {\r\n          width: 50%;\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n        }\r\n        .tblBillShip {\r\n          width: 100%;\r\n          margin: 20px 0;\r\n        }\r\n        .tblBillShip td {\r\n          width: 50%;\r\n        }\r\n        .tblBillShip td.col_2{\r\n          text-align: right;\r\n        }\r\n        .tblBillTo, .tblShipTo {\r\n          width: 90%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblBillTo {\r\n          float: right;\r\n        }\r\n        .tblBillTo td, .tblBillTo th, .tblShipTo td, .tblShipTo th {\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n        }\r\n        .tblBoxes {\r\n          width: 100%;\r\n          margin-bottom: 20px;\r\n        }\r\n        .tblBoxes td {\r\n          padding: 0;\r\n        }\r\n        .tblBoxes .col_1 {\r\n          width: 40%;\r\n        }\r\n        .tblBoxes .col_2, .tblBoxes .col_3 {\r\n          width: 30%;\r\n        }\r\n        .tblPaymentMethod, .tblShippingMethod {\r\n          width: 100%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblPaymentMethod {\r\n          border-right: none;\r\n        }\r\n        .tblPaymentMethod td, .tblPaymentMethod th, .tblShippingMethod td, .tblShippingMethod th {\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n          padding: 3px;\r\n        }\r\n        .tblProducts {\r\n          width: 100%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblProducts th, .tblProducts td {\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n        }\r\n        .tblProducts .col_1 {\r\n          width: 15%;\r\n        }\r\n        .tblProducts .col_2 {\r\n          width: 80%;\r\n        }\r\n        .tblProducts .col_3 {\r\n          width: 5%;\r\n        }\r\n    <\/style>\r\n\t<\/head>\r\n\t<body>\r\n        <div class=\"container\">\r\n          <table cellspacing=\"0\" class=\"tblTop\">\r\n            <tr>\r\n              <td class=\"col_1\"><h1>{{ store.name }}<\/h1><\/td>\r\n              <td class=\"col_2\">\r\n                <h3>Packing List<\/h3>\r\n                <table cellspacing=\"0\" class=\"tblDateOrderNumber\">\r\n                  <tr>\r\n                    <th>Order Date<\/th>\r\n                    <th>Order #<\/th>\r\n                  <\/tr>\r\n                  <tr>\r\n                    <td>{{ order.date }}<\/td>\r\n                    <td>{{ order.number }}<\/td>\r\n                  <\/tr>\r\n                <\/table>\r\n              <\/td>\r\n            <\/tr>\r\n          <\/table>\r\n\r\n          <table cellspacing=\"0\" class=\"tblBillShip\">\r\n            <tr>\r\n              <td class=\"col_1\">\r\n        \t<table cellspacing=\"0\" class=\"tblShipTo\">\r\n                  <tr>\r\n                    <th>Ship To<\/th>\r\n                  <\/tr>\r\n                  <tr>\r\n                    <td>\r\n              \t\t\t{% if shipping.company %}{{ shipping.company }}<br \/>{% endif %}\r\n                  \t\t{{ shipping.firstName }} {{ shipping.lastName }}<br \/>\r\n\t\t\t\t\t\t{{ shipping.address }}\r\n\t\t\t\t\t\t{{ shipping.city }}, {{ shipping.state }} {{ shipping.zipCode }}<br \/>\r\n\t\t\t\t\t\t{{ shipping.country }}\r\n                  \t<\/td>\r\n                  <\/tr>\r\n                <\/table>\r\n              <\/td>\r\n              <td class=\"col_2\">\r\n                  <table cellspacing=\"0\" class=\"tblBillTo\">\r\n                  <tr>\r\n                    <th>Bill To<\/th>\r\n                  <\/tr>\r\n                  <tr>\r\n                  \t<td>\r\n              \t\t\t{% if billing.company %}{{ billing.company }}<br \/>{% endif %}\r\n                  \t\t{{ billing.firstName }} {{ billing.lastName }}<br \/>\r\n\t\t\t\t\t\t{{ billing.address }}\r\n\t\t\t\t\t\t{{ billing.city }}, {{ billing.state }} {{ billing.zipCode }}<br \/>\r\n\t\t\t\t\t\t{{ billing.country }}\r\n                  \t<\/td>\r\n                  <\/tr>\r\n                <\/table>\r\n        \t  <\/td>\r\n            <\/tr>\r\n          <\/table>\r\n          <table cellspacing=\"0\" class=\"tblBoxes\">\r\n            <tr>\r\n              <td class=\"col_1\">&nbsp;<\/td>\r\n              <td class=\"col_3\">\r\n                <table cellspacing=\"0\" class=\"tblShippingMethod\">\r\n                  <tr>\r\n                    <th>Ship Method<\/th>\r\n                  <\/tr>\r\n                  <tr>\r\n                    <td>{{ order.shipping.option }}<\/td>\r\n                  <\/tr>\r\n                  {% if shipment %}\r\n                    {% if shipment.carrierName %}\r\n                        <tr><td>{{ shipment.carrierName }}<\/td><\/tr>\r\n                    {% endif %}\r\n                    {% if shipment.trackingNumber %}\r\n                        <tr><td>Tracking #: {{ shipment.trackingNumber }}<\/td><\/tr>\r\n                    {% endif %}\r\n                    {% if shipment.notes %}\r\n                        <tr><td>{{ shipment.notes }}<\/td><\/tr>\r\n                    {% endif %}\r\n                  {% endif %}\r\n                <\/table>\r\n              <\/td>\r\n            <\/tr>\r\n          <\/table>\r\n          <table cellspacing=\"0\" class=\"tblProducts\">\r\n          \t<thead>\r\n                <tr>\r\n                  <th class=\"col_1\">Item #<\/th>\r\n                  <th class=\"col_2\">Item<\/th>\r\n                  <th class=\"col_3\">Quantity<\/th>\r\n                <\/tr>\r\n            <\/thead>\r\n            <tfoot><\/tfoot>\r\n            <tbody>\r\n            \t{% for product in products %}\r\n                <tr>\r\n                  <td class=\"col_1\">{{ product.sku }}<\/td>\r\n                  <td class=\"col_2\"><strong>{{ product.productName }}<\/strong>{% for option in product.options %}<br\/><em>{{ option.label }}<\/em>:{% if option.value is iterable %}\r\n                  {{ option.value|join('<br \/>') }}\r\n               {% elseif option.file %}\r\n                  <a href=\"{{ option.file.src }}\">{{ option.value }}<\/a>\r\n               {% elseif option.image %}\r\n                     <a href=\"{{ option.image.src }}\">{{ option.value }}<\/a>\r\n                     {{ option.image.tag }}\r\n               {% else %}\r\n                  {{ option.value }}\r\n               {% endif %}{% endfor %}<\/td>\r\n                  <td class=\"col_3\">{{ product.quantityTotal.withFraction }}<\/td>\r\n                <\/tr>\r\n                {% endfor %}\r\n            <\/tbody>\r\n          <\/table>\r\n        <\/div>\r\n    <\/body>\r\n<\/html>",
+            "order_packing_list_date_format": "n/j/Y",
+            "order_packing_list_template": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"\r\n   \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\">\r\n<head>\r\n\t<title>Packing List</title>\r\n\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n    <style type=\"text/css\">\r\n        body {          font: small Arial, Verdana, Helvetica, sans-serif;\r\n          color: #333;\r\n          background: #fff;\r\n        }\r\n        .container {\r\n          width: 650px;\r\n        }\r\n        th, td {\r\n          padding: 3px;\r\n          text-align: left;\r\n          vertical-align: top;\r\n        }\r\n        th {\r\n          font-weight: bold;\r\n          white-space: nowrap;\r\n        }\r\n        .tblTop {\r\n          width: 100%;\r\n        }\r\n        .tblTop .col_1 {\r\n          width: 75%;\r\n        }\r\n        .tblTop .col_2 {\r\n          width: 25%;\r\n        }\r\n        .tblDateOrderNumber {\r\n          width: 100%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblDateOrderNumber td, .tblDateOrderNumber th {\r\n          width: 50%;\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n        }\r\n        .tblBillShip {\r\n          width: 100%;\r\n          margin: 20px 0;\r\n        }\r\n        .tblBillShip td {\r\n          width: 50%;\r\n        }\r\n        .tblBillShip td.col_2{\r\n          text-align: right;\r\n        }\r\n        .tblBillTo, .tblShipTo {\r\n          width: 90%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblBillTo {\r\n          float: right;\r\n        }\r\n        .tblBillTo td, .tblBillTo th, .tblShipTo td, .tblShipTo th {\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n        }\r\n        .tblBoxes {\r\n          width: 100%;\r\n          margin-bottom: 20px;\r\n        }\r\n        .tblBoxes td {\r\n          padding: 0;\r\n        }\r\n        .tblBoxes .col_1 {\r\n          width: 40%;\r\n        }\r\n        .tblBoxes .col_2, .tblBoxes .col_3 {\r\n          width: 30%;\r\n        }\r\n        .tblPaymentMethod, .tblShippingMethod {\r\n          width: 100%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblPaymentMethod {\r\n          border-right: none;\r\n        }\r\n        .tblPaymentMethod td, .tblPaymentMethod th, .tblShippingMethod td, .tblShippingMethod th {\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n          padding: 3px;\r\n        }\r\n        .tblProducts {\r\n          width: 100%;\r\n          border-top: 1px solid #000;\r\n          border-right: 1px solid #000;\r\n        }\r\n        .tblProducts th, .tblProducts td {\r\n          border-left: 1px solid #000;\r\n          border-bottom: 1px solid #000;\r\n        }\r\n        .tblProducts .col_1 {\r\n          width: 15%;\r\n        }\r\n        .tblProducts .col_2 {\r\n          width: 80%;\r\n        }\r\n        .tblProducts .col_3 {\r\n          width: 5%;\r\n        }\r\n    </style>\r\n\t</head>\r\n\t<body>\r\n        <div class=\"container\">\r\n          <table cellspacing=\"0\" class=\"tblTop\">\r\n            <tr>\r\n              <td class=\"col_1\"><h1>{{ store.name }}</h1></td>\r\n              <td class=\"col_2\">\r\n                <h3>Packing List</h3>\r\n                <table cellspacing=\"0\" class=\"tblDateOrderNumber\">\r\n                  <tr>\r\n                    <th>Order Date</th>\r\n                    <th>Order #</th>\r\n                  </tr>\r\n                  <tr>\r\n                    <td>{{ order.date }}</td>\r\n                    <td>{{ order.number }}</td>\r\n                  </tr>\r\n                </table>\r\n              </td>\r\n            </tr>\r\n          </table>\r\n\r\n          <table cellspacing=\"0\" class=\"tblBillShip\">\r\n            <tr>\r\n              <td class=\"col_1\">\r\n        \t<table cellspacing=\"0\" class=\"tblShipTo\">\r\n                  <tr>\r\n                    <th>Ship To</th>\r\n                  </tr>\r\n                  <tr>\r\n                    <td>\r\n              \t\t\t{% if shipping.company %}{{ shipping.company }}<br />{% endif %}\r\n                  \t\t{{ shipping.firstName }} {{ shipping.lastName }}<br />\r\n\t\t\t\t\t\t{{ shipping.address }}\r\n\t\t\t\t\t\t{{ shipping.city }}, {{ shipping.state }} {{ shipping.zipCode }}<br />\r\n\t\t\t\t\t\t{{ shipping.country }}\r\n                  \t</td>\r\n                  </tr>\r\n                </table>\r\n              </td>\r\n              <td class=\"col_2\">\r\n                  <table cellspacing=\"0\" class=\"tblBillTo\">\r\n                  <tr>\r\n                    <th>Bill To</th>\r\n                  </tr>\r\n                  <tr>\r\n                  \t<td>\r\n              \t\t\t{% if billing.company %}{{ billing.company }}<br />{% endif %}\r\n                  \t\t{{ billing.firstName }} {{ billing.lastName }}<br />\r\n\t\t\t\t\t\t{{ billing.address }}\r\n\t\t\t\t\t\t{{ billing.city }}, {{ billing.state }} {{ billing.zipCode }}<br />\r\n\t\t\t\t\t\t{{ billing.country }}\r\n                  \t</td>\r\n                  </tr>\r\n                </table>\r\n        \t  </td>\r\n            </tr>\r\n          </table>\r\n          <table cellspacing=\"0\" class=\"tblBoxes\">\r\n            <tr>\r\n              <td class=\"col_1\">&nbsp;</td>\r\n              <td class=\"col_3\">\r\n                <table cellspacing=\"0\" class=\"tblShippingMethod\">\r\n                  <tr>\r\n                    <th>Ship Method</th>\r\n                  </tr>\r\n                  <tr>\r\n                    <td>{{ order.shipping.option }}</td>\r\n                  </tr>\r\n                  {% if shipment %}\r\n                    {% if shipment.carrierName %}\r\n                        <tr><td>{{ shipment.carrierName }}</td></tr>\r\n                    {% endif %}\r\n                    {% if shipment.trackingNumber %}\r\n                        <tr><td>Tracking #: {{ shipment.trackingNumber }}</td></tr>\r\n                    {% endif %}\r\n                    {% if shipment.notes %}\r\n                        <tr><td>{{ shipment.notes }}</td></tr>\r\n                    {% endif %}\r\n                  {% endif %}\r\n                </table>\r\n              </td>\r\n            </tr>\r\n          </table>\r\n          <table cellspacing=\"0\" class=\"tblProducts\">\r\n          \t<thead>\r\n                <tr>\r\n                  <th class=\"col_1\">Item #</th>\r\n                  <th class=\"col_2\">Item</th>\r\n                  <th class=\"col_3\">Quantity</th>\r\n                </tr>\r\n            </thead>\r\n            <tfoot></tfoot>\r\n            <tbody>\r\n            \t{% for product in products %}\r\n                <tr>\r\n                  <td class=\"col_1\">{{ product.sku }}</td>\r\n                  <td class=\"col_2\"><strong>{{ product.productName }}</strong>{% for option in product.options %}<br/><em>{{ option.label }}</em>:{% if option.value is iterable %}\r\n                  {{ option.value|join('<br />') }}\r\n               {% elseif option.file %}\r\n                  <a href=\"{{ option.file.src }}\">{{ option.value }}</a>\r\n               {% elseif option.image %}\r\n                     <a href=\"{{ option.image.src }}\">{{ option.value }}</a>\r\n                     {{ option.image.tag }}\r\n               {% else %}\r\n                  {{ option.value }}\r\n               {% endif %}{% endfor %}</td>\r\n                  <td class=\"col_3\">{{ product.quantityTotal.withFraction }}</td>\r\n                </tr>\r\n                {% endfor %}\r\n            </tbody>\r\n          </table>\r\n        </div>\r\n    </body>\r\n</html>",
             "order_packing_list_time_format": "g:i A",
             "pagination_page_range": "10",
             "pagination_style": "Sliding",
@@ -3945,6 +4388,18 @@
             "password_reset_inline_js": "",
             "password_reset_js_files": "",
             "password_reset_title": "Password Reset",
+            "pay_cc_fee": "",
+            "pay_cc_fee_name": "Processing fee",
+            "pay_cc_fee_type": "flat",
+            "pay_cc_has_fee": "0",
+            "pay_cc_label": "Credit Card",
+            "pay_later_enabled": "no",
+            "pay_later_fee": "",
+            "pay_later_fee_name": "Pay later fee",
+            "pay_later_fee_type": "flat",
+            "pay_later_has_fee": "0",
+            "pay_later_label": "Pay Later",
+            "pay_later_products": "all",
             "product_body_class": "",
             "product_breadcrumb": "{{ productName }}",
             "product_css_files": "",
@@ -3964,7 +4419,7 @@
             "product_list_inline_js": "",
             "product_list_js_files": "",
             "product_list_title": "Products",
-            "product_option_file_upload_path": "\/store\/customer-uploads",
+            "product_option_file_upload_path": "/store/customer-uploads",
             "product_social_og_type": "product.item",
             "product_title": "{{ productName }}",
             "register_body_class": "",
@@ -3998,6 +4453,7 @@
             "search_results_js_files": "",
             "search_results_title": "Search Results",
             "search_title": "Search",
+            "search_wildcard_term": "0",
             "tag_body_class": "",
             "tag_breadcrumb": "{{ tagName }}",
             "tag_cloud_data_max_weight": "20",
@@ -4040,6 +4496,185 @@
             "tag_social_og_type": "",
             "tag_title": "Tag - {{ tagName }}",
             "time_format": "g:i A"
+        },
+        "store-locations": {
+            "account_items_body_class": "",
+            "account_items_breadcrumb": "Account Items",
+            "account_items_css_files": "",
+            "account_items_footer": "",
+            "account_items_header": "",
+            "account_items_head_content": "",
+            "account_items_inline_css": "",
+            "account_items_inline_js": "",
+            "account_items_js_files": "",
+            "account_items_title": "Account Items",
+            "additional_breadcrumb_links": "",
+            "add_item_body_class": "",
+            "add_item_breadcrumb": "Add Item",
+            "add_item_css_files": "",
+            "add_item_footer": "",
+            "add_item_header": "",
+            "add_item_head_content": "",
+            "add_item_inline_css": "",
+            "add_item_inline_js": "",
+            "add_item_js_files": "",
+            "add_item_not_logged_in_action": "404",
+            "add_item_not_logged_in_action_redirect": "",
+            "add_item_title": "Add Item",
+            "app_item_not_found_custom_redirect": "",
+            "app_item_not_found_handler": "redirectAppHome",
+            "breadcrumb_text": "Store Locator",
+            "category_body_class": "",
+            "category_breadcrumb": "{{ categoryName }}",
+            "category_css_files": "",
+            "category_footer": "",
+            "category_header": "",
+            "category_head_content": "",
+            "category_inline_css": "",
+            "category_inline_js": "",
+            "category_js_files": "",
+            "category_list_body_class": "",
+            "category_list_breadcrumb": "View by Category",
+            "category_list_css_files": "",
+            "category_list_footer": "",
+            "category_list_header": "",
+            "category_list_head_content": "",
+            "category_list_inline_css": "",
+            "category_list_inline_js": "",
+            "category_list_js_files": "",
+            "category_list_title": "View By Category",
+            "category_social_og_type": "",
+            "category_title": "{{ categoryName }}",
+            "date_format": "F j, Y",
+            "edit_item_body_class": "",
+            "edit_item_breadcrumb": "Edit Item",
+            "edit_item_css_files": "",
+            "edit_item_footer": "",
+            "edit_item_header": "",
+            "edit_item_head_content": "",
+            "edit_item_inline_css": "",
+            "edit_item_inline_js": "",
+            "edit_item_js_files": "",
+            "edit_item_partial_update": "1",
+            "edit_item_title": "Edit Item",
+            "feed_author": "",
+            "feed_category_description": "",
+            "feed_category_entry_title": "{{ title }}",
+            "feed_category_title": "Items in {{ categoryName }}",
+            "feed_comment_description": "",
+            "feed_comment_entry_title": "By {{ commentAuthor.fullName }}",
+            "feed_comment_title": "Comments",
+            "feed_copyright": "",
+            "feed_description": "",
+            "feed_email": "",
+            "feed_entry_title": "{{ title }}",
+            "feed_generator": "BranchCMS",
+            "feed_image": "",
+            "feed_item_description_source": "content",
+            "feed_language": "en-us",
+            "feed_skipDays": "",
+            "feed_skipHours": "",
+            "feed_tag_description": "",
+            "feed_tag_entry_title": "{{ title }}",
+            "feed_tag_title": "Items Tagged \"{{ tagName }}\"",
+            "feed_title": "Feed",
+            "feed_webmaster": "",
+            "home_body_class": "",
+            "home_css_files": "",
+            "home_footer": "",
+            "home_header": "",
+            "home_head_content": "",
+            "home_inline_css": "",
+            "home_inline_js": "",
+            "home_js_files": "",
+            "home_title": "Store Locator",
+            "item_body_class": "",
+            "item_breadcrumb": "{{ itemName }}",
+            "item_css_files": "",
+            "item_footer": "",
+            "item_header": "",
+            "item_head_content": "",
+            "item_inline_css": "",
+            "item_inline_js": "",
+            "item_js_files": "",
+            "item_list_body_class": "",
+            "item_list_breadcrumb": "",
+            "item_list_css_files": "",
+            "item_list_footer": "",
+            "item_list_header": "",
+            "item_list_head_content": "",
+            "item_list_inline_css": "",
+            "item_list_inline_js": "",
+            "item_list_js_files": "",
+            "item_list_title": "Locations",
+            "item_social_og_type": "",
+            "item_title": "{{ itemName }}",
+            "pagination_page_range": "10",
+            "pagination_style": "Sliding",
+            "search_body_class": "",
+            "search_breadcrumb": "Search",
+            "search_css_files": "",
+            "search_footer": "",
+            "search_get_all_ids": "0",
+            "search_header": "",
+            "search_head_content": "",
+            "search_inline_css": "",
+            "search_inline_js": "",
+            "search_js_files": "",
+            "search_results_body_class": "",
+            "search_results_breadcrumb": "Search Results",
+            "search_results_css_files": "",
+            "search_results_footer": "",
+            "search_results_header": "",
+            "search_results_head_content": "",
+            "search_results_inline_css": "",
+            "search_results_inline_js": "",
+            "search_results_js_files": "",
+            "search_results_title": "Search Results",
+            "search_title": "Search",
+            "search_wildcard_term": "0",
+            "tag_body_class": "",
+            "tag_breadcrumb": "{{ tagName }}",
+            "tag_cloud_data_max_weight": "20",
+            "tag_cloud_data_min_weight": "10",
+            "tag_cloud_html_cloud_separator": "space",
+            "tag_cloud_html_cloud_separator_tag": "",
+            "tag_cloud_html_cloud_wrapper": [
+                {
+                    "tag": "ul"
+                }
+            ],
+            "tag_cloud_html_tag_classes": "",
+            "tag_cloud_html_tag_font_size_unit": "px",
+            "tag_cloud_html_tag_max_font_size": "20",
+            "tag_cloud_html_tag_min_font_size": "10",
+            "tag_cloud_html_tag_style": "font",
+            "tag_cloud_html_tag_wrapper": [
+                {
+                    "tag": "li"
+                }
+            ],
+            "tag_cloud_order": "date",
+            "tag_css_files": "",
+            "tag_footer": "",
+            "tag_header": "",
+            "tag_head_content": "",
+            "tag_inline_css": "",
+            "tag_inline_js": "",
+            "tag_js_files": "",
+            "tag_list_body_class": "",
+            "tag_list_breadcrumb": "View by Tag",
+            "tag_list_css_files": "",
+            "tag_list_footer": "",
+            "tag_list_header": "",
+            "tag_list_head_content": "",
+            "tag_list_inline_css": "",
+            "tag_list_inline_js": "",
+            "tag_list_js_files": "",
+            "tag_list_title": "View By Tag",
+            "tag_social_og_type": "",
+            "tag_title": "{{ tagName }}",
+            "time_format": "g:i A"
         }
     },
     "contentLayouts": [
@@ -4047,6 +4682,12 @@
             "key": "header",
             "name": "Header",
             "description": "",
+            "availableOnSnippets": true,
+            "availableOnContentAreas": "specific",
+            "parseOnRequest": true,
+            "contentAreas": [
+                "header"
+            ],
             "fields": [
                 {
                     "key": "spacingAfterHeader",
@@ -4155,8 +4796,8 @@
                     "size": "",
                     "value": "",
                     "configuration": {
-                        "after": " seconds",
-                        "0": ""
+                        "0": "",
+                        "after": " seconds"
                     },
                     "values": [
                         {
@@ -4239,7 +4880,7 @@
                                     "value": "",
                                     "configuration": {
                                         "height": 720,
-                                        "path": "\/images\/header",
+                                        "path": "/images/header",
                                         "width": 2000
                                     }
                                 },
@@ -4252,7 +4893,7 @@
                                     "value": "",
                                     "configuration": {
                                         "height": 432,
-                                        "path": "\/images\/header",
+                                        "path": "/images/header",
                                         "width": 1200
                                     }
                                 },
@@ -4265,7 +4906,7 @@
                                     "value": "",
                                     "configuration": {
                                         "height": 216,
-                                        "path": "\/images\/header",
+                                        "path": "/images/header",
                                         "width": 600
                                     }
                                 }
@@ -4392,7 +5033,65 @@
         ]
     },
     "widgets": {
-        "collections": [],
+        "collections": [
+            {
+                "key": "notification-bar",
+                "name": "Notification Bar",
+                "description": "",
+                "displayNumber": 1,
+                "orderBy": "custom",
+                "orderDirection": "asc",
+                "dateFormat": "l, F j, Y",
+                "timeFormat": "g:i a",
+                "attributes": [
+                    {
+                        "key": "icon",
+                        "name": "Icon",
+                        "description": "",
+                        "type": "select",
+                        "size": "medium",
+                        "value": "",
+                        "values": [
+                            {
+                                "value": "None",
+                                "default": false
+                            },
+                            {
+                                "value": "Bullhorn",
+                                "default": false
+                            },
+                            {
+                                "value": "Info",
+                                "default": false
+                            },
+                            {
+                                "value": "Warning",
+                                "default": false
+                            }
+                        ]
+                    },
+                    {
+                        "key": "canBeClosed",
+                        "name": "Can be closed",
+                        "description": "Wether or not the visitor can close the message.",
+                        "type": "selectYesNo",
+                        "size": "medium",
+                        "value": "no",
+                        "configuration": {
+                            "optionLabel": "yesNo"
+                        }
+                    },
+                    {
+                        "key": "notificationMessage",
+                        "name": "Notification Message",
+                        "description": "",
+                        "type": "richTextEditor",
+                        "size": "medium",
+                        "value": ""
+                    }
+                ]
+            }
+        ],
         "feeds": []
     }
 }
