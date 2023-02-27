@@ -24,8 +24,8 @@ function observeSticky(el) {
      * Test to see if the required features exist before doing anything else.
      * Browsers that don't support all this either won't have the sticky element
      * (becuase it doesn't support the CSS)
-     * or it won't have the notification that the element is sticky because it
-     * doesn't support the following Javascript features.
+     * or it won't have the notification that the element is sticky
+     * because it doesn't support the following Javascript features.
      */
     if ('IntersectionObserver' in window && typeof CSS !== 'undefined' && typeof CSS.supports === 'function' && CSS.supports('position', 'sticky')) {
         const config = {
@@ -36,10 +36,11 @@ function observeSticky(el) {
         /**
          * Create an element before the sticky element to watch.
          * Because styles could be changing on the sticky element (like height) it's important
-         * for this sentinel element to be at least half the height of the sticky element.
-         * That way the sticky element won't be changed to quickly.
-         * If you're scrolling really slowly then it would be possible to trigger the
-         * sticky/unsticky event rapidly, which looks bad. This sentinel element prevents that.
+         * for this sentinel element to be at least half the height of the sticky element. That way
+         * the sticky element won't be changed to quickly.
+         * If you're scrolling really slowly then it would
+         * be possible to trigger the sticky/unsticky event rapidly, which looks bad.
+         * This sentinel element prevents that.
          */
         const sentinel = document.createElement('div');
         let style = `position: absolute; z-index: -1; width: 1px; height: ${el.clientHeight / 2}px;`;
@@ -71,9 +72,14 @@ function observeSticky(el) {
     }
 }
 
+/* =========================================================================== *\
+    JavaScript for navigation menus
+\* =========================================================================== */
+
 /**
  * Small screen navigation
  */
+
 // eslint-disable-next-line
 const smallScreenNav = {
     button: null,
@@ -95,21 +101,54 @@ const smallScreenNav = {
      * Initialization
      */
     init() {
-        const self = this;
-        this.button = $('.js-ssNavBtn');
-        this.nav = $('.js-mainNav');
+        // The max window width where the small screen navigation is shown
+        const width = 1050;
 
-        this.button.on('click', (e) => {
-            e.preventDefault();
-            self.button.toggleClass('is-active');
-            self.nav.toggle();
+        // Select elements
+        const button = document.querySelector('.js-ssNavBtn');
+        const nav = document.querySelector('.js-mainNav');
+        const navLinks = document.querySelectorAll('.js-navLink');
+        const dropdowns = document.querySelectorAll('.js-dropdown');
+
+        // Make sure that the navigation gets displayed if the window resizes.
+        // If you resize to make the small screen nav display, show and hide the nav,
+        // and then resize so that regular nav should show, the regular nav doesn't show
+        // because there are inline styles on the nav to hide it.
+        // We do this by clearing out any inline CSS styles so that the styles
+        // from the stylesheet are used.
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= width) {
+                nav.style.display = '';
+                nav.style.opacity = '';
+            }
         });
 
-        $('.js-dropdown').on('click', function onClick(e) {
-            if ($(window).width() <= self.width) {
-                e.preventDefault();
-                $(this).toggleClass('is-active').parent().toggleClass('is-active');
+        // Function to toggle showing and hiding the small screen navigation
+        function toggleNav() {
+            button.classList.toggle('is-active');
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'block';
             }
+        }
+
+        if (button !== null) {
+            // Small screen nav menu (hamburger) button click
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                toggleNav();
+            });
+        }
+
+        Array.from(dropdowns).forEach((dropdown) => {
+            dropdown.addEventListener('click', (e) => {
+                if (window.innerWidth <= width) {
+                    e.preventDefault();
+                    e.target.classList.toggle('is-active');
+                    e.target.parentElement.classList.toggle('is-active');
+                }
+            });
         });
     },
 };
@@ -120,8 +159,20 @@ const smallScreenNav = {
  *
  * Add "data-access-nav" attribute to the navigation menu.
  * Add "js-navLink" class to the navigation link tags.
- * Add "js-skip" class to any items that should be skipped.
- * Useful for items that are hidden for small screens.
+ * Add "js-skip" class to any items that should be skipped. Useful for items
+ *      that are hidden for small screens.
+ * Add "js-dropdownMenu" class to the <ul> tag that contains the sub navigation
+ * Add "js-dropdownParent" class to a <li> tag that contains a sub list for a drop down.
+ * Add "js-dropdown" to any link tags that have a drop down.
+ */
+/**
+ * Adds accessibly functionality to the main navigation.
+ * Adds support for navigating with the keyboard.
+ *
+ * Add "data-access-nav" attribute to the navigation menu.
+ * Add "js-navLink" class to the navigation link tags.
+ * Add "js-skip" class to any items that should be skipped. Useful for items
+ *      that are hidden for small screens.
  * Add "js-dropdownMenu" class to the <ul> tag that contains the sub navigation
  * Add "js-dropdownParent" class to a <li> tag that contains a sub list for a drop down.
  * Add "js-dropdown" to any link tags that have a drop down.
@@ -144,8 +195,6 @@ const navAccess = {
      */
     setupMenu(menu) {
         const nav = menu.querySelectorAll('.js-navLink');
-        // const subs = menu.querySelectorAll('.js-dropdownMenu');
-        // const mainnav = menu.children;
         const self = this;
         let key;
         const next = ['ArrowDown', 'Down', 'Tab', 'Spacebar', ' '];
@@ -200,9 +249,8 @@ const navAccess = {
      */
     focus(event, el, next, jumping) {
         let focusEl = null;
-        let isFirst = false;
+        const isFirst = this.isDropdownFirst(el);
         const isLast = this.isDropdownLast(el);
-        isFirst = this.isDropdownFirst(el);
         let sibling;
         if (next) {
             if (jumping) {
@@ -216,7 +264,10 @@ const navAccess = {
                 }
                 sibling = el.nextElementSibling;
                 // If next element is a dropdown, expand it
-                if (sibling !== null && sibling.nodeName.toLowerCase() === 'ul') {
+                if (
+                    sibling !== null
+                    && sibling.nodeName.toLowerCase() === 'ul'
+                ) {
                     this.activate(el.parentNode);
                 }
                 focusEl = this.getNextLink(el); // next navLink
@@ -231,11 +282,15 @@ const navAccess = {
             focusEl = this.getParent(el);
         } else {
             sibling = el.parentNode.previousElementSibling;
-            if (sibling !== null && sibling.classList.contains('js-dropdownParent')) {
+            if (
+                sibling !== null
+                && sibling.classList.contains('js-dropdownParent')
+            ) {
                 // Link before a sibling with dropdown (skip over dropdown)
                 focusEl = this.getPrevInLevel(el);
             } else {
-                focusEl = this.getPrevLink(el); // Get the previous navLink
+                // Get the previous navLink
+                focusEl = this.getPrevLink(el);
             }
         }
         if (focusEl) {
@@ -257,6 +312,7 @@ const navAccess = {
             el.querySelector('a').setAttribute('aria-expanded', 'true');
         }
     },
+
     /**
      * Deactivates a drop down
      * @param {Element} el
@@ -267,56 +323,78 @@ const navAccess = {
         // change the aria-expanded and aria-hidden values on the <ul> tag
         parent.setAttribute('aria-expanded', 'false');
     },
+
     // Returns returns true is the first element of a dropdown list
     isDropdownFirst(el) {
-        const dropdownNavs = Array.prototype.slice.call(this.getParent(el).parentNode.querySelectorAll('.js-navLink')); // get all children links in dropdown
+        const dropdownNavs = Array.prototype.slice.call(
+            this.getParent(el).parentNode.querySelectorAll('.js-navLink'),
+        ); // get all children links in dropdown
         // if it is the first link (after the main navigation link)
         return dropdownNavs.indexOf(el) === 1;
     },
+
     // Returns true if the last element of a dropdown
     isDropdownLast(el) {
-        const dropdownNavs = Array.prototype.slice.call(this.getParent(el).parentNode.querySelectorAll('.js-navLink')); // get all children links in dropdown
-        return dropdownNavs.indexOf(el) === (dropdownNavs.length - 1); // if it is the last link
+        const dropdownNavs = Array.prototype.slice.call(
+            this.getParent(el).parentNode.querySelectorAll('.js-navLink'),
+        ); // get all children links in dropdown
+        return dropdownNavs.indexOf(el) === dropdownNavs.length - 1; // if it is the last link
     },
     // Returns the index of this link out of all other navLinks
     getLinkIndex(el) {
-        const list = Array.prototype.slice.call(document.querySelectorAll('.js-navLink'));
+        const list = Array.prototype.slice.call(
+            document.querySelectorAll('.js-navLink'),
+        );
         return list.indexOf(el);
     },
+
     // Returns the index of the parent top level navigation
     getParentIndex(el) {
         const list = Array.prototype.slice.call(el.parentNode.children);
         return list.indexOf(el);
     },
+
     // Returns the previous navLink
     getPrevLink(el) {
-        const list = Array.prototype.slice.call(document.querySelectorAll('.js-navLink'));
+        const list = Array.prototype.slice.call(
+            document.querySelectorAll('.js-navLink'),
+        );
         return list[this.getLinkIndex(el) - 1];
     },
+
     // Returns the next navLink
     getNextLink(el) {
-        const list = Array.prototype.slice.call(document.querySelectorAll('.js-navLink'));
+        const list = Array.prototype.slice.call(
+            document.querySelectorAll('.js-navLink'),
+        );
         return list[this.getLinkIndex(el) + 1];
     },
+
     // Returns the parent navigation link
     getParent(el) {
         let node = el;
         while (node !== document.body) {
-            if (node.classList.contains('js-dropdownParent') || node.parentNode.classList.contains('js-mainNav')) {
+            if (
+                node.classList.contains('js-dropdownParent')
+                || node.parentNode.classList.contains('js-mainNav')
+            ) {
                 break;
             }
             node = node.parentNode;
         }
         return this.getLink(node);
     },
+
     // Returns the direct sibling navigation link before the active one
     getPrevInLevel(el) {
         return this.getLink(el.parentNode.previousElementSibling);
     },
+
     // Returns the direct sibling navigation link after the active one
     getNextInLevel(el) {
         return this.getLink(el.parentNode.nextElementSibling);
     },
+
     /**
      * Gets the first navigation in the element
      * @param {Element} el

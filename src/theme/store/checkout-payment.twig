@@ -82,17 +82,17 @@
 
 {% inlinejs %}
     {# Assuming jQuery is already loaded on the page #}
-    $('.js-copyShipping').click(function() {
+    document.querySelector('.js-copyShipping').addEventListener('click', () => {
         if (this.checked) {
-            $('.js-paymentFirstName').val('{{ shipping.firstName }}');
-            $('.js-paymentLastName').val('{{ shipping.lastName }}');
-            $('.js-paymentAddress').val('{{ shipping.address }}');
-            $('.js-paymentCity').val('{{ shipping.city }}');
-            $('.js-paymentState').val('{{ shipping.state }}');
-            $('.js-paymentPostalCode').val('{{ shipping.zipCode }}');
-            $('.js-paymentCountry').val('{{ shipping.country }}');
-            $('.js-paymentPhone').val('{{ shipping.phone }}');
-            $('.js-paymentEmail').val('{{ shipping.email }}');
+            document.querySelector('.js-paymentFirstName').value = '{{ shipping.firstName }}';
+            document.querySelector('.js-paymentLastName').value = '{{ shipping.lastName }}';
+            document.querySelector('.js-paymentAddress').value = '{{ shipping.address }}';
+            document.querySelector('.js-paymentCity').value = '{{ shipping.city }}';
+            document.querySelector('.js-paymentState').value = '{{ shipping.state }}';
+            document.querySelector('.js-paymentPostalCode').value = '{{ shipping.zipCode }}';
+            document.querySelector('.js-paymentCountry').value = '{{ shipping.country }}';
+            document.querySelector('.js-paymentPhone').value = '{{ shipping.phone }}';
+            document.querySelector('.js-paymentEmail').value = '{{ shipping.email }}';
         }
     });
 {% endinlinejs %}
