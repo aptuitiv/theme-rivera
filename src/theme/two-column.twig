@@ -1,6 +1,7 @@
-{%  include 'snippets/header' %}
+{% include 'snippets/header' %}
+
 <main id="main">
-    {% block banner %}{{ _page.content('banner') }}{% endblock %}
+    {% block banner _page.content('banner') %}
     <div class="Container">
         {% if _page.isHome == false %}
             {{ _page.breadcrumb }}
@@ -8,12 +9,14 @@
         <div class="Content u-cf">
             <div class="Grid Grid--withGutterXlg">
                 <div class="Grid-cell u-size3of4 u-md-sizeFull u-push1of4 u-md-pushNone">
-                    <main id="main">{% block main %}{{ _page.content() }}{% endblock %}</main>
+                    <main id="main">
+                        {% block main _page.content() %}
+                    </main>
                 </div>
                 <div class="Grid-cell u-size1of4 u-md-sizeFull u-pull3of4 u-md-pullNone">
                     <aside>
                         {% block sidebar %}
-                        {{ _api.navigation.getSubNavigationByUrl.key('main').getParentItem('yes').showSubNav('yes').template('sidebar') }}
+                            {{ _api.navigation.getSubNavigationByUrl.key('main').getParentItem('yes').showSubNav('yes').template('sidebar') }}
                         {% endblock %}
                     </aside>
                 </div>
@@ -21,4 +24,5 @@
         </div>
     </div>
 </main>
+
 {% include 'snippets/footer' %}

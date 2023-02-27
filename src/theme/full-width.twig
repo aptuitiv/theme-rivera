@@ -1,10 +1,15 @@
-{%  include 'snippets/header' %}
-{% block banner %}{{ _page.content('banner') }}{% endblock %}
+{% include 'snippets/header' %}
+{% block banner _page.content('banner') %}
+
 {% if _page.isHome == false %}
     {{ _page.breadcrumb }}
 {% endif %}
+
 <div class="u-cf">
-    <main id="main">{% block main %}{{ _page.content() }}{% endblock %}</main>
+    <main id="main">
+        {% block main _page.content() %}
+    </main>
 </div>
-{{ _page.content('footer') }}
+
+{% block footer _page.content('footer') %}
 {%  include 'snippets/footer' %}
