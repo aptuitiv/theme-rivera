@@ -299,3 +299,17 @@
 .splide__track--nav > .splide__list > .splide__slide.is-active {
     border-color: var(--theme-image-slider-hover-background) !important;
 }
+
+@media (--c-bp-md) {
+
+    /* postcss-bem-linter: ignore */
+    .splide__pagination {
+        bottom: -30px !important;
+    }
+    
+    /* postcss-bem-linter: ignore */
+    .splide__pagination__page.is-active {
+        background-color: var(--theme-primary-color) !important;
+        opacity: 1;
+    }
+}
