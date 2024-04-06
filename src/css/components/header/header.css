@@ -2,130 +2,68 @@
     Header
 \* =========================================================================== */
 
-
 /* @define Header */
-
 .Header {
-    background: #fff;
-    border-bottom: 1px solid #ebeaeb;
-    display: block;
-    padding: 12px 0;
-    z-index: 1000;
-}
-
-@media (--c-bp-largeScreenNav) {
-    .Header {
-        position: sticky;
-        top: 0;
-    }
-
-    .Header.is-sticky {
-        padding: 6px 0;
-    }
-}
-
-.Header-inner {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-}
-
-@media (--c-bp-smallScreenNav) {
-    .Header {
-        padding-left: var(--g-gutter);
-        padding-right: var(--g-gutter);
-    }
-
-    .Header-inner {
-        flex-wrap: wrap;
-    }
-}
-
-@media (--c-bp-sm) {
-    .Header {
-        padding-left: var(--g-gutter-sm);
-        padding-right: var(--g-gutter-sm);
-    }
-}
-
-.Header-logoWrap {
-    align-items: center;
-    display: flex;
-    margin-bottom: 2px;
-    order: 1;
+    padding: var(--Header-padding-sm, 20px 0);
 }
 
 .Header-logoLink {
-    display: inline-block;
+    color: var(--Header-text-logo-color);
+    display: contents; /* This fixes an issue where in Firefox the link tag would collapse around and SVG logo. */
+    text-decoration: none;
+}
+
+.Header-logoLink:focus-visible {
+    color: var(--Header-text-logo-color-hover);
+    text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .Header-logoLink:hover {
+        color: var(--Header-text-logo-color-hover);
+        text-decoration: none;
+    }
 }
 
 .Header-logo {
-    display: inline-block;
-    width: 90%;
+    max-width: var(--Header-logo-width);
+    width: 100%;
 }
 
-@media (--c-bp-sm) {
-    .Header-logoWrap {
-        margin-bottom: 20px;
-        text-align: center;
-        width: 100%;
-    }
-
-    .Header-logoLink {
-        width: 100%;
-    }
-
-    .Header-logo {
-        width: 70%;
-    }
+.Header-textLogo {
+    font-size: var(--Header-text-logo-font-size-sm);
 }
 
-.Header-social {
-    margin-right: 12px;
-    order: 3;
+.Header-link {
+    line-height: 1;
+    text-decoration: none;
 }
 
-.Header-buttons {
-    order: 4;
+.Header-link:focus-visible {
+    text-decoration: none;
 }
 
-
-.Header-button {
-    display: inline-block;
-    font-weight: 500;
-    letter-spacing: 1px;
-    margin-left: 10px;
-    text-transform: uppercase;
-}
-
-.Header-button:first-child {
-    margin-left: 0;
-}
-
-@media (--c-bp-sm) {
-    .Header-buttons {
-        text-align: center;
-        width: 100%;
+@media (hover: hover) and (pointer: fine) {
+    .Header-link:hover {
+        text-decoration: none;
     }
 }
 
-.Header-skipToMain {
-    height: 1px;
-    left: -10000px;
-    overflow: hidden;
-    position: absolute;
-    top: 5px;
-    width: 1px;
-    z-index: 100;
+@media (--c-bp-md) {
+    .Header-textLogo {
+        font-size: var(--Header-text-logo-font-size);
+    }
 }
 
-.Header-skipToMain:focus {
-    background-color: #fff;
-    color: var(--theme-primary-color);
-    font-weight: bold;
-    height: auto;
-    left: 10px;
-    padding: 5px 10px;
-    text-decoration: underline;
-    width: auto;
+@media (--c-bp-lg) {
+    .Header {
+        padding: var(--Header-padding, 20px 0);
+    }
+}
+
+.Header-socialLink {
+    align-items: center;
+    aspect-ratio: 1/1;
+    display: inline-flex;
+    justify-content: center;
 }

@@ -2,63 +2,32 @@
     Footer
 \* =========================================================================== */
 
-
 /* @define Footer */
-
 .Footer {
-    background: var(--theme-footer-bg);
-    color: var(--theme-footer-color);
-    display: block;
-    font-size: var(--theme-footer-font-size);
-    letter-spacing: 1px;
-    padding: 30px var(--g-gutter);
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-    z-index: 10;
+    color: var(--Footer-color);
+    margin: var(--Footer-sm-margin, 0);
+    padding: var(--Footer-sm-padding, 0);
 }
 
-@media (--c-bp-sm) {
+.Footer-attribution {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* ------------------------------------ *\
+    Responsive
+\* ------------------------------------ */
+
+@media (--c-bp-lg) {
     .Footer {
-        padding: 1rem var(--g-gutter-sm);
+        margin: var(--Footer-margin, 0);
+        padding: var(--Footer-padding, 20px 0);
     }
-}
 
-
-.Footer-link {
-    color: #fff;
-    text-decoration: none;
-}
-
-.Footer-link:active,
-.Footer-link:focus,
-.Footer-link:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-
-.Footer-credit {
-    font-size: .9em;
-    line-height: 1;
-    margin: 10px 0;
-}
-
-.Footer-creditLink {
-    border-left: 1px solid #fff;
-    display: inline-block;
-    line-height: 1;
-    padding: 0 1rem;
-}
-
-.Footer-creditLink:first-child {
-    border-left: none;
-}
-
-@media (max-width: 750px) {
-    .Footer-creditLink {
-        border-left: none;
-        display: block;
-        line-height: 1.5;
-        padding: 0;
+    .Footer-attribution {
+        flex-direction: row;
+        gap: 10px;
+        justify-content: center;
     }
 }

@@ -1,0 +1,251 @@
+{
+    "groups": [
+        {
+            "name": "Blocks - Full Width Image",
+            "description": "These settings set the responsive sizes for the \"Full Width Image\" block.",
+            "sidebarSize": "small",
+            "fields": [
+                {
+                    "name": "blockFullWidthImageSizes",
+                    "label": "Image Sizes",
+                    "type": "repeatingGrid",
+                    "itemName": "Image size",
+                    "children": [
+                        {
+                            "name": "maxWidth",
+                            "label": "Max width",
+                            "type": "stepper",
+                            "after": "px"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Blocks - Google Ratings Bar",
+            "description": "Settings for the Google Ratings Bar",
+            "fields": [
+                {
+                    "name": "googleRatingsBarReviewsLink",
+                    "label": "URL to view reviews on Google",
+                    "type": "url",
+                    "showLinkTextField": true
+                }
+            ]
+        },
+        {
+            "name": "Footer",
+            "description": "Content for the footer that is used on all pages",
+            "fields": [
+                {
+                    "name": "footerShowNavigation",
+                    "label": "Show navigation",
+                    "type": "switch",
+                    "default": "yes"
+                },
+                {
+                    "name": "footerNavigationMenu",
+                    "label": "Which navigation menu to use in the footer",
+                    "type": "radio",
+                    "default": "main",
+                    "options": {
+                        "main": "Same as the main navigation menu",
+                        "footer": "Use the separate footer navigation menu"
+                    }
+                },
+                {
+                    "name": "footerShowPhone",
+                    "label": "Show phone number",
+                    "type": "switch",
+                    "default": "yes"
+                },
+                {
+                    "name": "footerShowEmail",
+                    "label": "Show email",
+                    "type": "switch",
+                    "default": "no"
+                },
+                {
+                    "name": "footerShowAddress",
+                    "label": "Show address",
+                    "type": "switch",
+                    "default": "yes"
+                },
+                {
+                    "name": "footerShowCredit",
+                    "label": "Show Aptuitiv credit",
+                    "type": "switch",
+                    "default": "yes"
+                }
+            ]
+        },
+        {
+            "name": "Header",
+            "description": "Content for the header that is used on all pages.",
+            "sidebarSize": "small",
+            "groups": [
+                {
+                    "name": "Image Logo",
+                    "fields": [
+                        {
+                            "name": "headerLogo",
+                            "label": "Logo",
+                            "type": "image",
+                            "path": "images",
+                            "preview": {
+                                "type": "replace",
+                                "contentSelector": "#header-logo",
+                                "template": "<div class=\"col-3-4 col-xl-1-3\" id=\"header-logo\"><a href=\"/\" title=\"return to home page\" class=\"Header-logoLink\"><img src=\"{{ url }}\" height=\"{{ imageHeight }}\" width=\"{{ imageWidth }}\" alt=\"{{ alt }}\" class=\"Header-logo\"></a></div>"
+                            }
+                        },
+                        {
+                            "name": "headerLogoWidth",
+                            "label": "Logo width",
+                            "type": "stepper",
+                            "after": "px",
+                            "default": "425",
+                            "preview": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-logo-width",
+                                "template": "{{ value }}px"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Text Logo",
+                    "description": "Alternative option to the image logo if none is available.",
+                    "fields": [
+                        {
+                            "name": "headerTextLogo",
+                            "label": "Text logo",
+                            "type": "text",
+                            "preview": {
+                                "type": "replace",
+                                "contentSelector": "#header-logo",
+                                "template": "<div class=\"col-3-4 col-xl-1-3\" id=\"header-logo\"><a href=\"/\" title=\"return to home page\" class=\"Header-logoLink\">{% if fields.headerLogo %}<img src=\"{{ fields.headerLogo.url }}\" class=\"Header-logo\">{% elseif value %}<div class=\"Header-textLogo\">{{ value }}</div>{% endif %}</a></div>"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Buttons",
+                    "fields": [
+                        {
+                            "name": "headerButtons",
+                            "label": "Buttons",
+                            "type": "repeatingGrid",
+                            "itemName": "Button",
+                            "children": [
+                                {
+                                    "name": "button",
+                                    "label": "Button",
+                                    "type": "url",
+                                    "showLinkTextField": true,
+                                    "linkTextFieldLabel": "Button text"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Information",
+                    "fields": [
+                        {
+                            "name": "headerShowSocial",
+                            "label": "Show social",
+                            "type": "switch",
+                            "default": "yes"
+                        },
+                        {
+                            "name": "headerShowPhone",
+                            "label": "Show phone",
+                            "type": "switch",
+                            "default": "yes"
+                        },
+                        {
+                            "name": "headerShowEmail",
+                            "label": "Show email",
+                            "type": "switch",
+                            "default": "no"
+                        },
+                        {
+                            "name": "headerShowButtons",
+                            "label": "Show buttons",
+                            "type": "switch",
+                            "default": "yes"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Social Icons",
+            "description": "Set the links and icons to use for your social networks in the footer of each page.",
+            "sidebarSize": "medium",
+            "fields": [
+                {
+                    "name": "social",
+                    "label": "Social Networks",
+                    "type": "repeatingGrid",
+                    "itemName": "Social Network",
+                    "children": [
+                        {
+                            "name": "icon",
+                            "label": "Icon",
+                            "type": "select",
+                            "options": {
+                                "facebook": "Facebook",
+                                "google": "Google",
+                                "instagram": "Instagram",
+                                "linkedin": "LinkedIn",
+                                "pinterest": "Pinterest",
+                                "tiktok": "TikTok",
+                                "whatsapp": "WhatsApp",
+                                "x": "X (Twitter)",
+                                "youtube": "YouTube"
+                            },
+                            "columnWidth": "1fr"
+                        },
+                        {
+                            "name": "url",
+                            "label": "URL to your page on this social network",
+                            "type": "text",
+                            "columnWidth": "2fr"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Popup on Load",
+            "description": "Options for the optional popup that shows on page load.",
+            "fields": [
+                {
+                    "name": "popupDisplay",
+                    "label": "Display the popup",
+                    "type": "switch"
+                },
+                {
+                    "name": "popupSeconds",
+                    "label": "Seconds to wait before showing the popup",
+                    "type": "stepper",
+                    "after": "seconds",
+                    "default": "5"
+                },
+                {
+                    "name": "popupCookieExpiration",
+                    "label": "Number of days to show popup again after closing",
+                    "type": "stepper",
+                    "after": "days",
+                    "default": "30"
+                },
+                {
+                    "name": "popupContent",
+                    "label": "Content",
+                    "type": "richTextEditor"
+                }
+            ]
+        }
+    ]
+}

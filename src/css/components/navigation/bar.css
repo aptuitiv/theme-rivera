@@ -1,22 +1,17 @@
 /* =========================================================================== *\
-    MAIN NAVIGATION BAR
+    Navigation Bar
 \* =========================================================================== */
 
-
-/** @define NavBar */
-
+/* @define NavBar */
 .NavBar {
-    align-items: center;
-    display: flex;
-    flex: 1 1 auto;
-    justify-content: flex-start;
-    order: 2;
-    padding-left: 20px;
+    background-color: var(--NavBar-background);
+    display: none;
+    padding: var(--NavBar-padding-sm, 0);
 }
 
-@media (--c-bp-smallScreenNav) {
+@media (--c-bp-lg) {
     .NavBar {
-        order: 5;
-        padding-left: 0;
+        display: block;
+        padding: var(--NavBar-padding, 0);
     }
 }

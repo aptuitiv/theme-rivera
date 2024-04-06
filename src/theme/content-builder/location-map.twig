@@ -1,8 +1,0 @@
-{% if heading %}<h2 class="u-textCenter u-headingCentered u-margTop5">{{ heading }}</h2>{% endif %}
-{% if address %}<div class="u-margBottom2 u-textCenter">{{ address }}</div>{% endif %}
-{% if iframeTag %}
-    <div class="FlexEmbed">
-        <div class="FlexEmbed-ratio FlexEmbed-ratio--{{ embedRatio }}"></div>
-        <iframe class="FlexEmbed-content" frameborder="0" title="{{ heading ?: "Embedded iframe" }}" allowfullscreen src="{{ iframeTag.src }}" loading="lazy"></iframe>
-    </div>
-{% endif %}

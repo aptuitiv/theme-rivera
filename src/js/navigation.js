@@ -3,111 +3,20 @@
 \* =========================================================================== */
 
 /**
- * Tests to see if the thing is a number
- *
- * @param {number} thing
- * @returns {boolean}
- */
-function isNumber(thing) {
-    return typeof thing === 'number';
-}
-
-/**
- * Watches a DOM element and adds a class to it if it's sticky or not.
- * Depends on certain browser features so this will only work in modern browsers.
- * Inspired by https://developers.google.com/web/updates/2017/09/sticky-headers
- * @param {Element} el The DOM element to mark as sticky
- */
-// eslint-disable-next-line
-function observeSticky(el) {
-    /**
-     * Test to see if the required features exist before doing anything else.
-     * Browsers that don't support all this either won't have the sticky element
-     * (becuase it doesn't support the CSS)
-     * or it won't have the notification that the element is sticky
-     * because it doesn't support the following Javascript features.
-     */
-    if ('IntersectionObserver' in window && typeof CSS !== 'undefined' && typeof CSS.supports === 'function' && CSS.supports('position', 'sticky')) {
-        const config = {
-            offset: 0,
-            lowThreshold: 0.25,
-            highThreshold: 0.75,
-        };
-        /**
-         * Create an element before the sticky element to watch.
-         * Because styles could be changing on the sticky element (like height) it's important
-         * for this sentinel element to be at least half the height of the sticky element. That way
-         * the sticky element won't be changed to quickly.
-         * If you're scrolling really slowly then it would
-         * be possible to trigger the sticky/unsticky event rapidly, which looks bad.
-         * This sentinel element prevents that.
-         */
-        const sentinel = document.createElement('div');
-        let style = `position: absolute; z-index: -1; width: 1px; height: ${el.clientHeight / 2}px;`;
-        if (isNumber(config.offset)) {
-            style += ` top: -${config.offset}px;`;
-        }
-        sentinel.style = style;
-        el.parentNode.insertBefore(sentinel, el);
-
-        // Setup the observer
-        const observer = new IntersectionObserver(((entries) => {
-            entries.forEach((entry) => {
-                // Check for stickyness by checking how much of the element is visible
-                if (entry.intersectionRatio <= config.lowThreshold) {
-                    // Less than the low threshold percentage of the
-                    // sentinel is visible so mark the element as sticky
-                    el.classList.add('is-sticky');
-                } else if (entry.intersectionRatio >= config.highThreshold) {
-                    // More than this high threshold of the sentinel is visible,
-                    // almost to the top of the element so mark it as not sticky
-                    el.classList.remove('is-sticky');
-                }
-            });
-        }), {
-            threshold: [config.lowThreshold, config.highThreshold],
-        });
-        // Observe the visibility of the sentinel
-        observer.observe(sentinel);
-    }
-}
-
-/* =========================================================================== *\
-    JavaScript for navigation menus
-\* =========================================================================== */
-
-/**
  * Small screen navigation
  */
 
 // eslint-disable-next-line
 const smallScreenNav = {
-    button: null,
-    /**
-     * Holds the navigation object
-     * @type jQuery
-     * @private
-     */
-    nav: null,
-
-    /**
-     * The max window width where the small screen navigation is shown
-     * @type number
-     * @private
-     */
-    width: 1050,
-
     /**
      * Initialization
      */
     init() {
-        // The max window width where the small screen navigation is shown
-        const width = 1050;
+        const width = 768;
 
         // Select elements
         const button = document.querySelector('.js-ssNavBtn');
-        const nav = document.querySelector('.js-mainNav');
-        const navLinks = document.querySelectorAll('.js-navLink');
+        const nav = document.querySelector('.js-navBar');
         const dropdowns = document.querySelectorAll('.js-dropdown');
 
         // Make sure that the navigation gets displayed if the window resizes.

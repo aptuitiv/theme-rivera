@@ -1,0 +1,100 @@
+        <footer class="Footer">
+            <div class="Container">
+                <div class="flex flex-col g-2 text-center">
+                    {% if _core.theme.settings.footerShowNavigation == 'yes' %}
+                        {% if _core.theme.settings.footerNavigationMenu == 'footer' %}
+                            {{ _api.navigation.get.key('footer') }}
+                        {% else %}
+                            {{ _api.navigation.get.key('main').template('footer').showSubNav('no') }}
+                        {% endif %}
+                    {% endif %}
+
+                    <div class="Footer-contact">
+                        {% if _core.theme.settings.footerShowAddress == 'yes' %}
+                            <div>
+                                {% if _core.settings.companyAddressStreet %}
+                                    {{ _core.settings.companyAddressStreet }}{{ _core.settings.companyAddressCity ? ', ' }}
+                                {% endif %}
+                                {% if _core.settings.companyAddressCity %}
+                                    {{ _core.settings.companyAddressCity }}{{ _core.settings.companyAddressState ? ', ' }}
+                                {% endif %}
+                                {% if _core.settings.companyAddressState %}
+                                    {{ _core.settings.companyAddressState }}{{ _core.settings.companyAddressPostalCode ? ', ' }}
+                                {% endif %}
+                                {% if _core.settings.companyAddressPostalCode %}
+                                    {{ _core.settings.companyAddressPostalCode }}
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                        {% if _core.theme.settings.footerShowPhone == 'yes' %}
+                            <a href="tel:{{ _core.settings.companyPhone|replace({'(': '', '}': '', '-': '', ' ': ''}) }}">{{ _core.settings.companyPhone }}</a>
+                        {% endif %}
+                        {% if _core.theme.settings.footerShowEmail == 'yes' %}
+                            <a href="mailto:{{ _core.settings.companyEmail }}" class="Footer-link">{{ _core.settings.companyEmail }}</a>
+                        {% endif %}
+
+                    </div>
+                    <div>&copy; {{ _core.date.year }} {{ _core.settings.companyName }}</div>
+                    {% if _core.theme.settings.footerShowCredit == 'yes' %}
+                        <div class="Footer-attribution">
+                            <a href="https://www.aptuitiv.com" target="_blank" class="Footer-attributeLink">Website by Aptuitiv</a>
+                            <a href="https://www.branchcms.com" target="_blank" class="Footer-attributeLink">Powered by BranchCMS</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </footer>
+
+        {# Do this before you output any inline Javascript in the footer #}
+        {% if _core.service.recaptchaV3.isUsable %}
+            {% if _page.hasJs('recaptchaV3') == false %}
+                {% do _page.registerJs('recaptchaV3') %}
+                {% inlinejs %}
+                    loadjs.ready('main', {
+                        success: function() {
+                            new ScriptLoader(["{{ _core.service.recaptchaV3.js.src }}"]);
+                        }
+                    });
+                {% endinlinejs %}
+                {{ _core.service.recaptchaV3.script.tag }}
+            {% endif %}
+            {% inlinecss %}
+                .grecaptcha-badge { visibility: hidden; }
+            {% endinlinecss %}
+        {% endif %}
+        {{ _page.js() }}
+        {{ _page.bodyEndCode() }}
+
+        {# Optional Modal #}
+        {% nevercache %}
+            {% verbatim %}
+                {% if _core.theme.settings.popupDisplay == 'yes' and _core.theme.settings.popupContent and not _page.cookies.announcementPopup %}
+                    <div class="Modal Modal-slide" id="announcement-modal" aria-hidden="true">
+                        <div class="Modal-overlay" tabindex="-1" data-micromodal-close>
+                            <div class="Modal-container" role="dialog" aria-modal="true">
+                                <div class="Modal-header">
+                                    <button class="Modal-close" data-micromodal-close></button>
+                                </div>
+                                <div class="Modal-content last-child-sb-0">
+                                    {{ _core.theme.settings.popupContent }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% inlinejs %}
+                        loadjs.ready('main', {
+                            success: function() {
+                                setTimeout(() => {
+                                    MicroModal.show('announcement-modal', {
+                                        disableFocus: true
+                                    });
+                                    setCookie('announcementPopup', "hide", {{ _core.theme.settings.popupCookieExpiration }});
+                                }, {{ _core.theme.settings.popupSeconds }}000);
+                            }
+                        });
+                    {% endinlinejs %}
+                {% endif %}
+            {% endverbatim %}
+        {% endnevercache %}
+    </body>
+</html>
