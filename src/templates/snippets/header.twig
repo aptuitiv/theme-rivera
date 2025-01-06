@@ -35,65 +35,42 @@
 </head>
 <body{{ _page.body.attributes() }}>
     {{ _page.bodyStartCode() }}
-    <a class="Header-skipToMain" href="#main">skip to main content {{ macros.iconAriaHidden("chevron-small-right") }}</a>
-    <div class="visually-hidden" aria-hidden="true">{{ source('snippets/svg-icons.twig') }}</div>
     {{ _api.widgets.collection.get('notifications') }}
-    <header class="Header" id="top">
-        <div class="Container Container--pad">
-            <div class="grid align-center justify-between">
-                <div class="col-3-4 col-1-3-lg" id="header-logo"> {# ID is used for live theme preview. #}
-                        {% if _core.theme.settings.headerLogo %}
-                            {% set _core.theme.settings.headerLogo.class = "Header-logo" %}
-                            {% do _core.theme.settings.headerLogo.resize(_core.theme.settings.headerLogoWidth + 100) %}
-                            {% do _core.theme.settings.headerLogo.alt.default(_core.settings.companyName) %}
-                            <a href="/" title="return to home page" class="Header-logoLink">{{ _core.theme.settings.headerLogo.tag }}</a>
-                        {% elseif _core.theme.settings.headerTextLogo %}
-                            <a href="/" title="return to home page" class="Header-logoLink"><span class="Header-textLogo">{{ _core.theme.settings.headerTextLogo }}</span></a>
-                        {% endif %}
-                </div>
-                <div class="col-1-4 flex justify-end hidden-lg">
-                    <button class="SmScBtn js-ssNavBtn" aria-label="Navigation menu" aria-expanded="false" aria-controls="navbar">
-                        <span class="SmScBtn-icon"></span>
-                    </button>
-                </div>
-                <div class="col-1-1 col-2-3-lg mt-2 mt-0-lg">
-                    <div class="flex flex-col align-center align-end-lg gy-1 Header-content">
-                        {% if _core.theme.settings.social|first.url and _core.theme.settings.headerShowSocial == 'yes' %}
-                            <div class="Header-socialIcons flex gx-1">
-                                {% import 'macros/macros' as macros %}
-                                {% set socialNames = {facebook: 'Facebook', instagram: 'Instagram', linkedin: 'LinkedIn', pinterest: 'Pinterest', twitter: 'Twitter', youtube: 'YouTube'} %}
-                                {% for social in _core.theme.settings.social %}
-                                    <a href="{{ social.url }}" title="Follow us on {{ attribute(socialNames, social.icon)|default(social.icon) }}" target="_blank" rel="noopenner noreferrer" class="Header-socialLink">
-                                        {{ macros.iconImg(social.icon, attribute(socialNames, social.icon)|default(social.icon), "Header-icon") }}
-                                    </a>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
-                        {% if _core.settings.companyPhone and _core.theme.settings.headerShowPhone == 'yes' %}
-                            <a href="tel:{{ _core.settings.companyPhone|replace({'(': '', ')': '', '}': '', '-': '', ' ': ''}) }}" class="Header-link">
-                                {{ _core.settings.companyPhone }}
-                            </a>
-                        {% endif %}
-                        {% if _core.settings.companyEmail and _core.theme.settings.headerShowEmail == 'yes' %}
-                            <a href="mailto:{{ _core.settings.companyEmail }}" class="Header-link">
-                                {{ _core.settings.companyEmail }}
-                            </a>
-                        {% endif %}
-                        {% if _core.theme.settings.headerButtons|first.button and _core.theme.settings.headerShowButtons == 'yes' %}
-                            <div class="flex flex-col flex-row-md g-2 mt-1">
-                                {% for button in _core.theme.settings.headerButtons %}
-                                    {% set button.button.class = "Button Header-button" %}
-                                    {{ button.button.tag }}
-                                {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
+    <header class="Header">
+        <a class="Header-skipToMain" href="#main">skip to main content {{ macros.iconAriaHidden("chevron-small-right") }}</a>
+        <div class="visually-hidden" aria-hidden="true">{{ source('snippets/svg-icons.twig') }}</div>
+        {{ _api.widgets.collection.get('notifications') }}
+        <div class="Container Header-inner">
+            <div class="Header-logoWrap">
+                {% if _core.theme.settings.headerLogo %}
+                    {% set _core.theme.settings.headerLogo.class = 'headerLogo' %}
+                    {% if _core.theme.settings.headerLogo.alt|length == 0 %}
+                        {% set _core.theme.settings.headerLogo.alt = _core.settings.companyName %}
+                    {% endif %}
+                    <a href="/" title="Go to home page" class="Header-logoLink">{{ _core.theme.settings.headerLogo.tag }}</a>
+                {% endif %}
             </div>
+            {% if _core.theme.settings.headerShowButtons == 'yes' and _core.theme.settings.headerButtons %}
+                {% apply spaceless %}
+                    <div class="Header-buttons">
+                        {% for button in _core.theme.settings.headerButtons %}
+                            <a href="{{ button.url }}" class="Button Button--outline Header-button">{{ button.text }}</a>
+                        {% endfor %}
+                    </div>
+                {% endapply %}
+            {% endif %}
+            <nav class="NavBar" role="navigation">
+                {{ _api.navigation.get.key('main') }}
+            </nav>
+             <div class="Header-social">
+                {% if _core.theme.settings.headerShowSocial == 'yes' %}
+                    {% for social in _core.theme.settings.social %}
+                        <a href="{{ social.url }}" title="Follow us on {{ social.name }}" class="Header-iconLink"> {{ macros.iconImg(social.icon, social.name, "Header-icon") }}</a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <button>Menu</button>
+
         </div>
     </header>
-    <nav class="NavBar js-navBar" id="navbar">
-        <div class="Container Container--pad">
-            {{ _api.navigation.get.key('main') }}
-        </div>
-    </nav>
+</body>

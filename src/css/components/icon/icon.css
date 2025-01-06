@@ -3,12 +3,17 @@
 \* =========================================================================== */
 
 .Icon {
+    color: var(--Header-social-color);
     display: inline-block;
     fill: currentcolor;
+    font-size: var(--Header-social-size);
+    gap: var(--Header-social-gap);
     height: 1em;
+
+/* 
     line-height: 1em;
     stroke: currentcolor;
-    stroke-width: 0;
+    stroke-width: 0; */
     vertical-align: bottom;
     width: 1em;
 }

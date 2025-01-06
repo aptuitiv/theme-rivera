@@ -3047,6 +3047,22 @@
             "description": "Styles for the header of the website.",
             "groups": [
                 {
+                    "name": "General",
+                    "fields": [
+                        {
+                            "name": "headerBackgroundColor",
+                            "label": "Background color",
+                            "type": "color",
+                            "defaultValue": "#871E0F",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--Header-backgroundColor"
+                          
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "Padding",
                     "fields": [
                         {
@@ -3198,8 +3214,7 @@
                             "type": "color",
                             "render": {
                                 "type": "css-head",
-                                "cssSelector": ".Header-socialLink",
-                                "cssProperty": "color"
+                                "cssVariable": "--Header-social-color"
                             }
                         },
                         {
@@ -3214,45 +3229,23 @@
                             }
                         },
                         {
-                            "name": "headerSocialBackground",
-                            "label": "Background",
-                            "type": "color",
-                            "render": {
-                                "type": "css-head",
-                                "cssSelector": ".Header-socialLink",
-                                "cssProperty": "background-color"
-                            }
-                        },
-                        {
-                            "name": "headerSocialBackgroundHover",
-                            "label": "Background (hover)",
-                            "type": "color",
-                            "render": {
-                                "type": "css-head",
-                                "cssSelector": ".Header-socialLink",
-                                "cssProperty": "background-color",
-                                "state": "hover"
-                            }
-                        },
-                        {
                             "name": "headerSocialSize",
                             "label": "Size",
                             "type": "size",
                             "defaultValue": "30px",
                             "render": {
                                 "type": "css-head",
-                                "cssSelector": ".Header-socialLink",
-                                "cssProperty": "height"
+                                "cssVariable": "--Header-social-size"
                             }
                         },
                         {
-                            "name": "headerSocialBorderRadius",
-                            "label": "Border radius",
-                            "type": "borderRadius",
-                            "defaultValue": "50%",
+                            "name": "headerSocialGap",
+                            "label": "Gap between icons",
+                            "type": "size",
+                            "defaultValue": "10px",
                             "render": {
                                 "type": "css-head",
-                                "cssSelector": ".Header-socialLink"
+                                "cssVariable": "--Header-social-gap"
                             }
                         },
                         {

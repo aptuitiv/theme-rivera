@@ -4,90 +4,58 @@
 
 /* @define Header */
 .Header {
-    padding: var(--Header-padding-sm, 20px 0);
-}
-
-.Header-skipToMain {
     align-items: center;
-    display: flex;
-    height: 1px;
-    justify-content: center;
-    left: -10000px;
-    overflow: hidden;
-    position: absolute;
-    top: 5px;
-    width: 1px;
-    z-index: 100;
-}
+    background-color: var(--Header-backgroundColor);
+    border-bottom: 1px solid #ebeaeb;
+    display: inline-block;
 
-.Header-skipToMain:focus {
-    background-color: var(--Header-skipMain-background, #fff);
-    color: var(--Header-skipMain-color);
-    font-weight: var(-Header-skipMain-font-weight, bold);
-    height: auto;
-    left: 10px;
-    padding: var(--Header-skipMain-padding, 5px 10px);
-    text-decoration: underline;
-    width: auto;
-}
-
-.Header-logoLink {
-    color: var(--Header-text-logo-color);
-    display: contents; /* This fixes an issue where in Firefox the link tag would collapse around and SVG logo. */
-    text-decoration: none;
-}
-
-.Header-logoLink:focus-visible {
-    color: var(--Header-text-logo-color-hover);
-    text-decoration: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .Header-logoLink:hover {
-        color: var(--Header-text-logo-color-hover);
-        text-decoration: none;
-    }
-}
-
-.Header-logo {
-    max-width: var(--Header-logo-width);
+    /* padding: 12px 0; */
+    position: sticky;
+    text-align: center;
+    top: 0;
     width: 100%;
+
+    /* z-index: 1000; */
 }
 
-.Header-textLogo {
-    font-size: var(--Header-text-logo-font-size-sm);
-}
-
-.Header-link {
-    line-height: 1;
-    text-decoration: none;
-}
-
-.Header-link:focus-visible {
-    text-decoration: none;
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .Header-link:hover {
-        text-decoration: none;
-    }
-}
-
-@media (--m-md) {
-    .Header-textLogo {
-        font-size: var(--Header-text-logo-font-size);
-    }
-}
-
-@media (--m-lg) {
+@media (--c-bp-largeScreenNav) {
     .Header {
-        padding: var(--Header-padding, 20px 0);
+        position: sticky;
+        top: 0;
+    }
+
+    .Header.is-sticky {
+        padding: 6px 0;
     }
 }
 
-.Header-socialLink {
+.Header-inner {
     align-items: center;
-    aspect-ratio: 1/1;
-    display: inline-flex;
-    justify-content: center;
+    display: inline-block;
 }
+
+@media (--c-bp-smallScreenNav) {
+    .Header {
+        padding-left: var(--g-gutter);
+        padding-right: var(--g-gutter);
+    }
+
+    .Header-inner {
+        flex-wrap: wrap;
+    }
+}
+
+@media (--c-bp-sm) {
+    .Header {
+        padding-left: var(--g-gutter-sm);
+        padding-right: var(--g-gutter-sm);
+    }
+}
+
+.Header-socialIcons {
+    color: pink;
+    margin-right: 12px;
+    order: 3;
+}
+
+

@@ -8,10 +8,12 @@
  * Base menu
  */
 
+ /* --NavBar-background */
+
+
 .MainNav {
     align-items: center;
     display: flex;
-    flex-flow: column wrap;
     font-family: var(--MainNav-font-family);
     gap: var(--MainNav-item-gap);
     justify-content: var(--MainNav-horizontal-alignment);
