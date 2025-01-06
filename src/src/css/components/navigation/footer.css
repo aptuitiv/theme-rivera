@@ -1,0 +1,46 @@
+/* =========================================================================== *\
+    Footer Navigation
+\* =========================================================================== */
+
+/* @define FooterNav */
+.FooterNav {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+.FooterNav-link {
+    color: var(--FooterNav-color);
+}
+
+@media (--m-md) {
+    .FooterNav {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .FooterNav-link {
+        line-height: 1;
+        position: relative;
+    }
+
+    .FooterNav-link::after {
+        background: var(--FooterNav-color);
+        content: '';
+        height: 25%;
+        position: absolute;
+        right: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1px;
+    }
+
+    .FooterNav-item:last-child .FooterNav-link::after {
+        display: none;
+    }
+}

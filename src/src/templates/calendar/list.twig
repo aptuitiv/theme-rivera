@@ -1,0 +1,73 @@
+{% extends 'two-column-right-sidebar' %}
+{% import 'macros/macros' as macros %}
+
+{% block banner %}
+    {% set content %}
+        <h1 class="flex flex-col align-center g-1">Calendar of Events<span class="h4 m-0">{{ startDate }}{% if dateRangeKey != 'day' %} - {{ endDate }}{% endif %}</span></h1>
+    {% endset %}
+    {% include('content-builder/banner-bar') %}
+{% endblock %}
+
+{% block main %}
+    <div class="h4 flex align-center justify-center g-1">
+        {% if previousDateUrl %}
+            <a href="{{ previousDateUrl }}" class="flex m-0" title="Go to the previous date range">{{ macros.iconImg('caret-left', 'Go to the previous month', 'm-0') }}</a>
+        {% endif %}
+        <span class="m-0">{{ startDate }}{% if dateRangeKey != 'day' %} - {{ endDate }}{% endif %}</span>
+        {% if nextDateUrl %}
+            <a href="{{ nextDateUrl }}" class="flex m-0" title="Go to the next date range">{{ macros.iconImg('caret-right', 'Go to the next month', 'm-0') }}</a>
+        {% endif %}
+    </div>
+     {{ header }}
+    {% if eventCount > 0 %}
+        {% if list.events %}
+            {% set events = list.events %}
+        {% elseif category.list.events %}
+            {% set events = category.list.events %}
+        {% elseif tag.list.events %}
+            {% set events = tag.list.events %}
+        {% endif %}
+        {% for event in events %}
+            <div class="mb-3">
+                <h2 class="h3"><a href="{{ event.url }}">{{ event.title }}</a></h2>
+                {% if event.isMultiDay %}
+                    <div class="flex align-center g-1">
+                        {{ macros.iconImg('calendar', 'Date') }}
+                        <div>{{ event.startDate }} to {{ event.endDate }}</div>
+                    </div>
+                {% else %}
+                    <div class="flex align-center g-1">
+                        {{ macros.iconImg('calendar', 'Date') }}
+                        <div>{{ event.date }}</div>
+                    </div>
+                {% endif %}
+                {% if event.time.type != 'notime' %}
+                    <div class="flex align-center g-1">
+                        {{ macros.iconImg('clock', 'Time') }}
+                        <div>
+                            {% if event.time.type == 'timed' %}
+                                {{ event.time.start }} to {{ event.time.end }}
+                            {% elseif event.time.type == 'start' %}
+                                {{ event.time.start }}
+                            {% elseif event.time.type == 'allday' %}
+                                All Day
+                            {% elseif event.time.type == 'tba' %}
+                                TBA
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                {% if event.description %}
+                    <div class="mt-1">{{ event.description }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="my-2">{{ noEventsMessage }}</div>
+    {% endif %}
+{% endblock %}
+
+{% block sidebar %}
+    {{ include('calendar/sidebar.twig') }}
+{% endblock %}

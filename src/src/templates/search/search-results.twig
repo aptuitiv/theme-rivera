@@ -1,0 +1,43 @@
+{% extends "one-column" %}
+
+{% block banner %}
+{% set content = '<h1>Search Results</h1>' %}
+{% include('content-builder/banner-bar') %}
+{% endblock %}
+
+{% block main %}
+    <div class="Container Container--pad">
+        <h1>Search Results</h1>
+        {% if totalItemCount > 0 %}
+            {# SHOW THE TOTAL NUMBER OF RESULTS #}
+            <p>{{ firstItemNumber }} - {{ lastItemNumber }} of {{ totalItemCount }}
+                {% if totalItemCount > 1 %}
+                    results
+                {% else %}
+                    result
+                {% endif %}
+                for "{{ searchTerm }}".
+            </p>
+
+            {# SHOW THE SEARCH RESULTS #}
+            {% for result in results %}
+                <p>
+                    <a href="{{ result.url }}">{{ result.title }}</a><br>
+                    {{ result.publishDate }}<br />
+                    {% if result.content %}
+                        {{ result.content }}
+                    {% endif %}
+                </p>
+            {% endfor %}
+
+            {% include 'snippets/pagination' %}
+        {% else %}
+            {# NO MATCHING RESULTS #}
+            <p>There were no results for "{{ searchTerm }}".</p>
+        {% endif %}
+
+        {# SHOW THE SEARCH FORM TO SEARCH AGAIN #}
+        <h2>Search Again</h2>
+        {{ form.content }}
+    </div>
+{% endblock %}

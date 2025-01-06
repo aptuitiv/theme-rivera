@@ -1,0 +1,11 @@
+{# Template intended for 404 errors #}
+{% extends 'narrow' %}
+
+{% block banner %}
+    {% set content = '<h1>Not Found</h1>' %}
+    {% include('content-builder/banner-bar') %}
+{% endblock %}
+
+{% block main %}
+    <div class="py-4">{{ _page.content() }}</div>
+{% endblock %}

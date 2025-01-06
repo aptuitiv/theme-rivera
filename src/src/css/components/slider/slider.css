@@ -1,0 +1,99 @@
+/* =========================================================================== *\
+    Image Slider Block
+\* =========================================================================== */
+
+/* @define Slider */
+.Slider {
+    padding: 0 50px;
+}
+
+.Slider-wrapper,
+.Slider-wrapper:focus-visible {
+    text-decoration: none;
+}
+
+.Slider-content {
+    background-color: var(--Slider-content-background);
+    color: var(--Slider-content-color);
+    font-size: var(--Slider-content-font-size);
+    font-weight: var(--Slider-content-font-weight);
+    line-height: var(--Slider-content-line-height);
+    padding: var(--Slider-content-padding, 20px);
+    text-align: center;
+    text-transform: var(--Slider-content-text-transform);
+    transition: all 250ms;
+}
+
+.Slider-wrapper:focus-visible .Slider-content {
+    background-color: var(--Slider-content-background-hover);
+    color: var(--Slider-content-color-hover);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .Slider-wrapper:hover {
+        text-decoration: none;
+    }
+
+    .Slider-wrapper:hover .Slider-content {
+        background-color: var(--Slider-content-background-hover);
+        color: var(--Slider-content-color-hover);
+    }
+}
+
+/* ------------------------------------ *\
+    Overrides
+\* ------------------------------------ */
+
+/* postcss-bem-linter: ignore */
+.Slider .splide__arrow {
+    background: var(--Slider-arrow-background);
+    border-radius: 0;
+    height: 100%;
+    opacity: 1 !important;
+    transition: all 250ms;
+    width: 50px;
+}
+
+/* postcss-bem-linter: ignore */
+.Slider .splide__arrow svg {
+    fill: var(--Slider-arrow-color);
+}
+
+/* postcss-bem-linter: ignore */
+.Slider .splide__arrow:focus-visible {
+    background: var(--Slider-arrow-background-hover);
+}
+
+/* postcss-bem-linter: ignore */
+.Slider .splide__arrow:focus-visible svg {
+    fill: var(--Slider-arrow-color-hover);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    /* postcss-bem-linter: ignore */
+    .Slider .splide__arrow:hover {
+        background: var(--Slider-arrow-background-hover);
+    }
+
+    /* postcss-bem-linter: ignore */
+    .Slider .splide__arrow:hover svg {
+        fill: var(--Slider-arrow-color-hover);
+    }
+}
+
+/* postcss-bem-linter: ignore */
+.Slider .splide__arrow--prev {
+    left: 0;
+}
+
+/* postcss-bem-linter: ignore */
+.Slider .splide__arrow--next {
+    right: 0;
+}
+
+/* Hide arrows when there is no overflow. https://splidejs.com/guides/overflow/  */
+
+/* postcss-bem-linter: ignore */
+.Slider .splide:not(.is-overflow) .splide__arrows {
+    display: none;
+}

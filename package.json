@@ -1,5 +1,5 @@
 {
-    "name": "aptuitiv-theme-rivera",
+    "name": "aptuitiv-theme-carmine",
     "version": "2.0.0",
     "description": "",
     "author": "Aptuitiv, Inc <hello@aptuitiv.com>",
@@ -36,13 +36,14 @@
         "watch": "aptuitiv-build watch"
     },
     "devDependencies": {
-        "@aptuitiv/website-build-tools": "^1.15.0"
+        "@aptuitiv/website-build-tools": "^1.14.0"
     },
     "dependencies": {
         "@splidejs/splide": "^4.1.4",
         "@splidejs/splide-extension-video": "^0.8.0",
-        "cacao-css": "^4.4.0",
+        "cacao-css": "^6.4.0",
         "just-validate": "^4.3.0",
+        "masonry-layout": "^4.2.2",
         "micromodal": "^0.4.10"
     },
     "engines": {
