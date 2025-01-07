@@ -163,3 +163,9 @@
     flex-direction: row;
     gap: 5px;
 }
+
+
+.Button--outline {
+    background: transparent;
+    border:2px solid rgb(79 66 182);
+}

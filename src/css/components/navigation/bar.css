@@ -6,24 +6,31 @@
 .NavBar {
     --navbar-offset: 100px;
 
+    align-items: center;
     background-color: var(--NavBar-background);
     display: none;
-    padding: var(--NavBar-padding-sm, 0);
+    display: flex;
+    justify-content: flex-start;
+
+    /* flex: 1 1 auto; */
+    order: 2;
+    padding-left: 20px;
 }
 
-@media (--m-lg-below) {
+@media (width < 1050px) {
     .NavBar {
-        height: calc(100vh - var(--navbar-offset));
+        /* height: calc(100vh - var(--navbar-offset)); */
         left: 0;
         overflow-y: auto;
         position: fixed;
         top: var(--navbar-offset);
-        width: 100%;
+
+        /* width: 100%; */
         z-index: 1000;
     }
 
     .NavBar[data-open='yes'] {
-        display: block;
+        display: block; /* Show when the 'data-open' attribute is set to 'yes' */
     }
 }
 

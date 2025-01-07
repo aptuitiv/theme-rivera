@@ -50,26 +50,21 @@
                     <a href="/" title="Go to home page" class="Header-logoLink">{{ _core.theme.settings.headerLogo.tag }}</a>
                 {% endif %}
             </div>
-            {% if _core.theme.settings.headerShowButtons == 'yes' and _core.theme.settings.headerButtons %}
-                {% apply spaceless %}
-                    <div class="Header-buttons">
-                        {% for button in _core.theme.settings.headerButtons %}
-                            <a href="{{ button.url }}" class="Button Button--outline Header-button">{{ button.text }}</a>
-                        {% endfor %}
-                    </div>
-                {% endapply %}
-            {% endif %}
-            <nav class="NavBar" role="navigation">
-                {{ _api.navigation.get.key('main') }}
-            </nav>
-             <div class="Header-social">
+            <div class="Header-social gx-2">
                 {% if _core.theme.settings.headerShowSocial == 'yes' %}
                     {% for social in _core.theme.settings.social %}
                         <a href="{{ social.url }}" title="Follow us on {{ social.name }}" class="Header-iconLink"> {{ macros.iconImg(social.icon, social.name, "Header-icon") }}</a>
                     {% endfor %}
                 {% endif %}
             </div>
-            <button>Menu</button>
+            <div class="Header-buttons"><a href="#" class="Button Button--outline Header-button">Donate</a></div>
+            <button class="SmScBtn js-ssNavBtn" aria-label="Navigation menu" aria-expanded="false" aria-controls="navbar">
+                <span class="SmScBtn-icon"></span>
+            </button>
+            
+            <nav class="NavBar js-navBar" role="navigation">
+                {{ _api.navigation.get.key('main') }}
+            </nav>
 
         </div>
     </header>

@@ -8,26 +8,25 @@
  * Base menu
  */
 
- /* --NavBar-background */
-
 
 .MainNav {
     align-items: center;
-    display: flex;
+    display: inline-block;
     font-family: var(--MainNav-font-family);
     gap: var(--MainNav-item-gap);
     justify-content: var(--MainNav-horizontal-alignment);
     list-style: none;
     margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .MainNav-item {
+    display: inline-block;
     font-size: var(--MainNav-font-size);
     letter-spacing: var(--MainNav-letter-spacing);
     line-height: var(--MainNav-line-height);
     text-transform: var(--MainNav-text-transform);
-    width: 100%;
 }
 
 .MainNav-link {
@@ -35,9 +34,8 @@
     color: var(--MainNav-color);
     display: block;
     font-weight: var(--MainNav-font-weight);
-    padding: var(--MainNav-item-padding-sm);
+    padding: 1.5rem;
     position: relative;
-    text-align: center;
     text-decoration: var(--MainNav-link-text-decoration, none);
 }
 
@@ -53,9 +51,12 @@
     Responsive
 \* ------------------------------------ */
 
-@media (--m-lg-below) {
+@media (width < 1050px) {
     .MainNav-link {
-        text-align: left;
+        display: block;
+        padding: 1.4rem;
+
+        /* text-align: left; */
     }
 
     .MainNav-link.is-dropdown::after {
@@ -88,7 +89,7 @@
     }
 
     .MainNav-link {
-        padding: var(--MainNav-item-padding);
+        padding: 1.5rem;
     }
 
     .MainNav-item--smallScreen {

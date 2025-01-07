@@ -3,59 +3,82 @@
 \* =========================================================================== */
 
 /* @define Header */
+
 .Header {
-    align-items: center;
     background-color: var(--Header-backgroundColor);
     border-bottom: 1px solid #ebeaeb;
-    display: inline-block;
-
-    /* padding: 12px 0; */
-    position: sticky;
-    text-align: center;
-    top: 0;
-    width: 100%;
-
-    /* z-index: 1000; */
+    display: block;
+    padding: var(--Header-padding-sm, 12px 0);
+    z-index: 1000;
 }
 
-@media (--c-bp-largeScreenNav) {
-    .Header {
-        position: sticky;
-        top: 0;
-    }
+.Header-logoWrap {
+    align-items: center;
+    display: flex;
+    margin-bottom: 2px;
+    order: 1;
+}
 
-    .Header.is-sticky {
-        padding: 6px 0;
-    }
+.Container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding-left: 10px; /* Reduce padding */
+    padding-right: 10px; /* Reduce padding */
+    width: 100%;
 }
 
 .Header-inner {
     align-items: center;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-@media (--c-bp-smallScreenNav) {
+.Header-skipToMain {
+    align-items: center;
+    display: flex;
+    height: 1px;
+    justify-content: center;
+    left: -10000px;
+    overflow: hidden;
+    position: absolute;
+    top: 5px;
+    width: 1px;
+    z-index: 100;
+}
+
+@media (width < 1051px) {
+    .Container {
+        max-width: 100%; /* Allow container to take up full width */
+        padding-left: 10px; /* Reduce padding */
+        padding-right: 10px; /* Reduce padding */
+    }
+
     .Header {
-        padding-left: var(--g-gutter);
-        padding-right: var(--g-gutter);
+        padding: 12px;
+        position: sticky;
+        top: 0;
     }
 
     .Header-inner {
         flex-wrap: wrap;
+        padding: 12px;
     }
+
+    .Header.is-sticky {
+        padding: var(--Header-padding, 6px 0);
+    }
+
 }
 
-@media (--c-bp-sm) {
-    .Header {
-        padding-left: var(--g-gutter-sm);
-        padding-right: var(--g-gutter-sm);
-    }
-}
 
-.Header-socialIcons {
-    color: pink;
+
+.Header-social {
     margin-right: 12px;
     order: 3;
 }
 
-
+.Header-buttons {
+    order: 4;
+}
