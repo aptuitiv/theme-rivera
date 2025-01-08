@@ -7,13 +7,16 @@
     background: var(--SmScBtn-background, transparent);
     border: none;
     color: var(--SmScBtn-color);
-    display: none;
+
+    /* display: block; */
     font-size: 16px;
     line-height: 45px;
+    margin-top: 20px;
     order: 4;
     padding: 0 10px 0 18px;
     text-align: center;
     text-decoration: none;
+    width: 100%;
 }
 
 .SmScBtn:active,
@@ -81,11 +84,8 @@
         transform 0.1s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
-@media (width <= 1050px) {
+@media (width >= 1024px) {
     .SmScBtn {
-        display: block;
-        margin-top: 20px;
-        order: 4;
-        width: 100%;
+        display: none;
     }
 }

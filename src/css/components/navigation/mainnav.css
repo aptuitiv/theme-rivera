@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Main Navigation
-   ========================================================================== */
+    Main Navigation
+    ========================================================================== */
 
 /** @define MainNav */
 
@@ -8,17 +8,15 @@
  * Base menu
  */
 
-
 .MainNav {
-    align-items: center;
-    display: inline-block;
+    display: flex;
+    flex-flow: column wrap;
     font-family: var(--MainNav-font-family);
     gap: var(--MainNav-item-gap);
     justify-content: var(--MainNav-horizontal-alignment);
     list-style: none;
     margin: 0;
     padding: 0;
-    width: 100%;
 }
 
 .MainNav-item {
@@ -42,24 +40,21 @@
 .MainNav-item.is-current > .MainNav-link,
 .MainNav-item.is-currentParent > .MainNav-link,
 .MainNav-item:hover > .MainNav-link {
-    background: var(--MainNav-link-background-hover, transprent);
+    background: var(--MainNav-link-background-hover, transparent);
     color: var(--MainNav-color-hover);
     text-decoration: var(--MainNav-link-text-decoration-hover, none);
 }
 
 /* ------------------------------------ *\
-    Responsive
+     Responsive
 \* ------------------------------------ */
 
 @media (width < 1050px) {
     .MainNav-link {
-        display: block;
         padding: 1.4rem;
+     }
 
-        /* text-align: left; */
-    }
-
-    .MainNav-link.is-dropdown::after {
+     .MainNav-link.is-dropdown::after {
         border: 5px solid transparent;
         border-left-color: currentcolor;
         content: '';
@@ -69,13 +64,13 @@
         right: 10px;
         top: 50%;
         transform: translateY(-50%);
-    }
+     }
 
-    .MainNav-link.is-dropdown.is-active::after {
+     .MainNav-link.is-dropdown.is-active::after {
         right: 13px;
         top: 60%;
         transform: translateY(-50%) rotate(90deg);
-    }
+     }
 }
 
 @media (--m-lg) {
@@ -84,15 +79,4 @@
         margin: 0;
     }
 
-    .MainNav-item {
-        width: unset;
-    }
-
-    .MainNav-link {
-        padding: 1.5rem;
-    }
-
-    .MainNav-item--smallScreen {
-        display: none;
-    }
 }

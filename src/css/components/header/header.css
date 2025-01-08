@@ -22,17 +22,18 @@
 .Container {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
-    padding-left: 10px; /* Reduce padding */
-    padding-right: 10px; /* Reduce padding */
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
     width: 100%;
 }
 
+/* Default for smallest size */
 .Header-inner {
     align-items: center;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-flow: column wrap;
+    gap: 20px;
 }
 
 .Header-skipToMain {
@@ -48,32 +49,6 @@
     z-index: 100;
 }
 
-@media (width < 1051px) {
-    .Container {
-        max-width: 100%; /* Allow container to take up full width */
-        padding-left: 10px; /* Reduce padding */
-        padding-right: 10px; /* Reduce padding */
-    }
-
-    .Header {
-        padding: 12px;
-        position: sticky;
-        top: 0;
-    }
-
-    .Header-inner {
-        flex-wrap: wrap;
-        padding: 12px;
-    }
-
-    .Header.is-sticky {
-        padding: var(--Header-padding, 6px 0);
-    }
-
-}
-
-
-
 .Header-social {
     margin-right: 12px;
     order: 3;
@@ -82,3 +57,47 @@
 .Header-buttons {
     order: 4;
 }
+
+/* --m-sm = 576px and above */
+
+@media (--m-sm) {
+    .Container {
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .Header {
+        padding: 12px 0;
+        position: sticky;
+        top: 0;
+    }
+
+    .Header-inner {
+        align-items: center;
+        display: flex;
+
+        /* flex-flow: row wrap; */
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .Header.is-sticky {
+        padding: var(--Header-padding, 6px 0);
+    }
+}
+
+
+
+/* --m-lg = 1024px and above */
+@media (--m-lg) {
+    .Header {
+        padding: 12px;
+    }
+
+    .Header-inner {
+        flex-flow: wrap;
+        justify-content: space-evenly;
+    }
+}
+

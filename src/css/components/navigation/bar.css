@@ -2,41 +2,46 @@
     Navigation Bar
 \* =========================================================================== */
 
+
 /* @define NavBar */
+
 .NavBar {
     --navbar-offset: 100px;
 
-    align-items: center;
     background-color: var(--NavBar-background);
     display: none;
-    display: flex;
-    justify-content: flex-start;
-
-    /* flex: 1 1 auto; */
-    order: 2;
-    padding-left: 20px;
+    height: calc(100vh - var(--navbar-offset));
+    left: 0;
+    order: 5;
+    overflow-y: auto;
+    padding: var(--NavBar-padding-sm, 0);
+    position: fixed;
+    top: var(--navbar-offset);
+    width: 100%;
+    z-index: 1000;
 }
 
-@media (width < 1050px) {
+.NavBar[data-open='yes'] {
+    display: block;
+}
+
+@media (--m-lg-below) {
     .NavBar {
-        /* height: calc(100vh - var(--navbar-offset)); */
-        left: 0;
-        overflow-y: auto;
-        position: fixed;
-        top: var(--navbar-offset);
-
-        /* width: 100%; */
-        z-index: 1000;
-    }
-
-    .NavBar[data-open='yes'] {
-        display: block; /* Show when the 'data-open' attribute is set to 'yes' */
+        display: none;
     }
 }
 
 @media (--m-lg) {
     .NavBar {
-        display: block;
-        padding: var(--NavBar-padding, 0);
+        align-items: center;
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: row;
+        height: auto;
+        justify-content: space-between; /* Updated to space-between */
+        order: 2;
+        padding-left: 20px;
+        position: static;
+        width: auto;
     }
 }
