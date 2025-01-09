@@ -13,8 +13,17 @@
         {% set contentCol = contentCol ~ ' order-1-lg' %}
     {% endif %}
 
+    {% set gridClass = "nc-1" %}
+    {% if imageSize == 'Third' %}
+        {% set gridClass = "nc-1 nc-2-md nc-3-lg" %}
+    {% elseif imageSize == 'Quarter' %}
+        {% set gridClass = "nc-1 nc-2-md nc-4-lg" %}
+    {% elseif imagePosition == 'Right' %}
+        {% set gridClass = "nc-1 nc-2-md nc-2-lg" %}
+    {% endif %}
+
     <div class="Container Container--pad">
-        <div class="grid py-2 py-4-lg g-2 g-4-lg">
+        <div class="grid py-2 py-4-lg g-2 g-4-lg {{ gridClass }}">
             <div class="{{ imageCol }}">
                 {% do image.resize(800) %}
                 {% do image.lazy() %}
