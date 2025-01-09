@@ -18,6 +18,8 @@
 
 .Dropdown-menu {
     background: var(--Dropdown-background, #fff);
+    border-radius: 4px;
+    box-shadow: 0 0 2rem rgb(0 0 0 / 10%);
     display: none;
     list-style: none;
     margin: 0;

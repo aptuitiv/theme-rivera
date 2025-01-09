@@ -3295,15 +3295,7 @@
                                 "cssSelector": ".Button.Header-button"
                             }
                         },
-                        {
-                            "name": "headerButtonFontStyle",
-                            "label": "Font style",
-                            "type": "fontStyle",
-                            "render": {
-                                "type": "css-head",
-                                "cssSelector": ".Button.Header-button"
-                            }
-                        },
+                     
                         {
                             "name": "headerButtonBorderColor",
                             "label": "Border color",

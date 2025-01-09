@@ -50,7 +50,7 @@
                     <a href="/" title="Go to home page" class="Header-logoLink">{{ _core.theme.settings.headerLogo.tag }}</a>
                 {% endif %}
             </div>
-            <div class="Header-social gx-2">
+            <div class="Header-social flex gx-1">
                 {% if _core.theme.settings.headerShowSocial == 'yes' %}
                     {% for social in _core.theme.settings.social %}
                         <a href="{{ social.url }}" title="Follow us on {{ social.name }}" class="Header-iconLink"> {{ macros.iconImg(social.icon, social.name, "Header-icon") }}</a>
