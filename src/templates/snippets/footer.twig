@@ -11,7 +11,7 @@
 
                     <div class="Footer-contact">
                         {% if _core.theme.settings.footerShowAddress == 'yes' %}
-                            <div>
+                            <div class="Footer-address">
                                 {% if _core.settings.companyAddressStreet %}
                                     {{ _core.settings.companyAddressStreet }}{{ _core.settings.companyAddressCity ? ', ' }}
                                 {% endif %}
@@ -34,7 +34,7 @@
                         {% endif %}
 
                     </div>
-                    <div>&copy; {{ _core.date.year }} {{ _core.settings.companyName }}</div>
+                    <div class="Footer-copyRight">&copy; {{ _core.date.year }} {{ _core.settings.companyName }}</div>
                     {% if _core.theme.settings.footerShowCredit == 'yes' %}
                         <div class="Footer-attribution">
                             <a href="https://www.aptuitiv.com" target="_blank" class="Footer-attributeLink">Website by Aptuitiv</a>

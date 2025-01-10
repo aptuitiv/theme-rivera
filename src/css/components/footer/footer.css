@@ -5,14 +5,12 @@
 /* @define Footer */
 .Footer {
     color: var(--Footer-color);
-    margin: var(--Footer-sm-margin, 0);
     padding: var(--Footer-sm-padding, 0);
 }
 
 .Footer-attribution {
     display: flex;
     flex-direction: column;
-    gap: 5px;
 }
 
 /* ------------------------------------ *\
@@ -21,13 +19,38 @@
 
 @media (--m-lg) {
     .Footer {
-        margin: var(--Footer-margin, 0);
         padding: var(--Footer-padding, 20px 0);
+    }
+
+    .Footer-contact {
+        display: flex;
+        justify-content: center;
+    }
+
+    .Footer-contact a {
+        border-left: 2px solid black;
+        padding: 0 20px;
+    }
+
+    .Footer-address {
+        padding: 0 20px;
+    }
+
+    .Footer-copyRight {
+        margin-top: -20px;
     }
 
     .Footer-attribution {
         flex-direction: row;
-        gap: 10px;
         justify-content: center;
     }
+
+    .Footer-attribution a {
+        padding: 0 20px;
+    }
+
+    .Footer-attribution a:not(:first-child) {
+        border-left: 2px solid black;
+    }
+
 }

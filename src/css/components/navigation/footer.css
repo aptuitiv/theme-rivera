@@ -5,13 +5,18 @@
 /* @define FooterNav */
 .FooterNav {
     align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    justify-content: center;
+    column-count: 2;
+    display: block;
+
+    /* flex-direction: column;
+    justify-content: center; */
     list-style: none;
     margin-bottom: 0;
-    padding-left: 0;
+}
+
+.FooterNav-item {
+    display: block;
+    padding: 8px 0;
 }
 
 .FooterNav-link {
@@ -20,8 +25,9 @@
 
 @media (--m-md) {
     .FooterNav {
+        display : flex;
         flex-direction: row;
-        gap: 20px;
+        justify-content: center;
     }
 
     .FooterNav-link {
@@ -40,7 +46,16 @@
         width: 1px;
     }
 
+    .FooterNav-item {
+        padding: 0 20px;
+    }
+
+    .FooterNav-item:not(:first-child) {
+        border-left: 2px solid black;
+    }
+
     .FooterNav-item:last-child .FooterNav-link::after {
         display: none;
     }
+
 }
