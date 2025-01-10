@@ -43,27 +43,27 @@
         {% if count % 6 == 0 %}
             {% set class = count6.class %}
             {% set width = count6.width %}
-            
+            {% set nc_class = "nc-1 nc-2-sm nc-3-md nc-6-lg" %}
         {% elseif count % 5 == 0 %}
             {% set class = count5.class %}
             {% set width = count5.width %}
-            
+            {% set nc_class = "nc-1 nc-2-sm nc-3-md nc-5-lg" %}
         {% elseif count % 4 == 0 %}
             {% set class = count4.class %}
             {% set width = count4.width %}
-            
+            {% set nc_class = "nc-1 nc-2-sm nc-3-md nc-4-lg" %}
         {% elseif count % 3 == 0 %}
             {% set class = count3.class %}
             {% set width = count3.width %}
-            
+            {% set nc_class = "nc-1 nc-2-md nc-3-lg" %}
         {% elseif count % 2 == 0 %}
             {% set class = count2.class %}
             {% set width = count2.width %}
-            
+            {% set nc_class = "nc-1 nc-2-lg" %}
         {% elseif count > 6 %}
             {% set class = count4.class %}
             {% set width = count4.width %}
-            
+            {% set nc_class = "nc-1 nc-2-sm nc-3-md nc-4-lg" %}
         {% endif %}
     {% endif %}
     {# Build the grid of item #}
