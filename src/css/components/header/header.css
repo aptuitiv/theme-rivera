@@ -13,10 +13,12 @@
     z-index: 1000;
 }
 
+.headerLogo {
+    max-width: var(--Header-logo-width);
+    width: 100%;
+}
+
 .Header-logoWrap {
-    align-items: center;
-    display: flex;
-    margin-bottom: 2px;
     order: 1;
 }
 

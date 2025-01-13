@@ -2618,6 +2618,16 @@
                                 "cssSelector": "",
                                 "cssVariable": "--FooterNav-color"
                             }
+                        },
+                        {
+                            "name": "footerNavigationBorderColor",
+                            "label": "Border color",
+                            "type": "color",
+                            "render": {
+                                "type": "css-head",
+                                "cssVariable": "--FooterNav-border-color"
+                            }
+                            
                         }
                     ]
                 },

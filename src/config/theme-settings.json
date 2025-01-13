@@ -84,8 +84,8 @@
                             "path": "images",
                             "render": {
                                 "type": "replace",
-                                "contentSelector": "#header-logo",
-                                "template": "<div class=\"col-3-4 col-xl-1-3\" id=\"header-logo\"><a href=\"/\" title=\"return to home page\" class=\"Header-logoLink\"><img src=\"{{ url }}\" height=\"{{ imageHeight }}\" width=\"{{ imageWidth }}\" alt=\"{{ alt }}\" class=\"Header-logo\"></a></div>"
+                                "contentSelector": "#headerLogo",
+                                "template": "<div class=\"Header-logoWrapper\" id=\"header-logo\"><a href=\"/\"><img src=\"{{ url }}\" height=\"{{ imageHeight }}\" width=\"{{ imageWidth }}\" alt=\"{{ alt }}\" class=\"Header-logo\"></a></div>"
                             }
                         },
                         {
@@ -93,7 +93,7 @@
                             "label": "Logo width",
                             "type": "stepper",
                             "after": "px",
-                            "defaultValue": "425",
+                            "defaultValue": "200",
                             "render": {
                                 "type": "css-head",
                                 "cssVariable": "--Header-logo-width",
@@ -113,7 +113,7 @@
                             "render": {
                                 "type": "replace",
                                 "contentSelector": "#header-logo",
-                                "template": "<div class=\"col-3-4 col-xl-1-3\" id=\"header-logo\"><a href=\"/\" title=\"return to home page\" class=\"Header-logoLink\">{% if fields.headerLogo %}<img src=\"{{ fields.headerLogo.url }}\" class=\"Header-logo\">{% elseif value %}<div class=\"Header-textLogo\">{{ value }}</div>{% endif %}</a></div>"
+                                "template": "<div class=\"col-3-4 col-xl-1-3\" id=\"header-logo\"><a href=\"/\" title=\"return to home page\" class=\"Header-logoLink\">{% if fields.Header-logo %}<img src=\"{{ fields.Header-logo.url }}\" class=\"Header-logo\">{% elseif value %}<div class=\"Header-textLogo\">{{ value }}</div>{% endif %}</a></div>"
                             }
                         }
                     ]
