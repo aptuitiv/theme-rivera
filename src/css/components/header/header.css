@@ -13,7 +13,7 @@
     z-index: 1000;
 }
 
-.headerLogo {
+.Header-logo {
     max-width: var(--Header-logo-width);
     width: 100%;
 }
