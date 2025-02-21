@@ -43,7 +43,7 @@
         <div class="Container Header-inner">
             <div class="Header-logoWrap">
                 {% if _core.theme.settings.headerLogo %}
-                    {% set _core.theme.settings.headerLogo.class = 'headerLogo' %}
+                    {% set _core.theme.settings.headerLogo.class = 'Header-logo' %}
                     {% if _core.theme.settings.headerLogo.alt|length == 0 %}
                         {% set _core.theme.settings.headerLogo.alt = _core.settings.companyName %}
                     {% endif %}
