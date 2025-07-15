@@ -1,17 +1,6 @@
 {
     "groups": [
         {
-            "name": "Breadcrumb",
-            "fields": [
-                {
-                    "name": "showBreadcrumb",
-                    "label": "Show Breadcrumb Text",
-                    "type": "switch",
-                    "defaultValue": "yes"
-                }
-            ]
-        },
-        {
             "name": "Blocks - Google Ratings Bar",
             "description": "Settings for the Google Ratings Bar",
             "fields": [
@@ -20,6 +9,17 @@
                     "label": "URL to view reviews on Google",
                     "type": "url",
                     "showLinkTextField": true
+                }
+            ]
+        },
+        {
+            "name": "Breadcrumb",
+            "fields": [
+                {
+                    "name": "showBreadcrumb",
+                    "label": "Show Breadcrumb Text",
+                    "type": "switch",
+                    "defaultValue": "yes"
                 }
             ]
         },
