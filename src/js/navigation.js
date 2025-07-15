@@ -6,7 +6,7 @@
  * Small screen navigation
  */
 
-// eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars -- This is a global variable
 const smallScreenNav = {
 
     /**
@@ -103,14 +103,13 @@ const smallScreenNav = {
  * Add "js-dropdownParent" class to a <li> tag that contains a sub list for a drop down.
  * Add "js-dropdown" to any link tags that have a drop down.
  */
-// eslint-disable-next-line
+// eslint-disable-next-line no-unused-vars -- This is a global variable
 const navAccess = {
     init() {
         const menus = document.querySelectorAll('[data-access-nav]');
-        const self = this;
         if (menus.length > 0) {
             menus.forEach((menu) => {
-                self.setupMenu(menu);
+                this.setupMenu(menu);
             });
         }
     },
@@ -122,7 +121,6 @@ const navAccess = {
      */
     setupMenu(menu) {
         const nav = menu.querySelectorAll('.js-navLink');
-        const self = this;
         let key;
         const next = ['ArrowDown', 'Down', 'Tab', 'Spacebar', ' '];
         const prev = ['ArrowUp', 'Up', 'Tab', 'Spacebar', ' '];
@@ -137,30 +135,30 @@ const navAccess = {
                     // Going forwards
                     if (e.shiftKey) {
                         // Shift key was down
-                        self.focus(e, e.target);
+                        this.focus(e, e.target);
                     } else {
                         // Moving forward
-                        self.focus(e, e.target, true);
+                        this.focus(e, e.target, true);
                     }
                 } else if (prev.indexOf(key) >= 0) {
                     // Going backwards
                     if (e.shiftKey) {
                         // Negating going backwards so going forwards
-                        self.focus(e, e.target, true);
+                        this.focus(e, e.target, true);
                     } else {
-                        self.focus(e, e.target);
+                        this.focus(e, e.target);
                     }
                 } else if (left.indexOf(key) >= 0) {
                     // Jumping backwards
-                    self.focus(e, e.target, false, true);
+                    this.focus(e, e.target, false, true);
                 } else if (right.indexOf(key) >= 0) {
                     // Jumping forwards
-                    self.focus(e, e.target, true, true);
+                    this.focus(e, e.target, true, true);
                 } else if (key === 'Escape') {
                     // Close the menu
-                    const parentLi = self.getParent(e.target).parentNode;
+                    const parentLi = this.getParent(e.target).parentNode;
                     if (parentLi !== null) {
-                        focusEl = self.getLink(parentLi);
+                        focusEl = this.getLink(parentLi);
                         focusEl.focus();
                     }
                 }
@@ -240,6 +238,10 @@ const navAccess = {
             el.classList.add('is-active');
             // change the aria-expanded and aria-hidden values on the <ul> tag
             el.querySelector('a').setAttribute('aria-expanded', 'true');
+            const dropdownMenu = el.querySelector('ul.js-dropdownMenu');
+            if (dropdownMenu) {
+                dropdownMenu.setAttribute('aria-hidden', 'false');
+            }
         }
     },
 
@@ -253,6 +255,10 @@ const navAccess = {
         parent.parentNode.classList.remove('is-active');
         // change the aria-expanded and aria-hidden values on the <ul> tag
         parent.setAttribute('aria-expanded', 'false');
+        const dropdownMenu = parent.querySelector('ul.js-dropdownMenu');
+        if (dropdownMenu) {
+            dropdownMenu.setAttribute('aria-hidden', 'true');
+        }
     },
 
     /**
