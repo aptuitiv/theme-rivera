@@ -33,20 +33,24 @@
     color: var(--FooterNav-color);
 }
 
+.FooterNav-link:hover {
+    color: var(--FooterNav-color-hover);
+}
+
 /* --m-sm = 576px and above */
 @media (--m-sm) {
     .FooterNav {
         display: grid;
         gap: 20px;
-        grid-template-columns: repeat(3, 1fr); 
-        justify-content: center; 
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
         padding: 0;
     }
 
     .FooterNav-item {
-        border: none;  
-        padding: 0; 
-        text-align: center; 
+        border: none;
+        padding: 0;
+        text-align: center;
     }
 
     .FooterNav-link {
