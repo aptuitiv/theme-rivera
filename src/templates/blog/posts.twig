@@ -5,7 +5,7 @@
     {% if pagination.current > 1 %}
         {% set content = '<h1 class="flex flex-col align-center g-1">Blog<span class="h3 m-0">Page ' ~ pagination.current ~ '</span></h1>' %}
     {% endif %}
-    {% include('content-builder/banner-bar') %}
+    {% include('content-builder/banner') %}
 {% endblock %}
 
 {% block main %}
