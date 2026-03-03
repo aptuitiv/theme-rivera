@@ -4572,7 +4572,7 @@
                                 "defaultValue": "0"
                             },
                             "textAlignRender": {
-                                "cssProperty": "justify-content"
+                                "cssVariable": "--SidebarBox-heading"
                             },
                             "render": {
                                 "type": "css-head",
