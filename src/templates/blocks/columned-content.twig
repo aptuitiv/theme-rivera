@@ -1,4 +1,5 @@
 {% if columns|first.content %}
+    {% import 'macros/macros' as macros %}
     {# Set the image classes based on the number of columns #}
     {% set count = _core.theme.settings.blockColumnContentDefaultNumColumns %}
     {% if numberOfColumns not in ['Auto', 'Site default'] %}
@@ -67,7 +68,7 @@
         {% endif %}
     {% endif %}
     {# Build the grid of item #}
-    <div class="Container Container--pad">
+    <div class="Container Container--pad{{ macros.blockMargin(margin) }}{{ macros.blockWidth(width) }}">
         <div class="ColumnContent grid {{ ncClass }}">
             {% for column in columns %}
                 <div class="{{ class }}">
