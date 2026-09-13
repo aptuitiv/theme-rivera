@@ -4623,7 +4623,10 @@
                             "type": "border",
                             "render": {
                                 "type": "css-head",
-                                "cssVariable": "--Pagination-pages-wrapper-border"
+                                "cssVariable": "--Pagination-pages-wrapper-border",
+                                "config": {
+                                    "combine": false
+                                }
                             }
                         },
                         {
