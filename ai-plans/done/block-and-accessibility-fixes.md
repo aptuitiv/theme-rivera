@@ -55,3 +55,9 @@ Carmine isn't a good reference for these — each needs a new fix. Items marked 
 - [ ] `npm run build` completes and `npm run stylelint` shows no new warnings (stylelint: no new warnings; build not run)
 - [ ] Every changed block renders in the CMS, including the Margin and Width options
 - [ ] Keyboard check: the skip link works on the full-width layout; accordion headings open with Enter/Space
+
+## Follow-up fixes (2026-09-13)
+
+- [x] **`blocks/columned-content.twig` width override** — removed the `width:` values from `count2`–`count6` and every `{% set width = countN.width %}` line. They overwrote the block's Width field, so the Width setting never took effect (same fix as image-grid, Carmine commit `1745710`).
+- [x] **`snippets/header.twig`** — the notifications widget was output twice (duplicate `id="notification-modal"`); it's now output once. The skip link and the SVG icon sprite moved out of `<header>` so the skip link is the first element in `<body>` (same order as Carmine and Skeleton). Removed the stray `</body>` at the end of the file (the footer closes the body).
+- [x] **`blog/post.twig`** — the comment author's website link opens in a new window; added `rel="noopener"` and a visually hidden "(opens in a new window)" (same as Carmine).
