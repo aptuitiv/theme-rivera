@@ -24,11 +24,10 @@
 </head>
 <body{{ _page.body.attributes() }}>
     {{ _page.bodyStartCode() }}
+    <a class="Header-skipToMain" href="#main">skip to main content {{ macros.iconAriaHidden("chevron-small-right") }}</a>
+    <div class="visually-hidden" aria-hidden="true">{{ source('snippets/svg-icons.twig') }}</div>
     {{ _api.widgets.collection.get('notifications') }}
     <header class="Header">
-        <a class="Header-skipToMain" href="#main">skip to main content {{ macros.iconAriaHidden("chevron-small-right") }}</a>
-        <div class="visually-hidden" aria-hidden="true">{{ source('snippets/svg-icons.twig') }}</div>
-        {{ _api.widgets.collection.get('notifications') }}
         <div class="Container Header-inner">
             <div class="Header-logoWrap">
                 {% if _core.theme.settings.headerLogo %}
@@ -57,4 +56,3 @@
 
         </div>
     </header>
-</body>
