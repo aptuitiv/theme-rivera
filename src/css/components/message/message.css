@@ -37,3 +37,6 @@
 }
 
 /* postcss-bem-linter: ignore */
+.Message--failure a {
+    color: var(--Message-color-failure);
+}
